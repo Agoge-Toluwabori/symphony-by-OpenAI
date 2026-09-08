@@ -397,3 +397,9 @@ you.
 ## License
 
 This project is licensed under the [Apache License 2.0](../LICENSE).
+
+Agoge Factory V1 configures `tracker.provider.agent_policy: agoge-factory-v1` and
+`agent_issue_numbers` to constrain dynamic GitHub calls to repository reads and
+approved-task evidence/lifecycle writes. It blocks production, paid-resource and
+unrelated-repository REST requests; external worker isolation remains required.
+See `../operations/agoge/factory/TEMPLATE.md` for setup and validation boundaries.

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "repository": "Agoge-Toluwabori/Agoge-Business-Systems",
+  "project": 1,
+  "batch": "factory-v1-publication-guard",
+  "approved": true,
+  "approval_source": "Owner: AGOGE DELIVERY FACTORY V1 redesign instruction, 2026-09-08",
+  "max_concurrency": 1,
+  "publication_guard_verified": false,
+  "preview_isolation_verified": false,
+  "tasks": [{"number": 235, "authority": "Autonomous Development", "dependencies": [], "publication_guard_task": true}]
+}

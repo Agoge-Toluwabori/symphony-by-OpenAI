@@ -59,6 +59,7 @@ defmodule SymphonyElixir.GitHub.AgentTool do
     client_opts = Keyword.take(opts, [:tracker_settings])
 
     with {:ok, method, path, params, body} <- normalize_arguments(arguments),
+         :ok <- authorize_factory_request(method, path, body, opts),
          {:ok, %{status: status, body: response_body}} <-
            github_client.(method, path, params, body, client_opts),
          true <- is_integer(status) do
@@ -68,6 +69,53 @@ defmodule SymphonyElixir.GitHub.AgentTool do
       _ -> failure_response(tool_error_payload(:github_unknown_payload))
     end
   end
+
+  defp authorize_factory_request(method, path, body, opts) do
+    settings = Keyword.get_lazy(opts, :tracker_settings, fn -> SymphonyElixir.Config.settings!().tracker end)
+    provider = Map.get(settings, :provider, %{})
+
+    if provider["agent_policy"] == "agoge-factory-v1" do
+      issue_id = opts |> Keyword.get(:issue, %{}) |> Map.get(:id)
+      provider = Map.put(provider, "agent_current_issue", issue_id)
+      factory_request_allowed(method, path, body, provider)
+    else
+      :ok
+    end
+  end
+
+  defp factory_request_allowed(method, path, body, provider) do
+    prefix = "/repos/#{provider["repo"]}/"
+    relative = String.replace_prefix(path, prefix, "")
+    canonical = String.starts_with?(path, prefix) and not String.contains?(relative, ["%", "..", "?", "#", "\\"])
+    allowed = factory_read?(method, relative) or factory_write?(method, relative, body, provider)
+    if canonical and allowed, do: :ok, else: {:error, :factory_operation_denied}
+  end
+
+  defp factory_read?("GET", path), do: Regex.match?(~r/^(issues|pulls|commits|branches)(\/|$)/, path)
+  defp factory_read?(_, _), do: false
+
+  defp factory_write?(method, path, body, provider) do
+    case String.split(path, "/") do
+      ["issues", number | rest] ->
+        number == to_string(provider["agent_current_issue"]) and
+          number in Enum.map(provider["agent_issue_numbers"] || [], &to_string/1) and
+          factory_issue_write?(method, rest, body)
+
+      _ ->
+        false
+    end
+  end
+
+  defp factory_issue_write?("POST", ["comments"], %{"body" => text} = body),
+    do: map_size(body) == 1 and is_binary(text)
+
+  defp factory_issue_write?("POST", ["labels"], %{"labels" => labels} = body) when is_list(labels),
+    do: map_size(body) == 1 and Enum.all?(labels, &(&1 in ["symphony-running", "symphony-blocked", "human-review"]))
+
+  defp factory_issue_write?("DELETE", ["labels", label], _),
+    do: label in ["symphony-running", "symphony-ready", "symphony-blocked"]
+
+  defp factory_issue_write?(_, _, _), do: false
 
   defp normalize_arguments(arguments) when is_map(arguments) do
     with {:ok, method} <- normalize_method(Map.get(arguments, "method")),
@@ -156,17 +204,17 @@ defmodule SymphonyElixir.GitHub.AgentTool do
     }
   end
 
-  defp tool_error_payload({:github_api_request, reason}) do
+  defp tool_error_payload({:github_api_request, _reason}) do
     %{
       "error" => %{
         "message" => "GitHub API request failed before receiving a successful response.",
-        "reason" => inspect(reason)
+        "reason" => "details suppressed"
       }
     }
   end
 
-  defp tool_error_payload(reason) do
-    %{"error" => %{"message" => "GitHub API tool execution failed.", "reason" => inspect(reason)}}
+  defp tool_error_payload(_reason) do
+    %{"error" => %{"message" => "GitHub API tool execution failed.", "reason" => "details suppressed"}}
   end
 
   defp supported_tool_names, do: Enum.map(tool_specs(), & &1["name"])

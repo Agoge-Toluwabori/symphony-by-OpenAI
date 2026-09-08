@@ -1,0 +1,9 @@
+[Certain] Agoge Delivery Factory V1 supersedes the former approval conflict under the owner's 2026-09-08 redesign instruction. This explanatory comment preserves all prior evidence.
+
+Authority: Autonomous Development. Approved batch: factory-v1-publication-guard. This batch contains only #235; no product implementation batch is approved by this change. Project planning status alone does not authorize work. Standing development authority permits ordinary inspection, editing, validation, local commits and approved development operations without per-command approval. Historical unconditional “Never push” and “do not invoke Vercel” bootstrap language is superseded for this batch. The issue's existing narrow guard-configuration and harmless branch-only verification authorization remains applicable. Application publication remains prohibited until the guard is verified; preview publication additionally requires proven preview isolation. Production, billing, credential expansion, DNS and destructive actions are not delegated.
+
+Removing symphony-blocked retires only the obsolete instruction-conflict classification. It does not claim Vercel access or publication isolation has been verified. #235 is prepared, not executed: no guard inspection/change, test-branch push, deployment or application work occurred in the redesign.
+
+The service is disabled and stopped for owner review. Activation additionally fails closed until a separately isolated worker and scoped host brokers are installed and their boundary probes pass. The current same-UID host/network arrangement cannot establish those technical protections. This is one control-plane prerequisite, not a request to approve ordinary development commands.
+
+After successful execution, record evidence, move to human-review / In Review and leave open for owner acceptance. The reconciler must stop at this one-task batch boundary.

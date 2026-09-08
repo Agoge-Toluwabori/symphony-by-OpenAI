@@ -2310,3 +2310,12 @@ Extension config:
 - Cleanup and observability:
   - Operators need to know which host owns a run, where its workspace lives, and whether cleanup
     happened on the right machine.
+
+## Agoge factory extension
+
+An optional `tracker.provider.agent_policy: agoge-factory-v1` restricts dynamic
+GitHub REST calls to configured-repository reads and evidence/lifecycle writes for
+`agent_issue_numbers`. Authority and positive ready-label grants remain with a
+host-controlled approved batch, not the agent. The external reconciler selects one
+eligible task and stops at the batch boundary. This supplements, rather than
+replaces, tracker routing, live dispatch revalidation and workspace safeguards.

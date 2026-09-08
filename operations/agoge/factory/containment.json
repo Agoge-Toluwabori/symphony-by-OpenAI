@@ -1,0 +1,6 @@
+{
+  "status": "unverified",
+  "worker_executable": "/opt/agoge-factory/bin/isolated-codex",
+  "required": ["separate worker identity or equivalent verified namespace", "no host home or unrelated repository mounts", "no root/capability escalation", "default-deny egress with inference/dependency broker", "repository-scoped GitHub App outside worker", "provider broker rejecting production and billing", "credential/log redaction adversarial checks", "existing AppArmor/bubblewrap compatibility retained"],
+  "reason": "Existing same-UID worker, broad host credentials and unrestricted network do not meet this contract. Provisioning and external security verification require owner-controlled host changes. Do not change status as a substitute for verification."
+}

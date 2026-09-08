@@ -1,3 +1,14 @@
+# Delivery Factory V1 supersession — 2026-09-08
+
+The current review package is [factory/REPORT.md](factory/REPORT.md), with the
+reusable [template](factory/TEMPLATE.md). Its tracked workflow replaces the
+bootstrap approval rules below. The installed service remains DISABLED and STOPPED;
+the package is not installed because verified worker containment is unavailable.
+Historical reports below are retained and do not describe current runtime state.
+The later successful #234 canary supersedes the initial failed canary below.
+
+---
+
 # Agoge Symphony controlled activation — 2026-09-08
 
 Certain: configuration and controlled dispatch established; successful sandbox canary BLOCKED.

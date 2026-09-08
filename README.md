@@ -39,3 +39,8 @@ help with the setup:
 ## License
 
 This project is licensed under the [Apache License 2.0](LICENSE).
+
+Agoge's reviewed, batch-authorized delivery control plane is documented in
+[Delivery Factory V1](operations/agoge/factory/TEMPLATE.md). It includes a derived
+GitHub queue and scoped agent REST policy. Activation remains fail-closed pending
+the external worker containment and broker integrations listed in its report.
