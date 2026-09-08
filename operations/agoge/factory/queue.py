@@ -39,7 +39,7 @@ def accepted(issue):
 
 def select(batch, issues, active=()):
     validate(batch)
-    if not batch['approved'] or active or any('symphony-running' in labels(i) for i in issues.values()):
+    if not batch.get('execution_enabled', False) or not batch['approved'] or active or any('symphony-running' in labels(i) for i in issues.values()):
         return None
     for task in batch['tasks']:  # owner-defined order, never issue query order
         issue = issues.get(task['number'], {})

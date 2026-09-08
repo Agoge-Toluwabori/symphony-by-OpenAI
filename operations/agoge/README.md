@@ -1,3 +1,12 @@
+# Phase 2 status — DESIGN COMPLETE, ACTIVATION BLOCKED
+
+See [current Phase 2 report](factory/PHASE2.md). Native permission profiles replace
+the old placeholder broker prerequisite, but installation is blocked by read-only
+host paths. Canary #236 is prepared, not run. #235 is approved but not executable.
+All older activation/readiness statements below are retained historical evidence.
+
+---
+
 # Delivery Factory V1 supersession — 2026-09-08
 
 The current review package is [factory/REPORT.md](factory/REPORT.md), with the

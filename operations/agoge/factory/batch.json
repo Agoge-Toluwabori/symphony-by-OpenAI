@@ -8,5 +8,13 @@
   "max_concurrency": 1,
   "publication_guard_verified": false,
   "preview_isolation_verified": false,
-  "tasks": [{"number": 235, "authority": "Autonomous Development", "dependencies": [], "publication_guard_task": true}]
+  "tasks": [
+    {
+      "number": 235,
+      "authority": "Autonomous Development",
+      "dependencies": [],
+      "publication_guard_task": true
+    }
+  ],
+  "execution_enabled": false
 }

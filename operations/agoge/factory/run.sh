@@ -2,19 +2,20 @@
 set -euo pipefail
 factory_dir=$(cd -- "$(dirname -- "$0")" && pwd)
 export AGOGE_FACTORY_DIR="$factory_dir"
+export AGOGE_FACTORY_STATE="${XDG_STATE_HOME:-$HOME/.local/state}/agoge-factory"
 python3 "$factory_dir/preflight.py"
 # Lock spans both processes; two controllers cannot lease the same repository.
 exec 9>"${XDG_RUNTIME_DIR:?}/agoge-factory.lock"
 flock -n 9 || exit 75
-python3 "$factory_dir/queue.py" --prepare --state-dir "${XDG_STATE_HOME:-$HOME/.local/state}/agoge-factory" || { code=$?; test "$code" = 10 && exit 0; exit "$code"; }
+python3 "$factory_dir/queue.py" --prepare --batch "$AGOGE_FACTORY_STATE/batch.json" --state-dir "${XDG_STATE_HOME:-$HOME/.local/state}/agoge-factory" || { code=$?; test "$code" = 10 && exit 0; exit "$code"; }
 cd "$factory_dir/../../../elixir"
-./bin/symphony "$factory_dir/../WORKFLOW.md" --port 4000 --logs-root "${XDG_STATE_HOME:-$HOME/.local/state}/agoge-factory/logs" --i-understand-that-this-will-be-running-without-the-usual-guardrails &
+./bin/symphony "$AGOGE_FACTORY_STATE/WORKFLOW.md" --port 4000 --logs-root "${XDG_STATE_HOME:-$HOME/.local/state}/agoge-factory/logs" --i-understand-that-this-will-be-running-without-the-usual-guardrails &
 controller_pid=$!
 trap 'kill "$controller_pid" 2>/dev/null || true; wait "$controller_pid" 2>/dev/null || true' EXIT
 trap 'exit 0' TERM INT
 failures=0
 while kill -0 "$controller_pid" 2>/dev/null; do
-  if python3 "$factory_dir/queue.py" --apply --state-dir "${XDG_STATE_HOME:-$HOME/.local/state}/agoge-factory"; then
+  if python3 "$factory_dir/queue.py" --apply --batch "$AGOGE_FACTORY_STATE/batch.json" --state-dir "${XDG_STATE_HOME:-$HOME/.local/state}/agoge-factory"; then
     failures=0
   else
     code=$?

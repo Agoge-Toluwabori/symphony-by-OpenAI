@@ -1,0 +1,24 @@
+# Isolated App Server CODEX_HOME. No inherited host plugins or config.
+approval_policy = "never"
+default_permissions = "factory-canary"
+web_search = "disabled"
+[features]
+apps = false
+[shell_environment_policy]
+inherit = "none"
+include_only = []
+[permissions.factory-canary]
+extends = ":workspace"
+[permissions.factory-canary.filesystem]
+":root" = "deny"
+":minimal" = "read"
+":slash_tmp" = "deny"
+":tmpdir" = "deny"
+[permissions.factory-canary.filesystem.":workspace_roots"]
+"." = "write"
+".codex" = "deny"
+".agents" = "deny"
+"**/*.env" = "deny"
+"**/*.pem" = "deny"
+[permissions.factory-canary.network]
+enabled = false

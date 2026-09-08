@@ -1,0 +1,1 @@
+Factory installation blocked: use a permitted non-root host session with writable user-service/state directories and existing Codex auth; no activation performed

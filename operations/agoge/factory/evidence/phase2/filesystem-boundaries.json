@@ -1,0 +1,11 @@
+{
+  "/home/toluadmin/services/symphony/.git": {
+    "filesystem_read_only": true
+  },
+  "/home/toluadmin/.local/state": {
+    "filesystem_read_only": true
+  },
+  "/home/toluadmin/.config/systemd/user": {
+    "filesystem_read_only": true
+  }
+}

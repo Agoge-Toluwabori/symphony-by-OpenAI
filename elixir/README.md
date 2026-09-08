@@ -403,3 +403,7 @@ Agoge Factory V1 configures `tracker.provider.agent_policy: agoge-factory-v1` an
 approved-task evidence/lifecycle writes. It blocks production, paid-resource and
 unrelated-repository REST requests; external worker isolation remains required.
 See `../operations/agoge/factory/TEMPLATE.md` for setup and validation boundaries.
+
+Factory Phase 2 adds optional `codex.permissions` for native named profiles,
+sent without legacy sandbox fields. Current status and limitations are recorded
+in operations/agoge/factory/PHASE2.md (relative to the repository root).

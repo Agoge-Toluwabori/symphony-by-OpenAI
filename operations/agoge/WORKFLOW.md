@@ -19,14 +19,9 @@ agent:
   max_concurrent_agents: 1
   max_turns: 20
 codex:
-  command: /opt/agoge-factory/bin/isolated-codex app-server
+  command: python3 "$AGOGE_FACTORY_DIR/launcher.py"
   approval_policy: never
-  thread_sandbox: workspace-write
-  turn_sandbox_policy:
-    type: workspaceWrite
-    networkAccess: false
-    excludeTmpdirEnvVar: true
-    excludeSlashTmp: true
+  permissions: factory-canary
 server:
   host: 127.0.0.1
   port: 4000

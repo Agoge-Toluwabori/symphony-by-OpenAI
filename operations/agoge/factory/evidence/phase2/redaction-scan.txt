@@ -1,0 +1,1 @@
+PASS: changed files contain no credential-shaped tokens or private keys. This static scan does not prove live credential isolation.

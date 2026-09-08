@@ -1,3 +1,12 @@
+# Phase 2 current status
+
+DESIGN COMPLETE — ACTIVATION BLOCKED. See [PHASE2.md](PHASE2.md) for current
+preservation, native-profile implementation, installation denial and unrun canary
+#236. #235 is NOT executable. The remainder is retained Phase 1 history, not the
+current activation state or installation architecture.
+
+---
+
 # Agoge Delivery Factory V1 review report — 2026-09-08
 
 **Certain: the control-plane review package is implemented, and #235 is prepared

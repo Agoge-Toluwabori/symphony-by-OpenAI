@@ -2319,3 +2319,7 @@ GitHub REST calls to configured-repository reads and evidence/lifecycle writes f
 host-controlled approved batch, not the agent. The external reconciler selects one
 eligible task and stops at the batch boundary. This supplements, rather than
 replaces, tracker routing, live dispatch revalidation and workspace safeguards.
+
+Optional `codex.permissions` selects a named Codex profile for both thread and
+turn requests. Named profiles replace, rather than compose with, legacy sandbox
+request fields. Legacy workflow serialization is unchanged when it is absent.

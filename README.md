@@ -44,3 +44,7 @@ Agoge's reviewed, batch-authorized delivery control plane is documented in
 [Delivery Factory V1](operations/agoge/factory/TEMPLATE.md). It includes a derived
 GitHub queue and scoped agent REST policy. Activation remains fail-closed pending
 the external worker containment and broker integrations listed in its report.
+
+Factory Phase 2 adds optional `codex.permissions` for native named profiles,
+sent without legacy sandbox fields. Current status and limitations are recorded
+in operations/agoge/factory/PHASE2.md (relative to the repository root).

@@ -106,8 +106,8 @@ defmodule SymphonyElixir.Config do
         {:ok,
          %{
            approval_policy: settings.codex.approval_policy,
-           thread_sandbox: settings.codex.thread_sandbox,
-           turn_sandbox_policy: turn_sandbox_policy
+           thread_sandbox: settings.codex.permissions || settings.codex.thread_sandbox,
+           turn_sandbox_policy: if(settings.codex.permissions, do: %{"permissions" => settings.codex.permissions}, else: turn_sandbox_policy)
          }}
       end
     end

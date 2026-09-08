@@ -15,7 +15,12 @@ spec.loader.exec_module(q)
 class QueueTests(unittest.TestCase):
     def setUp(self):
         self.b = json.loads((ROOT / 'batch.json').read_text())
+        self.b['execution_enabled'] = True
         self.i = {235: {'state': 'open', 'labels': [], 'dependencies_verified': True}}
+    def test_activation_hold_does_not_revoke_batch_authority(self):
+        self.b["execution_enabled"] = False
+        self.assertTrue(self.b["approved"])
+        self.assertIsNone(q.select(self.b, self.i))
     def test_autonomous_without_execution_label(self):
         self.assertEqual(q.select(self.b, self.i), 235)
     def test_planning_status_is_not_authority(self):

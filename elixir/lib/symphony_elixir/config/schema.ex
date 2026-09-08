@@ -190,6 +190,7 @@ defmodule SymphonyElixir.Config.Schema do
         }
       )
 
+      field(:permissions, :string)
       field(:thread_sandbox, :string, default: "workspace-write")
       field(:turn_sandbox_policy, :map)
       field(:turn_timeout_ms, :integer, default: 3_600_000)
@@ -205,6 +206,7 @@ defmodule SymphonyElixir.Config.Schema do
         [
           :command,
           :approval_policy,
+          :permissions,
           :thread_sandbox,
           :turn_sandbox_policy,
           :turn_timeout_ms,

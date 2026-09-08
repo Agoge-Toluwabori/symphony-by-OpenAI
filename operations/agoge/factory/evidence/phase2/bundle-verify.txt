@@ -1,0 +1,5 @@
+/home/toluadmin/services/symphony/.factory-preservation/phase1.bundle is okay
+The bundle contains this ref:
+22f1128d6954f8d9634232c8293d72f6a36ddb98 refs/heads/codex/agoge-delivery-factory-v1
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1

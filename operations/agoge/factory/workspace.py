@@ -33,3 +33,7 @@ if __name__ == '__main__':
     archive_attempt(Path.cwd(), DEFAULT_ROOT)
     hook = Path(__file__).resolve().parents[1] / 'workspace-create.sh'
     subprocess.run(['/bin/bash', str(hook)], check=True)
+
+    # Trusted probe supplied for the canary; never read protected bytes.
+    probe = Path(__file__).resolve().with_name("canary-probe.py")
+    (Path.cwd() / "factory-containment-probe.py").write_bytes(probe.read_bytes())
