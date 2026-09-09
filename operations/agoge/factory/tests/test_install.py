@@ -64,7 +64,7 @@ class InstallerTests(unittest.TestCase):
             state=root/'state';units=root/'units'
             i.install(state,units,auth,control=False)
             config=state/'codex-home/config.toml'
-            config.write_text(config.read_text().replace('enabled = false', 'enabled = true'))
+            config.write_text(config.read_text().replace('apps = false', 'apps = true'))
             with self.assertRaises(ValueError): i.install(state,units,auth,control=False)
             with self.assertRaises(ValueError): i.rollback(state,control=False)
 

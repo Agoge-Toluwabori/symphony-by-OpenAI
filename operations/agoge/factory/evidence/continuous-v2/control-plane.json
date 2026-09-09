@@ -1,0 +1,50 @@
+{
+  "repository": "Agoge-Toluwabori/Agoge-Business-Systems",
+  "project": "PVT_kwHOCtbj7M4BixDs",
+  "selected": null,
+  "ready": [
+    {
+      "issue": 55,
+      "type": "Planning",
+      "authority": null,
+      "legacy_authority": "Conditional"
+    },
+    {
+      "issue": 56,
+      "type": "Planning",
+      "authority": null,
+      "legacy_authority": "Conditional"
+    },
+    {
+      "issue": 57,
+      "type": "Planning",
+      "authority": null,
+      "legacy_authority": "Conditional"
+    },
+    {
+      "issue": 85,
+      "type": "Validation",
+      "authority": null,
+      "legacy_authority": "Held"
+    },
+    {
+      "issue": 166,
+      "type": "Planning",
+      "authority": null,
+      "legacy_authority": "Conditional"
+    },
+    {
+      "issue": 178,
+      "type": "Planning",
+      "authority": null,
+      "legacy_authority": "Conditional"
+    }
+  ],
+  "develop": "42b547358a16acb650ed4083cf9bb9e213b94b04",
+  "safe01": {
+    "number": 235,
+    "state": "closed",
+    "closed_at": "2026-09-09T12:12:39Z",
+    "state_reason": "not_planned"
+  }
+}

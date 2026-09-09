@@ -1,0 +1,116 @@
+{
+  "date": "2026-09-09",
+  "issue": 235,
+  "repository": "Agoge-Toluwabori/Agoge-Business-Systems",
+  "classification": "insufficient evidence",
+  "local_link_files": {
+    "canonical_project_json": false,
+    "canonical_repo_json": false,
+    "retained_GH235_project_json": false,
+    "retained_GH235_repo_json": false,
+    "nested_links_found": []
+  },
+  "cli": {
+    "command": "vercel whoami",
+    "exit_code": 127,
+    "result": "vercel: command not found",
+    "cached_cli_search": "No executable found in inspected common install/cache locations",
+    "standard_auth_files_present": false,
+    "environment_token_present": false,
+    "username_verified": false
+  },
+  "existing_connector": {
+    "authenticated_team_listing_succeeded": true,
+    "teams": [
+      {
+        "name": "agoge-toluwabori's projects",
+        "slug": "agoge-toluwaboris-projects",
+        "id": "team_71Pod0CQBKz4RAlT1JOFH2m3",
+        "saml": {},
+        "plan": "hobby"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": "prj_v6trzbxaQ9W5UwDxNPPZFT9nt4Hl",
+      "name": "how-assessments",
+      "accountId": "team_71Pod0CQBKz4RAlT1JOFH2m3",
+      "createdAt": 1784398718533,
+      "link": {
+        "type": "github",
+        "org": "Agoge-Toluwabori",
+        "repo": "HoW_Assessments"
+      }
+    },
+    {
+      "id": "prj_BIXVbmHUEsPtzKEHixgJHT6YjLJI",
+      "name": "eyin-afe",
+      "accountId": "team_71Pod0CQBKz4RAlT1JOFH2m3",
+      "createdAt": 1782997577017,
+      "link": {
+        "type": "github",
+        "org": "Agoge-Toluwabori",
+        "repo": "Eyin-Afe"
+      }
+    }
+  ],
+  "lookups": [
+    {
+      "name": "project_by_id_scope",
+      "result": "404 Not Found"
+    },
+    {
+      "name": "deployment_by_id",
+      "result": "404 Not Found"
+    },
+    {
+      "name": "deployment_by_historical_hostname",
+      "result": "404 Not Found"
+    }
+  ],
+  "github": {
+    "sha": "4919ab4cfb78e8408bfc405134ba219f53c34cc2",
+    "deployment_id": 6316676637,
+    "creator": "vercel[bot]",
+    "created_at": "2026-09-07T21:46:09Z",
+    "environment": "Production",
+    "production_environment": false,
+    "transient_environment": false,
+    "payload": {},
+    "commit_status_id": 53697985254,
+    "deployment_status_id": 17958002590,
+    "state": "failure",
+    "context": "Vercel",
+    "target_url": "https://vercel.com/agoge-toluwaboris-projects/2026-09-07-animation-baseline/7MSA8nEQBJjWBwZxaDX3GHZizagC",
+    "deployment_hostname": "2026-09-07-animation-baseline-m3pxxdc48.vercel.app",
+    "vercel_deployment_id": "dpl_7MSA8nEQBJjWBwZxaDX3GHZizagC",
+    "historical_project_slug": "2026-09-07-animation-baseline",
+    "historical_team_slug": "agoge-toluwaboris-projects",
+    "immutable_project_id": null,
+    "immutable_historical_team_id": null,
+    "check_runs_count": 0
+  },
+  "service": {
+    "ActiveState": "inactive",
+    "UnitFileState": "disabled",
+    "MainPID": 0
+  },
+  "limits": [
+    "Connector does not expose whoami; authenticated username is not established by team naming.",
+    "list_projects tool has maximum 50; two projects returned without a pagination marker.",
+    "Current team slug matches historical URL, but GitHub supplies no immutable historical team/project ID.",
+    "404 cannot distinguish deletion, rename, permission filtering or connection change."
+  ],
+  "owner_action": "Provide the current Vercel dashboard project URL from the account/team that owns Agoge Business Systems, identifying its team and project IDs.",
+  "mutations": {
+    "application": false,
+    "github_configuration": false,
+    "github_issue_labels": false,
+    "vercel_configuration": false,
+    "service_restart": false,
+    "publication": false,
+    "authentication": false,
+    "local_evidence_only": true
+  }
+}

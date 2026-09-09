@@ -28,7 +28,8 @@ defmodule SymphonyElixir.Codex.FactoryContext do
       "dispatch_invocation" => status(is_binary(invocation) and context["invocation_id"] == invocation, is_nil(context["invocation_id"])),
       "approved_batch" =>
         status(
-          {context["batch"], issue.id} in [{"factory-v1-containment-canary", "236"}, {"factory-v1-publication-guard", "235"}] and context["authority"] == "Autonomous Development",
+          ({context["batch"], issue.id} in [{"factory-v1-containment-canary", "236"}, {"factory-v1-publication-guard", "235"}] or continuous?(context)) and
+            context["authority"] == "Autonomous Development",
           is_nil(context["batch"])
         ),
       "concurrency" => status(context["max_concurrency"] == 1, is_nil(context["max_concurrency"])),
@@ -56,6 +57,9 @@ defmodule SymphonyElixir.Codex.FactoryContext do
     text = Jason.encode!(result)
     %{"success" => success, "output" => text, "contentItems" => [%{"type" => "inputText", "text" => text}]}
   end
+
+  defp continuous?(context),
+    do: context["mode"] == "continuous" and context["batch"] == "continuous-project-authority" and is_binary(context["lease_nonce"])
 
   defp status(true, _missing), do: "verified"
   defp status(false, true), do: "missing"

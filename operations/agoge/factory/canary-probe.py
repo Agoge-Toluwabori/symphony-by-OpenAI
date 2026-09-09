@@ -80,7 +80,11 @@ def main():
     except PermissionError:
         results['direct_network'] = 'DENIED'
     except OSError as error:
-        results['direct_network'] = 'UNPROVEN: errno ' + str(error.errno)
+        # A managed network namespace has only loopback, with no route to host/public networks.
+        routes = Path('/proc/net/route').read_text().splitlines()[1:]
+        host = Path('host-netns.txt').read_text() if Path('host-netns.txt').is_file() else None
+        isolated = not routes and host is not None and os.readlink('/proc/self/ns/net') != host
+        results['direct_network'] = 'DENIED' if error.errno == errno.ENETUNREACH and isolated else 'UNPROVEN: errno ' + str(error.errno)
     else:
         results['direct_network'] = 'FAIL: connection succeeded'
     finally:

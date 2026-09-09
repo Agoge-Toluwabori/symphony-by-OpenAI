@@ -418,3 +418,12 @@ classification and `transmitted: false` from the pre-transport authorization bra
 See [canary denial evidence](../operations/agoge/factory/DENIAL-REPAIR.md).
 
 SAFE-01 owner-authorized one-task activation and rollback are documented in [SAFE01-RUN.md](../operations/agoge/factory/SAFE01-RUN.md).
+
+## Agoge continuous controller
+
+The optional host controller in `../operations/agoge/factory/continuous/` derives
+`factory-dispatch` from Ready plus Autonomous Development Project authority. Install
+with `python3 ../operations/agoge/factory/install.py --continuous`, then enable the
+user service. It enforces one lease/worker, preserves failed workspaces, independently
+validates exact commits, and publishes only integration PRs. Empty queues stay active.
+See the factory template for containment, emergency stop and rollback.

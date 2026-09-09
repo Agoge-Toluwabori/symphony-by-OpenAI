@@ -1,88 +1,99 @@
-# Delivery Factory V1 — current adoption contract
+# Agoge Delivery Factory — autonomous GitHub template
 
-DESIGN COMPLETE; ACTIVATION BLOCKED until installation and a live containment
-canary pass. Phase 1's generic external-broker requirement is superseded. Its
-original template is preserved in TEMPLATE.phase1.md as historical evidence.
+This is the current standing operating model. The earlier batch template is
+preserved in TEMPLATE-batch-history.md as historical evidence, not active policy.
 
-## Onboarding and authority
+## Business binding
 
-Record exact repository, Project, default branch, baseline, validation commands,
-workspace root and runtime paths. Preserve all history and existing governance.
-Approve one explicit ordered batch, with Autonomous Development / Owner Gate /
-Prohibited classifications and normalized dependencies. Do not derive authority
-from Project status or a manually applied execution label. The current publication
-batch remains approved but execution_enabled=false until containment is proven.
+Copy continuous/project.json for onboarding. Set the exact repository identity,
+integration branch and verified foundation ancestry, Project/control-plane IDs and
+status/Authority mappings, full test commands and required check names, protected
+paths, production/provider exclusions, and authorized concurrency (currently one).
+Node, package-manager and browser/runtime cache paths are installation defaults;
+reuse the installed pinned tools. No new orchestrator or generic broker is needed.
+The current ABS binding is separate from reusable Python policy under continuous/.
+Use the configured Project Authority field (ABS: Factory Authority); the older ABS
+Authority field remains historical and does not grant execution.
 
-Development authority permits ordinary edits, approved free dependencies, builds,
-tests, development-only PostgreSQL/synthetic data, local commits and private VM
-services. Historical task-by-task prohibitions do not revoke this standing grant.
-Production, customer data, DNS/firewall, paid activation, credential expansion,
-destructive material changes, history rewriting, unresolved product decisions and
-milestone acceptance remain owner gates. The worker has no production capability.
+## Standing authority and queue
 
-## Implemented containment route
+An exact-repository open issue is eligible only with Project Ready and Autonomous
+Development authority, satisfied native/Project dependencies, and no planning-only,
+blocked, human-review, owner-gate, prohibited or canary classification. No approved
+batch, execution label or individual owner confirmation is required. The controller
+derives factory-dispatch and routine labels. Never infer provider authority.
 
-Use the existing trusted Symphony/Codex App Server architecture. Native named
-permissions deny host filesystem reads, permit minimal toolchain reads and allow
-writes only in the task workspace. Shell environment inheritance is disabled.
-The App Server's isolated CODEX_HOME has only the reviewed config and a symlink to
-existing host authentication; credential contents are neither copied nor emitted.
-Worker commands cannot read that home. Native profiles and legacy sandbox fields
-must not be serialized together. Config supports codex.permissions and sends the
-profile at both thread/start and turn/start; legacy workflows remain compatible.
+Ready → Claimed → Implementing → Validating → GitHub Integrated → Completed.
+Existing Project equivalents are used: Claimed/Implementing/Validating map to
+In Progress; GitHub Integrated maps to In Review; Completed maps to Done. Evidence
+records the exact phase. The selector verifies dependencies again before dispatch.
+A single persistent lease plus service locks and Symphony concurrency one prevent
+two issues from sharing a workspace. Empty queues poll again. Bounded recoverable
+failures retain the issue branch and dirty work. External blockers are consolidated
+on the issue; unrelated eligible issues continue. A missing worker launch times out
+with preserved evidence instead of silently wedging the queue.
 
-The canary has no command network access. GitHub metadata goes through the existing
-repository/current-issue restricted Symphony tool. No additional inference broker
-is needed. No provider, deployment or publication tool is exposed in this canary.
-No placeholder /opt launcher is required: launcher.py is included in this checkout.
+## Worker and environment boundaries
 
-Keep non-root execution, AppArmor/bubblewrap remediation, NoNewPrivileges, private
-workspaces and service memory/process/CPU limits. Denial rules and credential
-protection remain UNPROVEN on this VM until the actual canary executes. This
-canary profile does not claim general dependency-download or provider access;
-those capabilities require separately bounded, tested operations before use.
+Non-root Codex App Server has approval_policy=never and a native workspace-write
+profile: root denied, minimal runtime readable, only the assigned workspace/private
+Git metadata writable, credentials and unrelated repositories inaccessible. The
+managed Codex network namespace permits local IPC; an empty destination allowlist
+rejects all external requests. This is required for Node subprocess capture and
+private Playwright tests; it does not grant provider or direct GitHub access.
+Local tests bind loopback and use NO_PROXY only for loopback. Private owner testing
+uses the established SSH tunnel; no public listener/firewall change is authorized.
+Existing systemd hardening/resource limits and AppArmor remain intact.
 
-## Installation and rollback
+The App Server's existing model authentication is referenced outside the worker
+filesystem. Host GitHub credentials are filtered from the worker environment.
+The dynamic GitHub tool permits exact-repository reads and only assigned-issue
+comments/lifecycle labels. Host code performs fixed-repository/ref publication.
+No arbitrary host shell, credential expansion or model-controlled API route exists.
+Zero-cost semver dependencies use a credential-free staging sandbox, scripts and
+Git disabled, and an npm-only CONNECT proxy; application code runs only inside the
+native worker/validation sandbox. No package manifests may select arbitrary URLs.
 
-Build with make all in elixir. Run install.py from a host session permitted to write
-user-service/state directories. --canary installs only dedicated issue #236's
-one-task batch. Default installation leaves the #235 batch paused. No installation
-command starts a service. Existing service contents are backed up in a private
-manifest; exact installed hashes prevent overwriting later owner edits. Reruns
-are idempotent for unchanged installed files. --rollback stops/disables Symphony,
-restores prior service/config content, and removes only factory-owned references
-and files. It never removes the target authentication file or workspaces/evidence.
-Do not claim installation success when required files or destinations are absent.
+## Validation and GitHub delivery
 
-## Queue, evidence and recovery
+Run baseline checks, implement documented acceptance criteria, run relevant tests
+and full required CI, commit locally, and hand off the exact SHA. The host makes a
+fresh private validation clone, checks accepted ancestry, current integration base,
+protected paths, secret signatures, unchanged acceptance scripts, and reruns CI.
+It pushes only symphony/GH-number-scoped branches, creates an integration PR, waits
+for configured automated checks, rechecks authority/head/base, and merges using
+repository governance (merge or squash). It records tested SHA, PR, merge SHA,
+validation log and rollback instructions before closing the issue.
 
-Approved Batch → Eligible → Claimed → Implementing → Validating → VM Integrated →
-Human Review → owner Accepted/Done. Concurrency and controller lock remain one.
-The queue combines manifest/native dependencies, skips independent blocked tasks,
-bounds retries and stops at the batch boundary. It cannot grant execution while
-execution_enabled=false. Workers cannot grant ready labels or claim another issue.
-Each attempt archives the prior workspace including dirty evidence and Git objects,
-then creates a fresh clone/branch. Preserve evidence URLs, baseline/final validation,
-local commit, session ID and exact failures. Never delete dirty material to retry.
+Force pushes, branch/tag deletion, direct main/integration pushes, repository
+transfer/deletion, secrets/billing changes and unrelated repositories are denied.
+A worker cannot manufacture completion by closing its issue directly. GitHub
+integration is not production deployment or production acceptance. All deployment,
+preview publication, Vercel/provider configuration and production releases are
+owner-managed outside this factory. Production data never enters a workspace.
 
-## Private integration, publication and release
+## Decisions
 
-Use synthetic data, development-only local DB instances and loopback apps. Owner
-access uses ssh -N -L 3000:127.0.0.1:3000 toluadmin@VM_HOST. Never open firewall/DNS
-as a development convenience. VM integration is not production authorization.
-Application pushes remain blocked until #235 proves the publication guard; previews
-additionally require isolation proof. No arbitrary provider endpoints or credentials
-may be added to this worker. Production release uses a separate owner-controlled
-process. This package has not implemented or proven provider/publication access.
+Resolve naming, ordinary engineering choices, reversible trade-offs, safe dependency
+selection, scoped conflicts and repairable failures autonomously. Ask one consolidated
+owner decision only for materially contradictory product requirements, production or
+main release, paid resources, unavailable access, real customer/donor data, live
+provider/DNS/firewall changes, irreversible destruction, or weakening a gate.
 
-## Canary and emergency stop
+## Installation, stop and recovery
 
-#236 must run through the actual installed service/App Server, commit a harmless
-marker, run the unchanged supplied negative probe, post lifecycle/evidence, reach
-human-review and stop its one-task batch. A timeout is not a passing denial test.
-Never use #235 as the canary. Keep #235 paused until external verification of the
-live canary evidence, then prepare it unclaimed and leave Symphony stopped.
+From the durable reviewed checkout run `python3 operations/agoge/factory/install.py
+--continuous` (on one line), then `systemctl --user enable --now symphony-agoge.service`.
+The installer validates concrete components/runtime before replacement, retains
+original and intervening versions, preserves credentials, and leaves the service
+stopped until explicit activation. Rerunning is idempotent and rejects unexplained
+drift. Never substitute a temporary checkout for the durable branch.
 
-Emergency stop: systemctl --user disable --now symphony-agoge.service.
-Verify no live PID, archive evidence and preserve claims until process death is
-known. Roll back only factory files; never reactivate the old workflow implicitly.
+Emergency stop: `systemctl --user disable --now symphony-agoge.service`.
+Rollback: stop, then `python3 operations/agoge/factory/install.py --rollback`.
+Rollback restores only manifest-owned files and removes only the factory auth
+symlink, never its target. Workspaces, branches, commits, evidence and logs remain.
+Task cleanup archives complete private checkouts; never delete shared Git objects.
+Code rollback is a new revert PR into the integration branch, never a history reset.
+After an interrupted delivery, reconcile the existing exact-SHA PR and lease before
+retrying; a confirmed already-merged PR is finalized idempotently.

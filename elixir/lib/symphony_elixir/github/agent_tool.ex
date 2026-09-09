@@ -138,7 +138,7 @@ defmodule SymphonyElixir.GitHub.AgentTool do
     case String.split(path, "/") do
       ["issues", number | rest] ->
         number == to_string(provider["agent_current_issue"]) and
-          number in Enum.map(provider["agent_issue_numbers"] || [], &to_string/1) and
+          (provider["factory_continuous"] == true or number in Enum.map(provider["agent_issue_numbers"] || [], &to_string/1)) and
           factory_issue_write?(method, rest, body)
 
       _ ->

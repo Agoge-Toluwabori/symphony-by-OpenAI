@@ -1,0 +1,54 @@
+WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir "/tmp" (codex_home: AbsolutePathBuf("/tmp/agoge-continuous-ci-home"))
+$ pnpm format:check && pnpm lint && pnpm typecheck && pnpm check:boundaries && pnpm test && pnpm build && pnpm test:e2e
+$ prettier --check "apps/web/app/**/*.{ts,tsx,css}" "apps/web/*.{json,mjs,ts}" "packages/*/src/**/*.ts" packages/design-tokens/tokens.css "tests/integration/**/*.ts" "tests/e2e/**/*.ts" scripts/foundation "*.json" "*.mjs" playwright.config.ts pnpm-workspace.yaml
+Checking formatting...
+All matched files use Prettier code style!
+$ eslint apps packages tests scripts/foundation playwright.config.ts --max-warnings 0
+Warning: React version was set to "detect" in eslint-plugin-react settings, but the "react" package is not installed. Assuming latest React version for linting.
+$ tsc --noEmit
+$ node scripts/foundation/check-boundaries.mjs
+PASS package directions; no provider network clients constructed
+$ vitest run
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.0 [39m[90m/home/toluadmin/services/symphony/.factory-preservation/github-delivery-governance[39m
+
+ [32m✓[39m tests/integration/database.test.ts [2m([22m[2m17 tests[22m[2m)[22m[33m 3364[2mms[22m[39m
+ [32m✓[39m tests/integration/foundation.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[32m29 passed[39m[22m[90m (29)[39m
+[2m   Start at [22m 13:07:02
+[2m   Duration [22m 3.95s[2m (tests 93%, import 4%, transform 2%)[22m
+
+$ pnpm --filter @abs/web build
+$ next build
+▲ Next.js 16.3.4 (Turbopack)
+✓ Running next.config.mjs took 18ms
+- Experiments (use with caution):
+  · cpus: 2
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 157ms
+  Running TypeScript ...
+  Finished TypeScript in 1894ms ...
+  Collecting page data using 2 workers ...
+  Generating static pages using 2 workers (0/2) ...
+✓ Generating static pages using 2 workers (2/2) in 185ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+└ ○ /_not-found
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+$ playwright test
+[WebServer] $ next start --hostname 127.0.0.1 --port 3100
+
+Running 1 test using 1 worker
+
+  ✓  1 tests/e2e/shell.spec.ts:2:5 › neutral shell renders without external requests (472ms)
+
+  1 passed (2.5s)

@@ -59,3 +59,11 @@ and reports safe, structured GitHub rejections before transport. See
 [denial-evidence repair](operations/agoge/factory/DENIAL-REPAIR.md).
 
 SAFE-01 owner-authorized one-task activation and rollback are documented in [SAFE01-RUN.md](operations/agoge/factory/SAFE01-RUN.md).
+
+## Agoge autonomous GitHub delivery
+
+The optional [Agoge factory](operations/agoge/factory/TEMPLATE.md) continuously
+reconciles Project authority and dependencies, runs one isolated worker, validates
+and integrates exact commits through pull requests. GitHub is its delivery boundary;
+provider deployment is owner-managed. Business bindings are separate from reusable
+controller policy. Historical canary/batch evidence remains preserved.

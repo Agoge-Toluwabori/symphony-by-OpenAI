@@ -23,8 +23,8 @@ def atomic(path, data):
         os.fchmod(f.fileno(), 0o600)
     temporary.replace(path)
 
-def install(state, units, auth, control=True, canary=False, safe01=False):
-    if canary and safe01: raise ValueError('Select exactly one execution batch')
+def install(state, units, auth, control=True, canary=False, safe01=False, continuous=False):
+    if sum((canary,safe01,continuous)) > 1: raise ValueError('Select exactly one execution batch')
     if os.geteuid() == 0: raise ValueError('Run as non-root toluadmin')
     for name in ('launcher.py', 'native-policy.toml', 'canary-batch.json', 'queue.py', 'workspace.py', 'canary-probe.py', 'policy.py', 'run.sh', 'preflight.py', 'attestation.py', 'native-policy.before-launcher-repair.toml'):
         if not (FACTORY/name).is_file(): raise ValueError('Required component missing: '+name)
@@ -53,13 +53,23 @@ def install(state, units, auth, control=True, canary=False, safe01=False):
     unit = units / 'symphony-agoge.service'
     rendered = (FACTORY.parent/'symphony-agoge.service').read_text().replace('@FACTORY_DIR@',str(FACTORY)).encode()
     policy = native_policy.render()
-    batch=json.loads((FACTORY/('canary-batch.json' if canary else 'batch.json')).read_text())
-    batch['execution_enabled']=bool(canary or safe01)
+    batch=json.loads((FACTORY/('continuous/project.json' if continuous else 'canary-batch.json' if canary else 'batch.json')).read_text())
+    batch['execution_enabled']=bool(canary or safe01 or continuous)
     from attestation import approved_task
-    if not approved_task(batch): raise ValueError('Batch differs from the explicit owner scope')
-    numbers=[t['number'] for t in batch['tasks']]
+    if not continuous and not approved_task(batch): raise ValueError('Batch differs from the explicit owner scope')
+    numbers=[] if continuous else [t['number'] for t in batch['tasks']]
     if canary and numbers != [236]: raise ValueError('Canary install must select only issue 236')
     workflow=(FACTORY.parent/'WORKFLOW.md').read_text().replace('agent_issue_numbers: [235]', 'agent_issue_numbers: '+json.dumps(numbers))
+    if continuous:
+        sys.path.insert(0,str(FACTORY/'continuous'))
+        import control as continuous_control
+        continuous_control.validate(batch)
+        for name in ('control.py','supervisor.py','runtime.py','publish.py','registry_proxy.py','WORKFLOW.md'):
+            if not (FACTORY/'continuous'/name).is_file(): raise ValueError('Required continuous component missing: '+name)
+        for name in ('node','pnpm','browser_cache','runtime_source'):
+            if control and not Path(batch[name]).exists(): raise ValueError('Required runtime unavailable: '+name)
+        workflow=(FACTORY/'continuous/WORKFLOW.md').read_text().replace('Agoge-Toluwabori/Agoge-Business-Systems',batch['repository']).replace('/home/toluadmin/services/symphony-workspaces/agoge-business-systems',batch['workspace_root'])
+        rendered=rendered.replace(b'Restart=no',b'Restart=on-failure\nRestartSec=30').replace(b'StartLimitBurst=1',b'StartLimitBurst=3').replace(b'(single approved batch)',b'(continuous GitHub delivery)')
     targets = {unit: rendered, home/'config.toml': policy,
                state/'batch.json': (json.dumps(batch,indent=2)+'\n').encode(), state/'WORKFLOW.md': workflow.encode()}
     if manifest.exists():
@@ -134,15 +144,15 @@ def rollback(state, control=True):
     if control: subprocess.run(['systemctl','--user','daemon-reload'],check=True)
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--rollback',action='store_true');parser.add_argument('--canary',action='store_true');parser.add_argument('--safe01',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--rollback',action='store_true');parser.add_argument('--canary',action='store_true');parser.add_argument('--safe01',action='store_true');parser.add_argument('--continuous',action='store_true');args=parser.parse_args()
     state=Path.home()/'.local/state/agoge-factory'
     try:
         if args.rollback: rollback(state)
-        else: install(state,Path.home()/'.config/systemd/user',Path.home()/'.codex/auth.json',canary=args.canary,safe01=args.safe01)
+        else: install(state,Path.home()/'.config/systemd/user',Path.home()/'.codex/auth.json',canary=args.canary,safe01=args.safe01,continuous=args.continuous)
     except OSError as error:
         raise SystemExit(f'Factory installation blocked: filesystem operation denied at {error.filename}; rerun in a permitted non-root host session. No activation performed')
     except ValueError as error:
         raise SystemExit('Factory installation blocked: '+str(error))
     except subprocess.SubprocessError:
         raise SystemExit('Factory installation blocked: user systemd operation failed; restore user-service access before retrying')
-    print('Factory files installed/restored; service disabled and stopped. Activation is a separate one-task operation.')
+    print('Factory files installed/restored; service disabled and stopped. Activation is a separate explicit operation; --continuous installs the polling queue.')

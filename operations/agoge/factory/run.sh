@@ -8,6 +8,9 @@ python3 "$factory_dir/preflight.py"
 exec 9>"${XDG_RUNTIME_DIR:?}/agoge-factory.lock"
 flock -n 9 || exit 75
 export AGOGE_FACTORY_ATTESTATION="$AGOGE_FACTORY_STATE/dispatch-context.json"
+if python3 -c 'import json,os; raise SystemExit(json.load(open(os.environ["AGOGE_FACTORY_STATE"]+"/batch.json")).get("mode")!="continuous")'; then
+  exec python3 "$factory_dir/continuous/supervisor.py"
+fi
 python3 "$factory_dir/attestation.py"
 python3 "$factory_dir/queue.py" --prepare --batch "$AGOGE_FACTORY_STATE/batch.json" --state-dir "${XDG_STATE_HOME:-$HOME/.local/state}/agoge-factory" || { code=$?; test "$code" = 10 && exit 0; exit "$code"; }
 cd "$factory_dir/../../../elixir"

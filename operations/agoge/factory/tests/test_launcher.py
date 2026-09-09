@@ -35,7 +35,9 @@ class LauncherTests(unittest.TestCase):
         self.assertEqual(config['shell_environment_policy']['inherit'], 'none')
         self.assertEqual(config['shell_environment_policy']['set'], {'PATH': '/usr/bin:/bin'})
         profile = config['permissions']['factory-canary']
-        self.assertFalse(profile['network']['enabled'])
+        self.assertTrue(profile['network']['enabled'])
+        self.assertTrue(config['features']['network_proxy']['enabled'])
+        self.assertEqual(profile['network']['domains'], {})
         self.assertEqual(profile['filesystem'][':root'], 'deny')
         self.assertEqual(profile['filesystem'][str(policy.CODEX.resolve())], 'read')
         self.assertEqual(profile['filesystem'][':workspace_roots']['.git'], 'write')

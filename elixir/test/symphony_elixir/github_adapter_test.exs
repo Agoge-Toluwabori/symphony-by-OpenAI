@@ -452,6 +452,30 @@ defmodule SymphonyElixir.GitHub.AdapterTest do
     end
   end
 
+  test "continuous binding permits only current issue evidence and still rejects privileged writes" do
+    settings = tracker_settings(%{"agent_policy" => "agoge-factory-v1", "factory_continuous" => true, "agent_issue_numbers" => []})
+
+    assert %{"success" => true} =
+             GitHubAgentTool.execute(
+               "github_api",
+               %{"method" => "POST", "path" => "/repos/octo/repo/issues/240/comments", "body" => %{"body" => "evidence"}},
+               tracker_settings: settings,
+               issue: %{id: "240"},
+               github_client: fn _, _, _, _, _ -> {:ok, %{status: 201, body: %{}}} end
+             )
+
+    for path <- ["/repos/octo/repo/issues/241/comments", "/repos/octo/repo/deployments", "/repos/octo/repo/git/refs", "/repos/other/repo/pulls", "/user/codespaces"] do
+      result =
+        GitHubAgentTool.execute("github_api", %{"method" => "POST", "path" => path, "body" => %{"body" => "x"}},
+          tracker_settings: settings,
+          issue: %{id: "240"},
+          github_client: fn _, _, _, _, _ -> flunk("forbidden continuous write transmitted") end
+        )
+
+      refute result["success"]
+    end
+  end
+
   test "factory denials expose safe stable evidence before invoking transport" do
     settings = tracker_settings(%{"agent_policy" => "agoge-factory-v1", "agent_issue_numbers" => [236]})
 

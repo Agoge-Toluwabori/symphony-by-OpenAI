@@ -26,7 +26,9 @@ def worker_environment(private_home):
 
 def main():
     state = Path(os.environ.get('AGOGE_FACTORY_STATE', str(Path.home() / '.local/state/agoge-factory')))
-    validate_workspace(Path.cwd())
+    import json
+    config=json.loads((state/'batch.json').read_text())
+    validate_workspace(Path.cwd(),Path(config.get('workspace_root',str(WORKSPACES))))
     private_home = state / 'codex-home'
     if not (private_home / 'config.toml').is_file() or not (private_home / 'auth.json').is_symlink():
         raise ValueError('Factory launcher prerequisites absent; run install.py from a permitted host session')
