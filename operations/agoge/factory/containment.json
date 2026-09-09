@@ -1,5 +1,5 @@
 {
-  "status": "LAUNCHER_REPAIRED_REINSTALL_AND_LIVE_CANARY_REQUIRED",
+  "status": "DISPATCH_CONTEXT_PROVEN_CANARY_VALIDATION_BLOCKED",
   "mechanism": "Native Codex permission profiles selected explicitly at thread/start and turn/start",
   "model_command_filesystem": "root deny, minimal runtime read, task workspace write",
   "model_command_network": "disabled for containment canary",
@@ -8,5 +8,6 @@
   "external_brokers_required_for_canary": false,
   "live_canary_issue": 236,
   "live_canary_passed": false,
-  "bubblewrap": "/usr/bin/bwrap via fixed command PATH; no outer namespace wrapper"
+  "bubblewrap": "/usr/bin/bwrap via fixed command PATH; no outer namespace wrapper",
+  "dispatch_context_proven": true
 }

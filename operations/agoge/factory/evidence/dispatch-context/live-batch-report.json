@@ -1,0 +1,20 @@
+{
+  "selected": null,
+  "add_ready": [],
+  "remove_ready": [],
+  "batch": "factory-v1-containment-canary",
+  "boundary": true,
+  "tasks": [
+    {
+      "number": 236,
+      "authority": "Autonomous Development",
+      "evidence_url": "https://github.com/Agoge-Toluwabori/Agoge-Business-Systems/issues/236",
+      "state": "open",
+      "labels": [
+        "authority:autonomous-development",
+        "symphony-blocked",
+        "symphony-canary"
+      ]
+    }
+  ]
+}

@@ -65,3 +65,7 @@ Local validation completed before installation: 300 Symphony tests, zero failure
 six existing live-test skips, 100% reported coverage, clean formatting/lint/build
 and zero Dialyzer errors. All 36 factory tests pass. Live execution is not inferred
 from these local results.
+
+Live result: [LIVE-CONTEXT-RESULT.md](LIVE-CONTEXT-RESULT.md). Context verified;
+the single canary remains blocked by separate probe/reporting defects. Service
+stopped and disabled. Do not use a new start as a substitute for those repairs.
