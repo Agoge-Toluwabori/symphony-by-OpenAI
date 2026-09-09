@@ -57,3 +57,5 @@ do not need host environment access. See [dispatch attestation](operations/agoge
 Agoge canary denial evidence verifies unchanged real/effective/saved UID mappings
 and reports safe, structured GitHub rejections before transport. See
 [denial-evidence repair](operations/agoge/factory/DENIAL-REPAIR.md).
+
+SAFE-01 owner-authorized one-task activation and rollback are documented in [SAFE01-RUN.md](operations/agoge/factory/SAFE01-RUN.md).

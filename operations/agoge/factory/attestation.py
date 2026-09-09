@@ -25,6 +25,16 @@ def write(path, value):
     temporary.replace(path)
 
 
+def approved_task(batch):
+    """Two explicit owner scopes; batch names cannot authorize arbitrary tasks."""
+    scopes = {
+        'factory-v1-containment-canary': [{'number':236,'authority':'Autonomous Development','dependencies':[]}],
+        'factory-v1-publication-guard': [{'number':235,'authority':'Autonomous Development','dependencies':[236],'publication_guard_task':True}],
+    }
+    return (batch.get('repository') == 'Agoge-Toluwabori/Agoge-Business-Systems'
+            and batch.get('batch') in scopes and batch.get('tasks') == scopes[batch['batch']])
+
+
 def service_context(state):
     batch = json.loads((state/'batch.json').read_text())
     invocation = os.environ.get('INVOCATION_ID', '')
@@ -37,7 +47,7 @@ def service_context(state):
         'service_identity': 'verified' if props.get('ActiveState') in ('active','activating') and props.get('ControlGroup') and props['ControlGroup'] in cgroup else 'invalid',
         'dispatch_invocation': 'verified' if invocation and props.get('InvocationID') == invocation else 'missing' if not invocation else 'invalid',
         'service_disabled': 'verified' if props.get('UnitFileState') == 'disabled' else 'invalid',
-        'approved_batch': 'verified' if batch.get('approved') is True and batch.get('execution_enabled') is True and batch.get('batch') == 'factory-v1-containment-canary' and batch.get('repository') == 'Agoge-Toluwabori/Agoge-Business-Systems' and batch.get('tasks') == [{'number':236,'authority':'Autonomous Development','dependencies':[]}] else 'invalid',
+        'approved_batch': 'verified' if batch.get('approved') is True and batch.get('execution_enabled') is True and approved_task(batch) else 'invalid',
         'hardening': 'verified' if all(props.get(name) == 'yes' for name in ('NoNewPrivileges','LockPersonality','RestrictSUIDSGID')) else 'invalid',
         'stop_policy': 'verified' if props.get('Restart') == 'no' and props.get('UnitFileState') == 'disabled' else 'invalid',
         'concurrency': 'verified' if batch.get('max_concurrency') == 1 else 'invalid',
@@ -45,7 +55,7 @@ def service_context(state):
     }
     check(fields)
     return {'repair':REPAIR, 'service':SERVICE, 'invocation_id':invocation,
-            'batch':batch['batch'], 'repository':batch['repository'], 'issue_id':'236',
+            'batch':batch['batch'], 'repository':batch['repository'], 'issue_id':str(batch['tasks'][0]['number']),
             'authority':'Autonomous Development', 'max_concurrency':1,
             'preflight':fields, 'approval_policy':'never', 'permissions':'factory-canary',
             'batch_stop':{'owner':'host supervisor','phase':'after worker completion','service_enabled':False},

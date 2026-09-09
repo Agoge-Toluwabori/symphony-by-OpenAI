@@ -16,6 +16,7 @@ class QueueTests(unittest.TestCase):
     def setUp(self):
         self.b = json.loads((ROOT / 'batch.json').read_text())
         self.b['execution_enabled'] = True
+        self.b['tasks'][0]['dependencies'] = []  # Generic selection fixture; SAFE-01 dependency has dedicated tests.
         self.i = {235: {'state': 'open', 'labels': [], 'dependencies_verified': True}}
     def test_activation_hold_does_not_revoke_batch_authority(self):
         self.b["execution_enabled"] = False

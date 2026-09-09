@@ -9,7 +9,7 @@ exec 9>"${XDG_RUNTIME_DIR:?}/agoge-factory.lock"
 flock -n 9 || exit 75
 export AGOGE_FACTORY_ATTESTATION="$AGOGE_FACTORY_STATE/dispatch-context.json"
 python3 "$factory_dir/attestation.py"
-python3 "$factory_dir/queue.py" --prepare --repair-canary --batch "$AGOGE_FACTORY_STATE/batch.json" --state-dir "${XDG_STATE_HOME:-$HOME/.local/state}/agoge-factory" || { code=$?; test "$code" = 10 && exit 0; exit "$code"; }
+python3 "$factory_dir/queue.py" --prepare --batch "$AGOGE_FACTORY_STATE/batch.json" --state-dir "${XDG_STATE_HOME:-$HOME/.local/state}/agoge-factory" || { code=$?; test "$code" = 10 && exit 0; exit "$code"; }
 cd "$factory_dir/../../../elixir"
 ./bin/symphony "$AGOGE_FACTORY_STATE/WORKFLOW.md" --port 4000 --logs-root "${XDG_STATE_HOME:-$HOME/.local/state}/agoge-factory/logs" --i-understand-that-this-will-be-running-without-the-usual-guardrails &
 controller_pid=$!

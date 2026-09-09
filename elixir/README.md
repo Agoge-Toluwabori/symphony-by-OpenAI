@@ -416,3 +416,5 @@ do not need host environment access. See [dispatch attestation](../operations/ag
 Agoge factory policy rejections use `FACTORY_POLICY_DENIED` with safe route/rule
 classification and `transmitted: false` from the pre-transport authorization branch.
 See [canary denial evidence](../operations/agoge/factory/DENIAL-REPAIR.md).
+
+SAFE-01 owner-authorized one-task activation and rollback are documented in [SAFE01-RUN.md](../operations/agoge/factory/SAFE01-RUN.md).

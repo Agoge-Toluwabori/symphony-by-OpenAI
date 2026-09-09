@@ -41,6 +41,12 @@ defmodule SymphonyElixir.FactoryContextTest do
     File.write!(path, Jason.encode!(Map.put(context, "issue_id", "235")))
     assert %{"success" => false, "output" => output} = FactoryContext.execute(%{}, opts)
     assert Jason.decode!(output)["fields"]["issue_id"] == "invalid"
+    safe01 = context |> Map.put("issue_id", "235") |> Map.put("batch", "factory-v1-publication-guard") |> Map.put("workspace", "/workspaces/GH-235")
+    safe_opts = [issue: %{id: "235"}, session: %{workspace: "/workspaces/GH-235", thread_id: "safe-thread", turn_id: "safe-turn"}]
+    File.write!(path, Jason.encode!(safe01))
+    assert %{"success" => true} = FactoryContext.execute(%{}, safe_opts)
+    File.write!(path, Jason.encode!(Map.put(safe01, "batch", "factory-v1-containment-canary")))
+    assert %{"success" => false} = FactoryContext.execute(%{}, safe_opts)
     root = path <> "-workspace"
     workspace = Path.join(root, "GH-236")
     File.mkdir_p!(workspace)

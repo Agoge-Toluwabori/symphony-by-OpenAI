@@ -36,4 +36,5 @@ if __name__ == '__main__':
 
     # Trusted probe supplied for the canary; never read protected bytes.
     probe = Path(__file__).resolve().with_name("canary-probe.py")
-    (Path.cwd() / "factory-containment-probe.py").write_bytes(probe.read_bytes())
+    if Path.cwd().name == "GH-236":
+        (Path.cwd() / "factory-containment-probe.py").write_bytes(probe.read_bytes())

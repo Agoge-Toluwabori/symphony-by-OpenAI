@@ -23,7 +23,8 @@ def atomic(path, data):
         os.fchmod(f.fileno(), 0o600)
     temporary.replace(path)
 
-def install(state, units, auth, control=True, canary=False):
+def install(state, units, auth, control=True, canary=False, safe01=False):
+    if canary and safe01: raise ValueError('Select exactly one execution batch')
     if os.geteuid() == 0: raise ValueError('Run as non-root toluadmin')
     for name in ('launcher.py', 'native-policy.toml', 'canary-batch.json', 'queue.py', 'workspace.py', 'canary-probe.py', 'policy.py', 'run.sh', 'preflight.py', 'attestation.py', 'native-policy.before-launcher-repair.toml'):
         if not (FACTORY/name).is_file(): raise ValueError('Required component missing: '+name)
@@ -53,7 +54,9 @@ def install(state, units, auth, control=True, canary=False):
     rendered = (FACTORY.parent/'symphony-agoge.service').read_text().replace('@FACTORY_DIR@',str(FACTORY)).encode()
     policy = native_policy.render()
     batch=json.loads((FACTORY/('canary-batch.json' if canary else 'batch.json')).read_text())
-    batch['execution_enabled']=bool(canary)
+    batch['execution_enabled']=bool(canary or safe01)
+    from attestation import approved_task
+    if not approved_task(batch): raise ValueError('Batch differs from the explicit owner scope')
     numbers=[t['number'] for t in batch['tasks']]
     if canary and numbers != [236]: raise ValueError('Canary install must select only issue 236')
     workflow=(FACTORY.parent/'WORKFLOW.md').read_text().replace('agent_issue_numbers: [235]', 'agent_issue_numbers: '+json.dumps(numbers))
@@ -131,15 +134,15 @@ def rollback(state, control=True):
     if control: subprocess.run(['systemctl','--user','daemon-reload'],check=True)
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--rollback',action='store_true');parser.add_argument('--canary',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--rollback',action='store_true');parser.add_argument('--canary',action='store_true');parser.add_argument('--safe01',action='store_true');args=parser.parse_args()
     state=Path.home()/'.local/state/agoge-factory'
     try:
         if args.rollback: rollback(state)
-        else: install(state,Path.home()/'.config/systemd/user',Path.home()/'.codex/auth.json',canary=args.canary)
+        else: install(state,Path.home()/'.config/systemd/user',Path.home()/'.codex/auth.json',canary=args.canary,safe01=args.safe01)
     except OSError as error:
         raise SystemExit(f'Factory installation blocked: filesystem operation denied at {error.filename}; rerun in a permitted non-root host session. No activation performed')
     except ValueError as error:
         raise SystemExit('Factory installation blocked: '+str(error))
     except subprocess.SubprocessError:
         raise SystemExit('Factory installation blocked: user systemd operation failed; restore user-service access before retrying')
-    print('Factory files installed/restored; service stopped. Live containment canary is still required.')
+    print('Factory files installed/restored; service disabled and stopped. Activation is a separate one-task operation.')

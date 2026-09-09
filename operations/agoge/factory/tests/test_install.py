@@ -96,3 +96,19 @@ class InstallerTests(unittest.TestCase):
             i.rollback(state,control=False)
             self.assertEqual((state/'installation.rolled-back.json').read_bytes(),original)
             self.assertEqual(len(list(state.glob('installation.rolled-back*.json'))),2)
+
+    def test_safe01_install_preserves_native_policy_and_selects_only_235(self):
+        import json
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);auth=root/'auth.json';auth.write_text('fixture')
+            state=root/'state';units=root/'units'
+            i.install(state,units,auth,control=False,canary=True)
+            policy=(state/'codex-home/config.toml').read_bytes()
+            i.install(state,units,auth,control=False,safe01=True)
+            batch=json.loads((state/'batch.json').read_text())
+            self.assertTrue(batch['execution_enabled'])
+            self.assertEqual([t['number'] for t in batch['tasks']],[235])
+            self.assertEqual(batch['tasks'][0]['dependencies'],[236])
+            self.assertEqual((state/'codex-home/config.toml').read_bytes(),policy)
+            self.assertIn('agent_issue_numbers: [235]',(state/'WORKFLOW.md').read_text())
+            with self.assertRaises(ValueError):i.install(state,units,auth,control=False,canary=True,safe01=True)

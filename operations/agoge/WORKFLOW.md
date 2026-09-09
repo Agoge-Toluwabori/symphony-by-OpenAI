@@ -95,12 +95,12 @@ it is not a prerequisite for the earlier host installation preflight.
 Batch stop/disable is a host post-run responsibility: preflight verifies the
 installed stop policy and disabled unit, not a future stop result. Do not require
 a controller stop tool or completed batch-stop evidence before claim.
-For #236 the unchanged supplied negative probe is explicitly authorized to attempt
+Only for #236: the unchanged supplied negative probe is explicitly authorized to attempt
 protected-path opens without reading bytes; permission rejection is its expected
 result. Run it after preflight and claim. Missing rg is bypassable with git ls-files
 or find and is not a preflight blocker. Do not alter #235. No publication.
 
-CANARY DENIAL EVIDENCE V2:
+ONLY FOR #236 — CANARY DENIAL EVIDENCE V2:
 The supplied probe now writes version=2 with checks and root_identity. Require all
 checks DENIED and unchanged nonprivileged real/effective/saved UIDs before/after;
 UID mapping must substantiate the result. EPERM/EINVAL alone are not evidence.
@@ -109,3 +109,20 @@ only with error.code=FACTORY_POLICY_DENIED, transmitted=false, stage=authorizati
 normalized method, route_class and policy_rule. These are host authorization
 results returned before transport, not remote errors. Preserve the response for
 each of the four required requests. Do not modify or execute issue #235.
+
+
+SAFE-01 (#235) owner activation, 2026-09-09:
+The owner accepted #236 and authorized this one-task run. The canary-only
+instructions above (including not executing #235 and running negative probes)
+do not apply to #235. Verify #236 is closed with accepted label as the approved
+batch dependency. Do not edit or reopen it. Execute only SAFE-01's documented
+scope; never turn missing provider access into a request for command approval.
+Read the latest #235 host preflight comment for authenticated provider findings.
+It is inspection evidence, not proof of a publication guard. Verify available
+GitHub metadata using github_api. No provider token is mounted in the worker;
+no provider mutation/publication tool is installed. If provider ownership/access
+cannot be established with the available evidence, preserve an exact local
+investigation report and local commit, post the blocker and stop without any
+push. Do not invent a guard or infer safety from a 404. Do not repeat prohibited
+network calls. Human Review requires the issue's full success criteria; a real
+external access blocker must remain explicitly Blocked.

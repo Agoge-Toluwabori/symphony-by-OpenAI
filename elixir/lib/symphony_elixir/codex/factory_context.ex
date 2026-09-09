@@ -26,7 +26,11 @@ defmodule SymphonyElixir.Codex.FactoryContext do
       "workspace" => status(context["workspace"] == session.workspace, is_nil(context["workspace"])),
       "service_identity" => status(context["service"] == "symphony-agoge.service", is_nil(context["service"])),
       "dispatch_invocation" => status(is_binary(invocation) and context["invocation_id"] == invocation, is_nil(context["invocation_id"])),
-      "approved_batch" => status(context["batch"] == "factory-v1-containment-canary" and context["authority"] == "Autonomous Development", is_nil(context["batch"])),
+      "approved_batch" =>
+        status(
+          {context["batch"], issue.id} in [{"factory-v1-containment-canary", "236"}, {"factory-v1-publication-guard", "235"}] and context["authority"] == "Autonomous Development",
+          is_nil(context["batch"])
+        ),
       "concurrency" => status(context["max_concurrency"] == 1, is_nil(context["max_concurrency"])),
       "native_preflight" =>
         status(is_map(context["preflight"]) and map_size(context["preflight"]) > 0 and Enum.all?(context["preflight"], fn {_, value} -> value == "verified" end), is_nil(context["preflight"])),

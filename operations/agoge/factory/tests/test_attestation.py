@@ -77,3 +77,21 @@ class AttestationTests(unittest.TestCase):
                 self.assertEqual(gh.call_count,3)
                 self.assertEqual(issue['labels'],[])
                 self.assertEqual(q.select(batch,{236:issue}),236)
+
+    def test_safe01_is_an_exact_scope_not_a_general_batch_override(self):
+        batch=json.loads((ROOT/'batch.json').read_text())
+        self.assertTrue(a.approved_task(batch))
+        batch['tasks'][0]['number']=237
+        self.assertFalse(a.approved_task(batch))
+        batch=json.loads((ROOT/'batch.json').read_text())
+        batch['tasks'][0]['dependencies']=[]
+        self.assertFalse(a.approved_task(batch))
+
+    def test_safe01_requires_closed_and_accepted_canary(self):
+        batch=json.loads((ROOT/'batch.json').read_text());batch['execution_enabled']=True
+        issues={235:{'state':'open','labels':[],'dependencies_verified':True},236:{'state':'closed','labels':['human-review']}}
+        self.assertIsNone(q.select(batch,issues))
+        issues[236]['labels']=['accepted']
+        self.assertEqual(q.select(batch,issues),235)
+        issues[235]['labels']=['human-review']
+        self.assertIsNone(q.select(batch,issues))
