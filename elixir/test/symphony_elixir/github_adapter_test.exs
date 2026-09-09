@@ -419,6 +419,39 @@ defmodule SymphonyElixir.GitHub.AdapterTest do
     end
   end
 
+  test "SAFE-01 permits exact inspection routes while denying writes and other scopes before transport" do
+    settings = tracker_settings(%{"agent_policy" => "agoge-factory-v1", "agent_issue_numbers" => [235]})
+
+    for path <- ["/repos/octo/repo", "/repos/octo/repo/deployments", "/repos/octo/repo/deployments/6316676637", "/repos/octo/repo/deployments/6316676637/statuses"] do
+      assert %{"success" => true} =
+               GitHubAgentTool.execute("github_api", %{"method" => "GET", "path" => path},
+                 tracker_settings: settings,
+                 issue: %{id: "235"},
+                 github_client: fn "GET", ^path, _, _, _ -> {:ok, %{status: 200, body: %{}}} end
+               )
+    end
+
+    for {method, path, issue} <- [
+          {"POST", "/repos/octo/repo/deployments", "235"},
+          {"POST", "/repos/octo/repo/deployments/1/statuses", "235"},
+          {"GET", "/repos/octo/repo/deployments", "236"},
+          {"GET", "/repos/octo/unrelated/deployments", "235"},
+          {"GET", "/repos/octo/repo/deployments/1/statuses/../secrets", "235"},
+          {"GET", "/repos/octo/repo/deployments/%31", "235"},
+          {"GET", "/repos/octo/repo/deployments?secret", "235"}
+        ] do
+      result =
+        GitHubAgentTool.execute("github_api", %{"method" => method, "path" => path},
+          tracker_settings: settings,
+          issue: %{id: issue},
+          github_client: fn _, _, _, _, _ -> flunk("prohibited inspection reached transport") end
+        )
+
+      refute result["success"]
+      assert Jason.decode!(result["output"])["error"]["transmitted"] == false
+    end
+  end
+
   test "factory denials expose safe stable evidence before invoking transport" do
     settings = tracker_settings(%{"agent_policy" => "agoge-factory-v1", "agent_issue_numbers" => [236]})
 

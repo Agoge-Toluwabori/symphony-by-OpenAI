@@ -89,7 +89,7 @@ defmodule SymphonyElixir.GitHub.AgentTool do
     canonical = String.starts_with?(path, prefix) and not String.contains?(relative, ["%", "..", "?", "#", "\\"])
     allowed = factory_read?(method, relative) or factory_write?(method, relative, body, provider)
 
-    if canonical and allowed do
+    if (canonical and allowed) or safe01_inspection?(method, path, provider) do
       :ok
     else
       {route, rule} = denial_classification(path, prefix, relative, canonical)
@@ -106,6 +106,19 @@ defmodule SymphonyElixir.GitHub.AgentTool do
         }}}
     end
   end
+
+  # SAFE-01 authorizes inspection, never deployment creation or provider writes.
+  defp safe01_inspection?("GET", path, provider) do
+    root = "/repos/#{provider["repo"]}"
+    relative = String.replace_prefix(path, root <> "/", "")
+
+    provider["agent_current_issue"] == "235" and provider["agent_issue_numbers"] == [235] and
+      (path == root or
+         (String.starts_with?(path, root <> "/") and
+            Regex.match?(~r/\Adeployments(?:\/[1-9][0-9]*(?:\/statuses)?)?\z/, relative)))
+  end
+
+  defp safe01_inspection?(_, _, _), do: false
 
   defp denial_classification(path, prefix, relative, canonical) do
     cond do

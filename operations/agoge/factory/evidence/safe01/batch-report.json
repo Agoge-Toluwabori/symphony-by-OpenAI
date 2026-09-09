@@ -1,0 +1,20 @@
+{
+  "selected": null,
+  "add_ready": [],
+  "remove_ready": [],
+  "batch": "factory-v1-publication-guard",
+  "boundary": true,
+  "tasks": [
+    {
+      "number": 235,
+      "authority": "Autonomous Development",
+      "evidence_url": "https://github.com/Agoge-Toluwabori/Agoge-Business-Systems/issues/235",
+      "state": "open",
+      "labels": [
+        "authority:autonomous-development",
+        "batch:factory-v1-publication-guard",
+        "symphony-blocked"
+      ]
+    }
+  ]
+}
