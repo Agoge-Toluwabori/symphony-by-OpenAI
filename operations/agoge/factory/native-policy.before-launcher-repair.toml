@@ -7,9 +7,6 @@ apps = false
 [shell_environment_policy]
 inherit = "none"
 include_only = []
-# Keep system Bubblewrap discoverable after the command environment is cleared.
-[shell_environment_policy.set]
-PATH = "/usr/bin:/bin"
 [permissions.factory-canary]
 extends = ":workspace"
 [permissions.factory-canary.filesystem]
@@ -17,12 +14,10 @@ extends = ":workspace"
 ":minimal" = "read"
 ":slash_tmp" = "deny"
 ":tmpdir" = "deny"
-# Exact installed executable only: required for the sandbox seccomp re-entry.
-"@CODEX_EXECUTABLE@" = "read"
 [permissions.factory-canary.filesystem.":workspace_roots"]
 "." = "write"
-# Task clones have private Git metadata; local commits need this explicit grant.
-".git" = "write"
+".codex" = "deny"
+".agents" = "deny"
 "**/*.env" = "deny"
 "**/*.pem" = "deny"
 [permissions.factory-canary.network]

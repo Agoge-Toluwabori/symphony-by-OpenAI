@@ -1,0 +1,6 @@
+{"case": "original", "exit": 1, "output": "Running as unit: run-u40.service\nWARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/agoge-launcher-proof-h7pwc9hn/home\"))\nError: `--strict-config` is not supported for `codex sandbox`\nFinished with result: exit-code\nMain processes terminated with: code=exited/status=1\nService runtime: 12ms\nCPU time consumed: 9ms\nMemory peak: 6.9M\nMemory swap peak: 0B\n"}
+Traceback (most recent call last):
+  File "/home/toluadmin/services/symphony/.factory-preservation/worktree/operations/agoge/factory/tests/launcher_probe.py", line 39, in <module>
+    assert (result.returncode == 0 if expected is None else result.returncode != 0 and expected in output)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

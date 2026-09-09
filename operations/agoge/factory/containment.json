@@ -1,5 +1,5 @@
 {
-  "status": "STAGED_UNPROVEN_INSTALLATION_BLOCKED",
+  "status": "LAUNCHER_REPAIRED_REINSTALL_AND_LIVE_CANARY_REQUIRED",
   "mechanism": "Native Codex permission profiles selected explicitly at thread/start and turn/start",
   "model_command_filesystem": "root deny, minimal runtime read, task workspace write",
   "model_command_network": "disabled for containment canary",
@@ -7,5 +7,6 @@
   "github": "Existing Symphony host tool, repository/current-issue allowlist",
   "external_brokers_required_for_canary": false,
   "live_canary_issue": 236,
-  "live_canary_passed": false
+  "live_canary_passed": false,
+  "bubblewrap": "/usr/bin/bwrap via fixed command PATH; no outer namespace wrapper"
 }

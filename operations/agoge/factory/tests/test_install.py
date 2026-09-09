@@ -42,3 +42,57 @@ class InstallerTests(unittest.TestCase):
             with self.assertRaises(ValueError): i.install(state,units,auth,control=False)
             with self.assertRaises(ValueError): i.rollback(state,control=False)
             self.assertEqual(unit.read_text(),'owner edit')
+    def test_codex_trust_metadata_survives_reinstall_and_is_archived_on_rollback(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);auth=root/'auth.json';auth.write_text('fixture')
+            state=root/'state';units=root/'units'
+            i.install(state,units,auth,control=False)
+            config=state/'codex-home/config.toml'
+            config.write_text(config.read_text()+'\n[projects."/home/toluadmin/services/symphony-workspaces/agoge-business-systems/GH-236"]\ntrust_level="trusted"\n')
+            before=config.read_bytes()
+            record=i.install(state,units,auth,control=False)
+            self.assertIn(b'trust_level = "trusted"',config.read_bytes())
+            self.assertIn(before.hex(), [r.get(str(config)) for r in record['revisions']])
+            i.rollback(state,control=False)
+            import json
+            archived=json.loads((state/'installation.rolled-back.json').read_text())
+            self.assertIn('trust_level',bytes.fromhex(archived['revisions'][-1][str(config)]).decode())
+
+    def test_security_policy_drift_is_not_treated_as_trust_metadata(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);auth=root/'auth.json';auth.write_text('fixture')
+            state=root/'state';units=root/'units'
+            i.install(state,units,auth,control=False)
+            config=state/'codex-home/config.toml'
+            config.write_text(config.read_text().replace('enabled = false', 'enabled = true'))
+            with self.assertRaises(ValueError): i.install(state,units,auth,control=False)
+            with self.assertRaises(ValueError): i.rollback(state,control=False)
+
+    def test_legacy_trust_only_drift_is_migrated_with_original_retained(self):
+        import hashlib
+        import json
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);auth=root/'auth.json';auth.write_text('fixture')
+            state=root/'state';units=root/'units'
+            record=i.install(state,units,auth,control=False)
+            config=state/'codex-home/config.toml'
+            legacy=(i.FACTORY/'native-policy.before-launcher-repair.toml').read_bytes()
+            record.pop('policy_base')
+            record['installed'][str(config)]=hashlib.sha256(legacy).hexdigest()
+            (state/'installation.json').write_text(json.dumps(record))
+            config.write_bytes(legacy+b'\n[projects."/home/toluadmin/services/symphony-workspaces/agoge-business-systems/GH-236"]\ntrust_level="trusted"\n')
+            previous=config.read_bytes()
+            record=i.install(state,units,auth,control=False,canary=True)
+            self.assertTrue(i.native_policy.matches(config.read_bytes()))
+            self.assertEqual(record['revisions'][-1][str(config)],previous.hex())
+    def test_repeated_rollback_keeps_prior_evidence(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);auth=root/'auth.json';auth.write_text('fixture')
+            state=root/'state';units=root/'units'
+            i.install(state,units,auth,control=False)
+            i.rollback(state,control=False)
+            original=(state/'installation.rolled-back.json').read_bytes()
+            i.install(state,units,auth,control=False)
+            i.rollback(state,control=False)
+            self.assertEqual((state/'installation.rolled-back.json').read_bytes(),original)
+            self.assertEqual(len(list(state.glob('installation.rolled-back*.json'))),2)

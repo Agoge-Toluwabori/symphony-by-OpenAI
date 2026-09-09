@@ -9,6 +9,10 @@ import subprocess
 import tempfile
 import shutil
 import tomllib
+import uuid
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import policy as native_policy
 
 FACTORY = Path(__file__).resolve().parent
 
@@ -21,7 +25,7 @@ def atomic(path, data):
 
 def install(state, units, auth, control=True, canary=False):
     if os.geteuid() == 0: raise ValueError('Run as non-root toluadmin')
-    for name in ('launcher.py', 'native-policy.toml', 'canary-batch.json', 'queue.py', 'workspace.py', 'canary-probe.py'):
+    for name in ('launcher.py', 'native-policy.toml', 'canary-batch.json', 'queue.py', 'workspace.py', 'canary-probe.py', 'policy.py', 'run.sh', 'preflight.py', 'native-policy.before-launcher-repair.toml'):
         if not (FACTORY/name).is_file(): raise ValueError('Required component missing: '+name)
     policy_config=tomllib.loads((FACTORY/'native-policy.toml').read_text())
     if policy_config.get('default_permissions') != 'factory-canary' or 'sandbox_mode' in policy_config:
@@ -47,7 +51,7 @@ def install(state, units, auth, control=True, canary=False):
     manifest = state / 'installation.json'
     unit = units / 'symphony-agoge.service'
     rendered = (FACTORY.parent/'symphony-agoge.service').read_text().replace('@FACTORY_DIR@',str(FACTORY)).encode()
-    policy = (FACTORY/'native-policy.toml').read_bytes()
+    policy = native_policy.render()
     batch=json.loads((FACTORY/('canary-batch.json' if canary else 'batch.json')).read_text())
     batch['execution_enabled']=bool(canary)
     numbers=[t['number'] for t in batch['tasks']]
@@ -60,14 +64,25 @@ def install(state, units, auth, control=True, canary=False):
         if record['factory'] != str(FACTORY): raise ValueError('Installation belongs to another checkout; rollback first')
         for path, previous in record['installed'].items():
             p = Path(path)
-            if not p.exists() or hashlib.sha256(p.read_bytes()).hexdigest() != previous:
-                raise ValueError('Installed factory file changed; preserve/review it before reinstalling')
+            if not p.exists():
+                raise ValueError('Installed factory file absent; preserve/review before reinstalling')
+            if hashlib.sha256(p.read_bytes()).hexdigest() != previous:
+                validate_trust_drift(p, previous, record, home/'config.toml')
+        _, trust = native_policy.split((home/'config.toml').read_bytes())
+        targets[home/'config.toml'] = native_policy.with_trust(policy, trust)
     else:
         record = {'factory':str(FACTORY), 'backups':{}, 'installed':{}, 'auth_link':str(home/'auth.json')}
         for p in targets:
             record['backups'][str(p)] = p.read_bytes().hex() if p.exists() else None
         # Persist original contents before any replacement, including on interrupted installation.
         atomic(manifest,json.dumps(record,indent=2).encode())
+    # Retain every replaced installed version, including Codex-added trust metadata.
+    changed = {str(p): p.read_bytes().hex() for p, data in targets.items()
+               if p.exists() and p.read_bytes() != data}
+    if changed:
+        record.setdefault('revisions', []).append(changed)
+    record['policy_base'] = native_policy.split(policy)[0]
+    atomic(manifest,json.dumps(record,indent=2).encode())
     link = home/'auth.json'
     if link.is_symlink():
         if link.resolve() != auth.resolve(): raise ValueError('Existing auth reference differs; not replacing it')
@@ -82,12 +97,26 @@ def install(state, units, auth, control=True, canary=False):
         subprocess.run(['systemctl','--user','disable','--now','symphony-agoge.service'],check=True)
     return record
 
+def validate_trust_drift(path, digest, record, config_path):
+    if path != config_path:
+        raise ValueError('Installed factory file changed; preserve/review it before reinstalling')
+    baseline = record.get('policy_base')
+    if baseline is None:
+        legacy = (FACTORY/'native-policy.before-launcher-repair.toml').read_bytes()
+        if hashlib.sha256(legacy).hexdigest() != digest:
+            raise ValueError('Unknown previous policy; preserve and review before reinstalling')
+        baseline = native_policy.split(legacy)[0]
+    if native_policy.split(path.read_bytes())[0] != baseline:
+        raise ValueError('Installed security policy changed; preserve and review before reinstalling')
+
 def rollback(state, control=True):
     manifest=state/'installation.json'
     record=json.loads(manifest.read_text())
     for path,digest in record['installed'].items():
         if hashlib.sha256(Path(path).read_bytes()).hexdigest()!=digest:
-            raise ValueError('Modified installed file retained; review before rollback')
+            validate_trust_drift(Path(path), digest, record, state/'codex-home/config.toml')
+    record.setdefault('revisions', []).append({path: Path(path).read_bytes().hex() for path in record['installed']})
+    atomic(manifest,json.dumps(record,indent=2).encode())
     if control: subprocess.run(['systemctl','--user','disable','--now','symphony-agoge.service'],check=True)
     for path,backup in record['backups'].items():
         p=Path(path)
@@ -95,7 +124,10 @@ def rollback(state, control=True):
         else: atomic(p,bytes.fromhex(backup))
     link=Path(record['auth_link'])
     if link.is_symlink(): link.unlink()  # only factory reference, never target credential
-    manifest.rename(state/'installation.rolled-back.json')
+    archived = state/'installation.rolled-back.json'
+    if archived.exists():
+        archived = state/('installation.rolled-back.'+uuid.uuid4().hex+'.json')
+    manifest.rename(archived)
     if control: subprocess.run(['systemctl','--user','daemon-reload'],check=True)
 
 if __name__=='__main__':

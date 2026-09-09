@@ -1,3 +1,5 @@
+> Launcher repair update (2026-09-09): see [LAUNCHER-REPAIR.md](LAUNCHER-REPAIR.md). The owner installed the factory after the historical report below; #236 attempts failed. Native launcher diagnostics now pass, but reinstall and a successful live canary remain required. Normal delivery is not authorized. Historical evidence below is retained unchanged.
+
 # Phase 2 — DESIGN COMPLETE, ACTIVATION BLOCKED
 
 The design is preserved and native containment integration is implemented in a
