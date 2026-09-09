@@ -7,5 +7,5 @@ export MIX_HOME=/tmp/agoge-factory-mix
 export HEX_HOME=/tmp/agoge-factory-hex
 cd "$factory_dir/../../../elixir"
 mix format
-make all > "$factory_dir/evidence/dispatch-context/symphony-suite.txt" 2>&1
-python3 -m unittest discover -s "$factory_dir/tests" -v > "$factory_dir/evidence/dispatch-context/factory-tests.txt" 2>&1
+make all > "$factory_dir/evidence/denial-repair/symphony-suite.txt" 2>&1
+python3 -m unittest discover -s "$factory_dir/tests" -v > "$factory_dir/evidence/denial-repair/factory-tests.txt" 2>&1

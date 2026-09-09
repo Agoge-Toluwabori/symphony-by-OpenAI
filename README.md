@@ -53,3 +53,7 @@ Agoge factory deployments expose the read-only `factory_context` controller tool
 when the bound tracker policy is `agoge-factory-v1`. It combines protected host
 dispatch evidence with thread/turn IDs from the live App Server responses; workers
 do not need host environment access. See [dispatch attestation](operations/agoge/factory/DISPATCH-CONTEXT.md).
+
+Agoge canary denial evidence verifies unchanged real/effective/saved UID mappings
+and reports safe, structured GitHub rejections before transport. See
+[denial-evidence repair](operations/agoge/factory/DENIAL-REPAIR.md).

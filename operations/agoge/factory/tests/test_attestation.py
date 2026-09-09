@@ -40,7 +40,7 @@ class AttestationTests(unittest.TestCase):
             with self.assertRaises(FileNotFoundError): q.recover_canary(batch,issues,state)
             proof={'repair':a.REPAIR,'invocation_id':'fixture','preflight':{'native_policy':'verified'}}
             (state/'service-preflight.json').write_text(json.dumps(proof))
-            with patch.object(q,'pages',return_value=[{'body':'controller-evidence failure before Claimed'}]),patch.object(q,'gh') as gh:
+            with patch.object(q,'pages',return_value=[{'body':'FAILED live canary validation: OSError: [Errno 22] Invalid argument; details suppressed'}]),patch.object(q,'gh') as gh:
                 q.recover_canary(batch,issues,state)
                 self.assertEqual(q.select(batch,issues),236)
                 self.assertEqual(gh.call_count,2)

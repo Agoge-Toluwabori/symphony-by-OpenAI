@@ -88,7 +88,34 @@ defmodule SymphonyElixir.GitHub.AgentTool do
     relative = String.replace_prefix(path, prefix, "")
     canonical = String.starts_with?(path, prefix) and not String.contains?(relative, ["%", "..", "?", "#", "\\"])
     allowed = factory_read?(method, relative) or factory_write?(method, relative, body, provider)
-    if canonical and allowed, do: :ok, else: {:error, :factory_operation_denied}
+
+    if canonical and allowed do
+      :ok
+    else
+      {route, rule} = denial_classification(path, prefix, relative, canonical)
+
+      {:error,
+       {:factory_operation_denied,
+        %{
+          "code" => "FACTORY_POLICY_DENIED",
+          "method" => method,
+          "route_class" => route,
+          "policy_rule" => rule,
+          "stage" => "authorization",
+          "transmitted" => false
+        }}}
+    end
+  end
+
+  defp denial_classification(path, prefix, relative, canonical) do
+    cond do
+      path == "/user/codespaces" -> {"account_resource", "default_deny"}
+      not String.starts_with?(path, prefix) -> {"outside_repository", "repository_scope"}
+      not canonical -> {"noncanonical", "canonical_route_required"}
+      String.starts_with?(relative, "deployments") -> {"deployments", "development_operations_only"}
+      String.starts_with?(relative, "issues/") -> {"issue_lifecycle", "assigned_issue_lifecycle_only"}
+      true -> {"repository_other", "default_deny"}
+    end
   end
 
   defp factory_read?("GET", path), do: Regex.match?(~r/^(issues|pulls|commits|branches)(\/|$)/, path)
@@ -179,6 +206,8 @@ defmodule SymphonyElixir.GitHub.AgentTool do
       }
     })
   end
+
+  defp tool_error_payload({:factory_operation_denied, evidence}), do: %{"error" => evidence}
 
   defp tool_error_payload(:invalid_arguments) do
     %{"error" => %{"message" => "`github_api` expects an object with `method` and `path`."}}

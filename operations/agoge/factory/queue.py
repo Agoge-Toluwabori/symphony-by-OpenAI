@@ -130,9 +130,9 @@ def recover_canary(batch, issues, directory):
     prefix = '/repos/'+batch['repository']+'/issues/236'
     comments = pages(prefix+'/comments')
     latest = comments[-1]['body'] if comments else ''
-    if 'controller-evidence' not in latest or 'before Claimed' not in latest:
+    if 'FAILED live canary validation' not in latest or 'OSError: [Errno 22] Invalid argument' not in latest or 'details suppressed' not in latest:
         raise ValueError('Unknown canary blocker; not automatically clearing it')
-    gh(prefix+'/comments','POST',{'body':'Factory dispatch-context repair: current host preflight passed. Prior controller-evidence failure and all local archives are retained. The repaired controller now supplies factory_context with service, batch, workspace and actual App Server session IDs. Restoring only #236 for one service invocation; batch stop verification belongs after completion. #235 remains untouched.'})
+    gh(prefix+'/comments','POST',{'body':'Factory canary denial-evidence repair: current host preflight passed. Prior failed validation and all local archives are retained. The repaired probe records real/effective/saved UID and mapping evidence around setuid; GitHub policy denials now carry safe pre-transmission evidence. Restoring only #236 for one service invocation; batch stop verification belongs after completion. #235 remains untouched.'})
     gh(prefix+'/labels/symphony-blocked','DELETE')
     current['labels'] = candidate['labels']
     receipt.write_text(json.dumps({'repair':REPAIR,'invocation_id':proof['invocation_id'],'issue':236})+'\n')

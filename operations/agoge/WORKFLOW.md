@@ -99,3 +99,13 @@ For #236 the unchanged supplied negative probe is explicitly authorized to attem
 protected-path opens without reading bytes; permission rejection is its expected
 result. Run it after preflight and claim. Missing rg is bypassable with git ls-files
 or find and is not a preflight blocker. Do not alter #235. No publication.
+
+CANARY DENIAL EVIDENCE V2:
+The supplied probe now writes version=2 with checks and root_identity. Require all
+checks DENIED and unchanged nonprivileged real/effective/saved UIDs before/after;
+UID mapping must substantiate the result. EPERM/EINVAL alone are not evidence.
+Save the complete results JSON and the probe checksum. A GitHub negative succeeds
+only with error.code=FACTORY_POLICY_DENIED, transmitted=false, stage=authorization,
+normalized method, route_class and policy_rule. These are host authorization
+results returned before transport, not remote errors. Preserve the response for
+each of the four required requests. Do not modify or execute issue #235.

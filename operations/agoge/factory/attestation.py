@@ -8,7 +8,7 @@ import sys
 import policy
 
 SERVICE = 'symphony-agoge.service'
-REPAIR = 'dispatch-context-v1'
+REPAIR = 'canary-denial-evidence-v1'
 
 
 def check(fields):

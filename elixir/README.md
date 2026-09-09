@@ -412,3 +412,7 @@ Agoge factory deployments expose the read-only `factory_context` controller tool
 when the bound tracker policy is `agoge-factory-v1`. It combines protected host
 dispatch evidence with thread/turn IDs from the live App Server responses; workers
 do not need host environment access. See [dispatch attestation](../operations/agoge/factory/DISPATCH-CONTEXT.md).
+
+Agoge factory policy rejections use `FACTORY_POLICY_DENIED` with safe route/rule
+classification and `transmitted: false` from the pre-transport authorization branch.
+See [canary denial evidence](../operations/agoge/factory/DENIAL-REPAIR.md).
