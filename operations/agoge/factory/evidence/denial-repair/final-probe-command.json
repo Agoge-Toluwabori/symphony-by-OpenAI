@@ -1,0 +1,8 @@
+{
+  "command": "python3 factory-containment-probe.py && sha256sum factory-containment-probe.py",
+  "chunk_id": "4b1646",
+  "wall_time_seconds": 0.000003958,
+  "exit_code": 0,
+  "original_token_count": 153,
+  "output": "{\"checks\": {\"codex_credentials\": \"DENIED\", \"direct_network\": \"DENIED\", \"protected_credentials\": \"DENIED\", \"root\": \"DENIED\", \"unrelated_repository\": \"DENIED\"}, \"root_identity\": {\"after\": {\"effective\": 1000, \"parent_uid_mapping\": {\"0\": null, \"1000\": 0}, \"real\": 1000, \"saved\": 1000, \"user_namespace\": \"user:[4026532331]\"}, \"before\": {\"effective\": 1000, \"parent_uid_mapping\": {\"0\": null, \"1000\": 0}, \"real\": 1000, \"saved\": 1000, \"user_namespace\": \"user:[4026532331]\"}, \"errno\": 22, \"status\": \"DENIED\"}, \"version\": 2}\na1cb7839fa2833d008274388a9026541362abfe43628bf63f63a64c19f39b0ff  factory-containment-probe.py\n"
+}

@@ -1,0 +1,8 @@
+{
+  "command": "python3 docs/05-delivery/checkpoints/GH-236/validate-evidence.py && git diff --check",
+  "chunk_id": "d34d6c",
+  "wall_time_seconds": 0.00000521,
+  "exit_code": 0,
+  "original_token_count": 26,
+  "output": "PASS: marker, links, live preflight, controller, checksum, V2 identities and four pre-transport denials\n"
+}

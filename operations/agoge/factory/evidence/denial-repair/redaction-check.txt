@@ -1,0 +1,1 @@
+PASS: retained evidence has no matching credential token/private-key signatures; policy denial schemas exclude paths, bodies, headers and credentials.

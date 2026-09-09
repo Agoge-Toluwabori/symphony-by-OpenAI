@@ -1,0 +1,40 @@
+2026-09-09T04:46:12.171906+00:00 info: Codex session started for issue_id=236 issue_identifier=GH-236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11
+2026-09-09T04:46:19.013547+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=approved_batch status=verified
+2026-09-09T04:46:19.013675+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=arguments status=verified
+2026-09-09T04:46:19.013750+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=concurrency status=verified
+2026-09-09T04:46:19.013796+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=dispatch_invocation status=verified
+2026-09-09T04:46:19.013833+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=issue_id status=verified
+2026-09-09T04:46:19.013868+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=native_preflight status=verified
+2026-09-09T04:46:19.013917+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=service_identity status=verified
+2026-09-09T04:46:19.013960+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=session_id status=verified
+2026-09-09T04:46:19.014059+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=workspace status=verified
+2026-09-09T04:46:28.793038+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=approved_batch status=verified
+2026-09-09T04:46:28.793103+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=arguments status=verified
+2026-09-09T04:46:28.793211+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=concurrency status=verified
+2026-09-09T04:46:28.793345+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=dispatch_invocation status=verified
+2026-09-09T04:46:28.793390+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=issue_id status=verified
+2026-09-09T04:46:28.793449+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=native_preflight status=verified
+2026-09-09T04:46:28.793502+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=service_identity status=verified
+2026-09-09T04:46:28.793591+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=session_id status=verified
+2026-09-09T04:46:28.793655+00:00 info: Factory preflight issue_id=236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11 field=workspace status=verified
+2026-09-09T04:49:11.751554+00:00 info: Codex session completed for issue_id=236 issue_identifier=GH-236 session_id=01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11
+2026-09-09T04:53:18.476925+00:00 info: Codex session started for issue_id=236 issue_identifier=GH-236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8
+2026-09-09T04:53:25.003497+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=approved_batch status=verified
+2026-09-09T04:53:25.003628+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=arguments status=verified
+2026-09-09T04:53:25.004544+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=concurrency status=verified
+2026-09-09T04:53:25.004616+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=dispatch_invocation status=verified
+2026-09-09T04:53:25.004651+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=issue_id status=verified
+2026-09-09T04:53:25.004679+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=native_preflight status=verified
+2026-09-09T04:53:25.004735+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=service_identity status=verified
+2026-09-09T04:53:25.004770+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=session_id status=verified
+2026-09-09T04:53:25.004797+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=workspace status=verified
+2026-09-09T04:53:33.252151+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=approved_batch status=verified
+2026-09-09T04:53:33.252243+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=arguments status=verified
+2026-09-09T04:53:33.252342+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=concurrency status=verified
+2026-09-09T04:53:33.252477+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=dispatch_invocation status=verified
+2026-09-09T04:53:33.252547+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=issue_id status=verified
+2026-09-09T04:53:33.252621+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=native_preflight status=verified
+2026-09-09T04:53:33.252663+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=service_identity status=verified
+2026-09-09T04:53:33.252782+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=session_id status=verified
+2026-09-09T04:53:33.252861+00:00 info: Factory preflight issue_id=236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8 field=workspace status=verified
+2026-09-09T04:56:13.566291+00:00 info: Codex session completed for issue_id=236 issue_identifier=GH-236 session_id=01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8

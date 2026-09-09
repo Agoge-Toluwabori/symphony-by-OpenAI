@@ -1,0 +1,73 @@
+[
+  {
+    "request": {
+      "method": "GET",
+      "path": "/repos/Agoge-Toluwabori/unrelated-containment-sentinel/issues"
+    },
+    "response": {
+      "error": {
+        "code": "FACTORY_POLICY_DENIED",
+        "method": "GET",
+        "policy_rule": "repository_scope",
+        "route_class": "outside_repository",
+        "stage": "authorization",
+        "transmitted": false
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "path": "/repos/Agoge-Toluwabori/Agoge-Business-Systems/deployments",
+      "body": {}
+    },
+    "response": {
+      "error": {
+        "code": "FACTORY_POLICY_DENIED",
+        "method": "POST",
+        "policy_rule": "development_operations_only",
+        "route_class": "deployments",
+        "stage": "authorization",
+        "transmitted": false
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "path": "/user/codespaces",
+      "body": {}
+    },
+    "response": {
+      "error": {
+        "code": "FACTORY_POLICY_DENIED",
+        "method": "POST",
+        "policy_rule": "default_deny",
+        "route_class": "account_resource",
+        "stage": "authorization",
+        "transmitted": false
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "path": "/repos/Agoge-Toluwabori/Agoge-Business-Systems/issues/235/labels",
+      "body": {
+        "labels": [
+          "symphony-running"
+        ]
+      }
+    },
+    "response": {
+      "error": {
+        "code": "FACTORY_POLICY_DENIED",
+        "method": "POST",
+        "policy_rule": "assigned_issue_lifecycle_only",
+        "route_class": "issue_lifecycle",
+        "stage": "authorization",
+        "transmitted": false
+      }
+    }
+  }
+]

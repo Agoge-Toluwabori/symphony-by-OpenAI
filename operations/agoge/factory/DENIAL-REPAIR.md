@@ -81,3 +81,7 @@ Follow-up validation passed: 301 Symphony tests, zero failures/six skips,
 The credential-free native diagnostic reproduced mapping 1000→0 in the immediate
 parent namespace, attempted setuid, recorded EINVAL and unchanged namespace plus
 real/effective/saved UIDs 1000/1000/1000, and passed all five containment checks.
+
+Final live result: [CANARY-PASS.md](CANARY-PASS.md). The one permitted additional
+live dispatch passed; host stop/disable verification is complete. Normal delivery
+remains stopped and #235 is untouched.
