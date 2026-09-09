@@ -2323,3 +2323,8 @@ replaces, tracker routing, live dispatch revalidation and workspace safeguards.
 Optional `codex.permissions` selects a named Codex profile for both thread and
 turn requests. Named profiles replace, rather than compose with, legacy sandbox
 request fields. Legacy workflow serialization is unchanged when it is absent.
+
+Agoge factory deployments expose the read-only `factory_context` controller tool
+when the bound tracker policy is `agoge-factory-v1`. It combines protected host
+dispatch evidence with thread/turn IDs from the live App Server responses; workers
+do not need host environment access. See [dispatch attestation](operations/agoge/factory/DISPATCH-CONTEXT.md).

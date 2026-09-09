@@ -25,7 +25,7 @@ def atomic(path, data):
 
 def install(state, units, auth, control=True, canary=False):
     if os.geteuid() == 0: raise ValueError('Run as non-root toluadmin')
-    for name in ('launcher.py', 'native-policy.toml', 'canary-batch.json', 'queue.py', 'workspace.py', 'canary-probe.py', 'policy.py', 'run.sh', 'preflight.py', 'native-policy.before-launcher-repair.toml'):
+    for name in ('launcher.py', 'native-policy.toml', 'canary-batch.json', 'queue.py', 'workspace.py', 'canary-probe.py', 'policy.py', 'run.sh', 'preflight.py', 'attestation.py', 'native-policy.before-launcher-repair.toml'):
         if not (FACTORY/name).is_file(): raise ValueError('Required component missing: '+name)
     policy_config=tomllib.loads((FACTORY/'native-policy.toml').read_text())
     if policy_config.get('default_permissions') != 'factory-canary' or 'sandbox_mode' in policy_config:

@@ -6,6 +6,7 @@ GitHub labels are derived outputs; Project status is planning only.
 import argparse
 import fcntl
 import json
+import os
 import pathlib
 import re
 import subprocess
@@ -107,10 +108,41 @@ def exhausted_retries(state, batch):
                   if int(r['issue_id']) in approved and r['attempt'] >= 3)
 
 
+def recover_canary(batch, issues, directory):
+    """One repair-specific reset of the documented pre-claim evidence failure."""
+    from attestation import REPAIR
+    receipt = directory/('recovery-'+REPAIR+'.json')
+    if receipt.exists():
+        return
+    proof = json.loads((directory/'service-preflight.json').read_text())
+    if proof.get('repair') != REPAIR or proof.get('invocation_id') != os.environ.get('INVOCATION_ID'):
+        raise ValueError('Missing current repaired service preflight')
+    if not proof.get('preflight') or any(v != 'verified' for v in proof['preflight'].values()):
+        raise ValueError('Invalid repaired service preflight')
+    if [t['number'] for t in batch['tasks']] != [236]:
+        raise ValueError('Recovery is restricted to canary 236')
+    current = issues[236]
+    if 'symphony-blocked' not in labels(current):
+        return
+    candidate = dict(current, labels=sorted(labels(current)-{'symphony-blocked'}))
+    if select(batch, issues | {236:candidate}) != 236:
+        raise ValueError('Canary remains ineligible for a reason other than repaired blocker')
+    prefix = '/repos/'+batch['repository']+'/issues/236'
+    comments = pages(prefix+'/comments')
+    latest = comments[-1]['body'] if comments else ''
+    if 'controller-evidence' not in latest or 'before Claimed' not in latest:
+        raise ValueError('Unknown canary blocker; not automatically clearing it')
+    gh(prefix+'/comments','POST',{'body':'Factory dispatch-context repair: current host preflight passed. Prior controller-evidence failure and all local archives are retained. The repaired controller now supplies factory_context with service, batch, workspace and actual App Server session IDs. Restoring only #236 for one service invocation; batch stop verification belongs after completion. #235 remains untouched.'})
+    gh(prefix+'/labels/symphony-blocked','DELETE')
+    current['labels'] = candidate['labels']
+    receipt.write_text(json.dumps({'repair':REPAIR,'invocation_id':proof['invocation_id'],'issue':236})+'\n')
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--batch', default=str(pathlib.Path(__file__).with_name('batch.json')))
     parser.add_argument('--snapshot')
+    parser.add_argument('--repair-canary', action='store_true')
     parser.add_argument('--apply', action='store_true')
     parser.add_argument('--prepare', action='store_true', help='Only under supervisor lifetime lock before controller starts')
     parser.add_argument('--state-dir', default='/tmp/agoge-factory-state')
@@ -123,6 +155,10 @@ def main():
     with (directory / 'queue.lock').open('w') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         issues = {int(n): i for n, i in json.loads(pathlib.Path(args.snapshot).read_text()).items()} if args.snapshot else snapshot(batch)
+        if args.repair_canary:
+            if not args.prepare or args.snapshot:
+                raise ValueError('Canary recovery requires the service prepare phase')
+            recover_canary(batch, issues, directory)
         active = []
         if args.apply:
             # An unreachable controller is never interpreted as idle.
@@ -139,9 +175,17 @@ def main():
                 issues[n]['labels'] = sorted((labels(issues[n]) - {'symphony-ready', 'symphony-running'}) | {'symphony-blocked'})
             active = [int(i['issue_id']) for key in ('running', 'retrying') for i in state[key]]
         result = plan(batch, issues, active)
+        # A completed/failed first launch closes this service invocation, even if
+        # the orchestrator has queued a retry. The launcher rejects any second launch.
+        invocation = os.environ.get('INVOCATION_ID', '')
+        if args.apply and invocation and (directory/('attempt-'+invocation+'.json')).exists() and not state['running']:
+            result.update(selected=None, add_ready=[], boundary=True,
+                          remove_ready=[t['number'] for t in batch['tasks'] if 'symphony-ready' in labels(issues[t['number']])])
         if args.apply or args.prepare:
             prefix = '/repos/' + batch['repository']
             for n in result['remove_ready']:
+                if n not in {t['number'] for t in batch['tasks']}:
+                    continue
                 gh(f'{prefix}/issues/{n}/labels/symphony-ready', 'DELETE')
             for n in result['add_ready']:
                 gh(f'{prefix}/issues/{n}/labels', 'POST', {'labels': ['symphony-ready']})

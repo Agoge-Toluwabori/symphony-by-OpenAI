@@ -35,6 +35,8 @@ def main():
         raise ValueError('Factory launcher policy is stale; reinstall before dispatch')
     if not os.access('/usr/bin/bwrap', os.X_OK):
         raise ValueError('Factory launcher requires /usr/bin/bwrap; restore the approved system executable')
+    from attestation import dispatch
+    dispatch(state, Path.cwd())
     command = ['/home/toluadmin/.local/bin/codex', '--strict-config', 'app-server']
     os.execve(command[0], command, worker_environment(private_home))
 

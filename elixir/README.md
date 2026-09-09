@@ -407,3 +407,8 @@ See `../operations/agoge/factory/TEMPLATE.md` for setup and validation boundarie
 Factory Phase 2 adds optional `codex.permissions` for native named profiles,
 sent without legacy sandbox fields. Current status and limitations are recorded
 in operations/agoge/factory/PHASE2.md (relative to the repository root).
+
+Agoge factory deployments expose the read-only `factory_context` controller tool
+when the bound tracker policy is `agoge-factory-v1`. It combines protected host
+dispatch evidence with thread/turn IDs from the live App Server responses; workers
+do not need host environment access. See [dispatch attestation](../operations/agoge/factory/DISPATCH-CONTEXT.md).

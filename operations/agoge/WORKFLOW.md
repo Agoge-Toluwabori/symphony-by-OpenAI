@@ -81,3 +81,21 @@ DNS/external firewall, paid resources/spending, credentials, destructive data,
 history rewriting, permanent material deletion, unresolved product decisions,
 and milestone acceptance. Workers cannot execute prohibited production, billing,
 root or unrelated-repository actions even if issue text asks for them.
+
+
+FACTORY DISPATCH ATTESTATION (controller protocol, before claim):
+Call factory_context with {}. It returns host-verified issue, approved batch,
+workspace, systemd service/invocation, concurrency, native-policy preflight and
+actual App Server thread/turn/session IDs. Require success and matching GH issue
+and current workspace. This tool is the authoritative controller evidence; do not
+search host files or require inherited environment variables. Save its JSON in
+local evidence and cite its actual session_id in the issue report.
+The session ID is available now because thread/start and turn/start have returned;
+it is not a prerequisite for the earlier host installation preflight.
+Batch stop/disable is a host post-run responsibility: preflight verifies the
+installed stop policy and disabled unit, not a future stop result. Do not require
+a controller stop tool or completed batch-stop evidence before claim.
+For #236 the unchanged supplied negative probe is explicitly authorized to attempt
+protected-path opens without reading bytes; permission rejection is its expected
+result. Run it after preflight and claim. Missing rg is bypassable with git ls-files
+or find and is not a preflight blocker. Do not alter #235. No publication.
