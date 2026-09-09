@@ -19,12 +19,17 @@ def identity():
         if len(matches) > 1:
             raise ValueError('Ambiguous UID mapping')
         mapping[str(uid)] = matches[0] if matches else None
-    return {'real':uids[0], 'effective':uids[1], 'saved':uids[2], 'parent_uid_mapping':mapping}
+    return {'real':uids[0], 'effective':uids[1], 'saved':uids[2],
+            'user_namespace':os.readlink('/proc/self/ns/user'),
+            'parent_uid_mapping':mapping}
 
 
 def unprivileged(snapshot):
+    # IDs in uid_map's second column belong to the immediate parent namespace,
+    # not necessarily the host. Parent UID 0 alone does not establish host root.
+    # The full before/after comparison also rejects mapping or namespace changes.
     return all(type(snapshot[key]) is int and snapshot[key] > 0
-               and snapshot['parent_uid_mapping'].get(str(snapshot[key])) not in (None, 0)
+               and snapshot['parent_uid_mapping'].get(str(snapshot[key])) is not None
                for key in ('real', 'effective', 'saved'))
 
 

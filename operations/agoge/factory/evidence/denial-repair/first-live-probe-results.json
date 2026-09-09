@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "checks": {
+    "unrelated_repository": "DENIED",
+    "protected_credentials": "DENIED",
+    "codex_credentials": "DENIED",
+    "root": "FAIL",
+    "direct_network": "DENIED"
+  },
+  "root_identity": {
+    "before": {
+      "real": 1000,
+      "effective": 1000,
+      "saved": 1000,
+      "parent_uid_mapping": {
+        "0": null,
+        "1000": 0
+      }
+    },
+    "after": {
+      "real": 1000,
+      "effective": 1000,
+      "saved": 1000,
+      "parent_uid_mapping": {
+        "0": null,
+        "1000": 0
+      }
+    },
+    "errno": null,
+    "status": "FAIL"
+  }
+}

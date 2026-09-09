@@ -2,7 +2,7 @@ make setup
 make[1]: Entering directory '/home/toluadmin/services/symphony/.factory-preservation/worktree/elixir'
 mix setup
 Resolving Hex dependencies...
-Resolution completed in 0.213s
+Resolution completed in 0.228s
 Unchanged:
   bandit 1.12.5
   bunt 1.0.0
@@ -62,7 +62,7 @@ Checking 80 source files (this might take a while) ...
 
 Please report incorrect results: https://github.com/rrrene/credo/issues
 
-Analysis took 5.0 seconds (0.1s to load, 4.8s running 69 checks on 80 files)
+Analysis took 5.0 seconds (0.1s to load, 4.9s running 69 checks on 80 files)
 1855 mods/funs, found no issues.
 
 Use `mix credo explain` to explain issues, `mix credo --help` for options.
@@ -71,10 +71,10 @@ make coverage
 make[1]: Entering directory '/home/toluadmin/services/symphony/.factory-preservation/worktree/elixir'
 mix test --cover
 Cover compiling modules ...
-Running ExUnit with seed: 284336, max_cases: 4
+Running ExUnit with seed: 709850, max_cases: 4
 
-.................................................................................................................................*............***......................................*...........*.........................................................................................................
-Finished in 16.4 seconds (5.2s async, 11.2s sync)
+.........................................................***..............................................................................................**.................................*...............................................................................................................
+Finished in 15.9 seconds (5.2s async, 10.6s sync)
 301 tests, 0 failures, 6 skipped
 
 Generating cover results ...
@@ -127,7 +127,7 @@ make dialyzer
 make[1]: Entering directory '/home/toluadmin/services/symphony/.factory-preservation/worktree/elixir'
 mix deps.get
 Resolving Hex dependencies...
-Resolution completed in 0.22s
+Resolution completed in 0.224s
 Unchanged:
   bandit 1.12.5
   bunt 1.0.0
@@ -189,6 +189,6 @@ Starting Dialyzer
   ...
 ]
 Total errors: 0, Skipped: 0, Unnecessary Skips: 0
-done in 0m8.86s
+done in 0m8.82s
 done (passed successfully)
 make[1]: Leaving directory '/home/toluadmin/services/symphony/.factory-preservation/worktree/elixir'

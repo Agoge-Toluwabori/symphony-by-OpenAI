@@ -15,7 +15,7 @@ p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
 
 
 def snapshot(zero=None):
-    return {'real':1000,'effective':1000,'saved':1000,'parent_uid_mapping':{'0':zero,'1000':1000}}
+    return {'real':1000,'effective':1000,'saved':1000,'user_namespace':'user:[fixture]','parent_uid_mapping':{'0':zero,'1000':1000}}
 
 
 class ProbeTests(unittest.TestCase):
@@ -33,6 +33,7 @@ class ProbeTests(unittest.TestCase):
             value=snapshot();value[key]=0;bad.append(value)
             value=snapshot();value[key]=1001;bad.append(value)
         value=snapshot();value['parent_uid_mapping']['1000']=0;bad.append(value)
+        value=snapshot();value['user_namespace']='user:[changed]';bad.append(value)
         for after in bad:
             with patch.object(p,'identity',side_effect=[snapshot(),after]),patch.object(p.os,'setuid',side_effect=OSError(errno.EINVAL,'fixture')):
                 self.assertEqual(p.root_probe()['status'],'FAIL')
@@ -50,10 +51,10 @@ class ProbeTests(unittest.TestCase):
             self.assertEqual(p.root_probe()['status'],'UNPROVEN');attempt.assert_not_called()
 
     def test_uid_mapping_projects_only_relevant_identities(self):
-        with patch.object(p.os,'getresuid',return_value=(1000,1000,1000)),patch.object(p.Path,'read_text',return_value='1000 1000 1\n9000 9999 7\n'):
+        with patch.object(p.os,'getresuid',return_value=(1000,1000,1000)),patch.object(p.os,'readlink',return_value='user:[fixture]'),patch.object(p.Path,'read_text',return_value='1000 1000 1\n9000 9999 7\n'):
             self.assertEqual(p.identity(),snapshot())
         for mapping in ('', '1000 1000 0', '1000 1000 1\n1000 9999 1'):
-            with patch.object(p.os,'getresuid',return_value=(1000,1000,1000)),patch.object(p.Path,'read_text',return_value=mapping):
+            with patch.object(p.os,'getresuid',return_value=(1000,1000,1000)),patch.object(p.os,'readlink',return_value='user:[fixture]'),patch.object(p.Path,'read_text',return_value=mapping):
                 with self.assertRaises(ValueError):p.identity()
 
     def test_einval_no_longer_skips_network_or_results(self):
@@ -67,3 +68,12 @@ class ProbeTests(unittest.TestCase):
                 self.assertTrue(all(v=='DENIED' for v in result['checks'].values()))
                 self.assertEqual(result['root_identity']['before'],result['root_identity']['after'])
             finally:os.chdir(previous)
+
+    def test_parent_namespace_zero_is_not_host_root_and_attempt_is_required(self):
+        nested=snapshot();nested['parent_uid_mapping']['1000']=0
+        with patch.object(p,'identity',return_value=nested),patch.object(p.os,'setuid',side_effect=OSError(errno.EINVAL,'fixture')) as attempt:
+            result=p.root_probe()
+            attempt.assert_called_once_with(0)
+            self.assertEqual(result['status'],'DENIED')
+            self.assertEqual(result['before'],result['after'])
+            self.assertEqual(result['before']['user_namespace'],'user:[fixture]')

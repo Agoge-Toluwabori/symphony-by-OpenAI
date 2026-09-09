@@ -40,7 +40,7 @@ class AttestationTests(unittest.TestCase):
             with self.assertRaises(FileNotFoundError): q.recover_canary(batch,issues,state)
             proof={'repair':a.REPAIR,'invocation_id':'fixture','preflight':{'native_policy':'verified'}}
             (state/'service-preflight.json').write_text(json.dumps(proof))
-            with patch.object(q,'pages',return_value=[{'body':'FAILED live canary validation: OSError: [Errno 22] Invalid argument; details suppressed'}]),patch.object(q,'gh') as gh:
+            with patch.object(q,'pages',return_value=[{'body':'CANARY FAILED parent_uid_mapping {"1000":0} errno=null'}]),patch.object(q,'gh') as gh:
                 q.recover_canary(batch,issues,state)
                 self.assertEqual(q.select(batch,issues),236)
                 self.assertEqual(gh.call_count,2)
@@ -61,3 +61,19 @@ class AttestationTests(unittest.TestCase):
                 gh.assert_not_called()
                 issues[236]['labels'].append('authority:owner-gate')
                 with self.assertRaises(ValueError): q.recover_canary(batch,issues,state)
+
+    def test_specific_failed_review_is_reopened_but_acceptance_is_not(self):
+        with tempfile.TemporaryDirectory() as d, patch.dict(os.environ,{'INVOCATION_ID':'fixture'}):
+            state=Path(d)
+            batch=json.loads((ROOT/'canary-batch.json').read_text());batch['execution_enabled']=True
+            proof={'repair':a.REPAIR,'invocation_id':'fixture','preflight':{'native_policy':'verified'}}
+            (state/'service-preflight.json').write_text(json.dumps(proof))
+            issue={'state':'open','labels':['symphony-blocked','human-review','accepted'],'dependencies_verified':True}
+            with patch.object(q,'pages',return_value=[{'body':'CANARY FAILED parent_uid_mapping {"1000":0} errno=null'}]),patch.object(q,'gh') as gh:
+                with self.assertRaises(ValueError):q.recover_canary(batch,{236:issue},state)
+                gh.assert_not_called()
+                issue['labels'].remove('accepted')
+                q.recover_canary(batch,{236:issue},state)
+                self.assertEqual(gh.call_count,3)
+                self.assertEqual(issue['labels'],[])
+                self.assertEqual(q.select(batch,{236:issue}),236)

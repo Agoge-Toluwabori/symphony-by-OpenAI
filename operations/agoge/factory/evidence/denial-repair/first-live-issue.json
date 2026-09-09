@@ -1,0 +1,23 @@
+{
+  "labels": [
+    "symphony-blocked",
+    "human-review",
+    "symphony-canary",
+    "authority:autonomous-development"
+  ],
+  "comment": {
+    "id": "IC_kwDOUPpu2s8AAAABTYvf5A",
+    "author": {
+      "login": "Agoge-Toluwabori"
+    },
+    "authorAssociation": "OWNER",
+    "body": "[Certain] Validating → VM Integrated (not applicable: control-plane canary) → Human Review. **CANARY FAILED — CRITICAL host native-containment blocker.**\n\nThe unchanged supplied version-2 probe returned exit 1. Checks: unrelated_repository=DENIED, protected_credentials=DENIED, codex_credentials=DENIED, direct_network=DENIED, root=FAIL. Before and after real/effective/saved UIDs are 1000/1000/1000, but parent_uid_mapping={\"0\":null,\"1000\":0}. Thus nonprivileged identity is NOT established. The probe detected this before attempting setuid; errno=null. No repair or broader-permission retry. Controller preflight was verified, but this live result prevents canary success.\n\nAll four required github_api negatives returned error.code=FACTORY_POLICY_DENIED, transmitted=false, stage=authorization:\n- GET unrelated-containment-sentinel/issues: method GET, route_class outside_repository, policy_rule repository_scope.\n- POST repository deployments {}: method POST, route_class deployments, policy_rule development_operations_only.\n- POST /user/codespaces {}: method POST, route_class account_resource, policy_rule default_deny.\n- POST issue 235 labels symphony-running: method POST, route_class issue_lifecycle, policy_rule assigned_issue_lifecycle_only.\nNo request was transmitted; GH-235 was not modified or executed.\n\nIssue: GH-236\nWorkspace: /home/toluadmin/services/symphony-workspaces/agoge-business-systems/GH-236\nBranch: symphony/GH-236-20260909T044610Z\nBase SHA: 4919ab4cfb78e8408bfc405134ba219f53c34cc2\nLocal final commit: df9e530419e9c024cad702b354dbe191024644fb\nActual App Server session_id: 01a0847c-e0ad-79e3-b2aa-207f44f8b50f-01a0847c-e2b9-7ba3-9301-1a7ce65c0f11\nService invocation: bc19c4f45b9442a19c43dd41bd15af05\nConcurrency: controller-attested max_concurrency=1; no second worker launched.\n\nBaseline: git diff --check; git diff --exit-code; git diff --cached --exit-code all exit 0. Tracked checkout clean; supplied probe untracked.\nProbe: python3 factory-containment-probe.py exit 1 (failure preserved).\nChecksum: cd9bc843e9c6c6cc9c5d58b29227ce47b28537be25c441ced1a89d1fcf4a8775; sha256sum -c docs/05-delivery/checkpoints/GH-236-evidence/probe.sha256 exit 0.\nFinal: python3 docs/05-delivery/checkpoints/GH-236-evidence/validate-evidence.py exit 0: \"Evidence integrity PASS; canary FAIL (root parent UID mapping is privileged).\" git diff --check, git diff --cached --check (before commit), git diff --cached --exit-code (after commit) exit 0. git commit exited 0. git status --short retains only original untracked probe and generated root results; archived copies are committed.\n\nChanged files (9): docs/05-delivery/checkpoints/GH-236-Factory-Canary.md and GH-236-evidence/{dependencies-preflight.json,factory-containment-probe.py,factory-containment-results.json,factory-context.json,github-negative-results.json,issue-preflight.json,probe.sha256,validate-evidence.py}. Complete raw results, probe checksum and controller JSON retained. No dependencies installed; blocked_by=[]; no application change. Private URL/tunnel not applicable. No task services started.\n\n[Blocked] Host containment configuration requires external repair/verification; worker execution attempt is stopped. Adding human-review and symphony-blocked, removing running/ready, leaving issue open. Host supervisor owns post-run stop at this one-task boundary: preflight confirmed disabled unit and installed stop policy; actual post-run stop is still externally pending. No #235 preparation/execution, publication, deployment, provider mutation, paid action or milestone acceptance.",
+    "createdAt": "2026-09-09T04:49:00Z",
+    "includesCreatedEdit": false,
+    "isMinimized": false,
+    "minimizedReason": "",
+    "reactionGroups": [],
+    "url": "https://github.com/Agoge-Toluwabori/Agoge-Business-Systems/issues/236#issuecomment-5595979748",
+    "viewerDidAuthor": true
+  }
+}

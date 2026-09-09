@@ -4,10 +4,12 @@ test_private_dispatch_receipt_rejects_second_launch (test_attestation.Attestatio
 {"preflight_field": "workspace", "status": "verified"}
 {"preflight_field": "workspace", "status": "invalid"}
 ok
+test_specific_failed_review_is_reopened_but_acceptance_is_not (test_attestation.AttestationTests.test_specific_failed_review_is_reopened_but_acceptance_is_not) ... ok
 test_unknown_blocker_or_gate_is_never_cleared (test_attestation.AttestationTests.test_unknown_blocker_or_gate_is_never_cleared) ... ok
 test_einval_no_longer_skips_network_or_results (test_canary_probe.ProbeTests.test_einval_no_longer_skips_network_or_results) ... ok
 test_errno_alone_and_unexpected_identity_are_not_proof (test_canary_probe.ProbeTests.test_errno_alone_and_unexpected_identity_are_not_proof) ... ok
 test_expected_denials_require_unchanged_unprivileged_identity (test_canary_probe.ProbeTests.test_expected_denials_require_unchanged_unprivileged_identity) ... ok
+test_parent_namespace_zero_is_not_host_root_and_attempt_is_required (test_canary_probe.ProbeTests.test_parent_namespace_zero_is_not_host_root_and_attempt_is_required) ... ok
 test_preexisting_privilege_and_unreadable_mapping_fail_closed (test_canary_probe.ProbeTests.test_preexisting_privilege_and_unreadable_mapping_fail_closed) ... ok
 test_uid_mapping_projects_only_relevant_identities (test_canary_probe.ProbeTests.test_uid_mapping_projects_only_relevant_identities) ... ok
 test_canary_install_selects_only_dedicated_issue (test_install.InstallerTests.test_canary_install_selects_only_dedicated_issue) ... ok
@@ -44,6 +46,6 @@ test_invalid_workspace_rejected_and_empty_workspace_accepted (test_workspace.Wor
 test_sibling_and_symlink_escape_rejected (test_workspace.WorkspaceTests.test_sibling_and_symlink_escape_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 41 tests in 0.245s
+Ran 43 tests in 0.248s
 
 OK
