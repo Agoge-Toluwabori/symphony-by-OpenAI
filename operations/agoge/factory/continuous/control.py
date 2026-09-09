@@ -21,7 +21,9 @@ def validate(c):
 
 def command(args, **kwargs):
     r=subprocess.run(args,capture_output=True,text=True,timeout=kwargs.pop('timeout',120),**kwargs)
-    if r.returncode: raise RuntimeError('COMMAND_FAILED:'+Path(args[0]).name+':'+str(r.returncode))
+    if r.returncode:
+        category='RATE_LIMITED' if 'rate limit' in r.stderr.lower() else 'COMMAND_FAILED'
+        raise RuntimeError(category+':'+Path(args[0]).name+':'+str(r.returncode))
     return r.stdout
 
 def gh(args, body=None):
@@ -61,10 +63,53 @@ def eligible(c, item, issue, dependencies):
         if labels(d)&{'symphony-blocked','human-review','withdrawn','superseded'}:return False
     return True
 
+LAST_RATE = {}
+PROJECT_QUERY = """query($id: ID!, $after: String, $authority: String!) {
+  node(id: $id) { ... on ProjectV2 { items(first: 100, after: $after) {
+    totalCount pageInfo { hasNextPage endCursor }
+    nodes { id
+      content { ... on Issue { number repository { nameWithOwner } } }
+      status: fieldValueByName(name: "Status") { ... on ProjectV2ItemFieldSingleSelectValue { name } }
+      authority: fieldValueByName(name: $authority) { ... on ProjectV2ItemFieldSingleSelectValue { name } }
+      taskType: fieldValueByName(name: "Task Type") { ... on ProjectV2ItemFieldSingleSelectValue { name } }
+      depends: fieldValueByName(name: "Depends On") { ... on ProjectV2ItemFieldTextValue { text } }
+    }
+  } } }
+  rateLimit { cost remaining resetAt }
+}"""
+
 def snapshot(c):
-    data=gh(['project','item-list',str(c['project_number']),'--owner',c['project_owner'],'--limit','10000','--format','json'])
-    if data.get('totalCount',len(data['items']))>len(data['items']):raise ValueError('Incomplete Project snapshot')
-    return [i for i in data['items'] if i.get('content',{}).get('repository')==c['repository']]
+    # Select only the four control fields; gh project item-list expands every field
+    # and exhausts the hourly GraphQL budget when continuously polled.
+    global LAST_RATE
+    result=[];cursor=None
+    for _ in range(100):
+        args=['api','graphql','-f','query='+PROJECT_QUERY,'-f','id='+c['project_id'],
+              '-f','authority='+c.get('authority_name','Factory Authority')]
+        if cursor:args+=['-f','after='+cursor]
+        response=gh(args)
+        if response.get('errors'):raise ValueError('Project GraphQL query rejected')
+        data=response['data'];LAST_RATE=data['rateLimit'];page=data['node']['items']
+        for item in page['nodes']:
+            content=item.get('content') or {}
+            repository=(content.get('repository') or {}).get('nameWithOwner')
+            if repository!=c['repository']:continue
+            result.append({'id':item['id'],'content':{'repository':repository,'number':content['number']},
+                'status':(item.get('status') or {}).get('name'),
+                c['authority_key']:(item.get('authority') or {}).get('name'),
+                'task Type':(item.get('taskType') or {}).get('name',''),
+                'depends On':(item.get('depends') or {}).get('text','')})
+        if not page['pageInfo']['hasNextPage']:return result
+        next_cursor=page['pageInfo']['endCursor']
+        if not next_cursor or next_cursor==cursor:raise ValueError('Project pagination did not advance')
+        cursor=next_cursor
+    raise ValueError('Incomplete Project snapshot')
+
+def poll_delay(c):
+    if LAST_RATE.get('remaining',100)>10:return c['poll_seconds']
+    from datetime import datetime
+    reset=datetime.fromisoformat(LAST_RATE['resetAt'].replace('Z','+00:00')).timestamp()
+    return max(c['poll_seconds'],min(3600,reset-time.time()+5))
 
 def select(c, items, active=None):
     if active:return None

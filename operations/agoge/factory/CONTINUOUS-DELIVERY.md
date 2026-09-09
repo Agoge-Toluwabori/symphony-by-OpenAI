@@ -26,3 +26,8 @@ See TEMPLATE.md for standing policy/install/rollback, continuous/ for the reusab
 implementation, and evidence/continuous-v2/ for validation and activation evidence.
 Prior canary and SAFE-01 reports/bundles remain intact. No incremental paid resource
 was activated; existing VM and authentication are used.
+
+Live activation exposed excessive GraphQL cost in the broad gh Project query.
+The controller now paginates only required fields and backs off to GitHub reset
+when its budget is low. Stale health and the initial failure are preserved; a
+healthy running process alone is not evidence of a healthy queue.

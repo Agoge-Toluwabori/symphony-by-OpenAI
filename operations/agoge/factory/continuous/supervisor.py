@@ -74,7 +74,7 @@ def tick(c, running):
         q.phase(c,selected,'Claimed');q.write(lease_path,selected)
         q.comment(c,selected['number'],'Ready → Claimed. Standing Project authority verified; isolated development into develop, concurrency one. Vercel/production excluded.')
         q.add_labels(c,selected['number'],['symphony-ready','factory-dispatch'])
-    q.write(STATE/'continuous-health.json',{'time':time.time(),'selected':selected,'eligible_count':1 if selected else 0,'status':'working' if selected else 'idle','concurrency':1})
+    q.write(STATE/'continuous-health.json',{'time':time.time(),'selected':selected,'eligible_count':1 if selected else 0,'status':'working' if selected else 'idle','concurrency':1,'next_poll_in_seconds':q.poll_delay(c),'graphql_remaining':q.LAST_RATE.get('remaining')})
     print(json.dumps({'queue':'claimed' if selected else 'idle','issue':selected['number'] if selected else None}),flush=True)
 
 def main():
@@ -94,8 +94,8 @@ def main():
                 with urllib.request.urlopen('http://127.0.0.1:4000/api/v1/state',timeout=5) as r:data=json.load(r)
                 tick(c,data['running']);failures=0
             except (ValueError,RuntimeError,OSError,KeyError,subprocess.SubprocessError) as e:
-                failures+=1;print(json.dumps({'queue_error':type(e).__name__,'retry':failures}),flush=True)
-            time.sleep(min(c['poll_seconds']*max(1,failures),120))
+                failures+=1;print(json.dumps({'queue_error':str(e) if isinstance(e,RuntimeError) else type(e).__name__,'retry':failures}),flush=True)
+            time.sleep(q.poll_delay(c) if not failures else min(c['poll_seconds']*max(1,failures),120))
     except KeyboardInterrupt:pass
     finally:
         child.terminate()

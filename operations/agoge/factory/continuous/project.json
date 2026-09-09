@@ -11,6 +11,7 @@
   "status_field": "PVTSSF_lAHOCtbj7M4BixDszhhn1o8",
   "authority_field": "PVTSSF_lAHOCtbj7M4BixDszhhu2FM",
   "authority_key": "factory Authority",
+  "authority_name": "Factory Authority",
   "status_options": {"Ready":"c6ddf1fc", "Claimed":"47fc9ee4", "Implementing":"47fc9ee4", "Validating":"47fc9ee4", "GitHub Integrated":"2052b2da", "Completed":"98236657", "Blocked":"8b625a28"},
   "workspace_root": "/home/toluadmin/services/symphony-workspaces/agoge-business-systems",
   "runtime_source": "/home/toluadmin/projects/Agoge-Business-Systems",

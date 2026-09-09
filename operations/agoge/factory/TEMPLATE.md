@@ -97,3 +97,7 @@ Task cleanup archives complete private checkouts; never delete shared Git object
 Code rollback is a new revert PR into the integration branch, never a history reset.
 After an interrupted delivery, reconcile the existing exact-SHA PR and lease before
 retrying; a confirmed already-merged PR is finalized idempotently.
+
+Project polling requests only required control fields, with explicit pagination.
+When the GraphQL budget is low, polling waits until reset while remaining enabled;
+health records the next poll delay. No credential rotation/expansion is needed.

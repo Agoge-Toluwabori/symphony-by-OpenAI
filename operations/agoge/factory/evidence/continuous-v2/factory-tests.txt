@@ -34,8 +34,10 @@ test_idle_controller_keeps_polling_and_records_health (test_continuous.Continuou
 ok
 test_installer_continuous_mode_keeps_containment_and_rollback (test_continuous.ContinuousTests.test_installer_continuous_mode_keeps_containment_and_rollback) ... ok
 test_latest_required_ci_cannot_be_overridden_by_old_success (test_continuous.ContinuousTests.test_latest_required_ci_cannot_be_overridden_by_old_success) ... ok
+test_minimal_project_query_paginates_without_expanding_unneeded_fields (test_continuous.ContinuousTests.test_minimal_project_query_paginates_without_expanding_unneeded_fields) ... ok
 test_prohibited_push_never_invokes_git (test_continuous.ContinuousTests.test_prohibited_push_never_invokes_git) ... ok
 test_project_blocked_revokes_dispatch_even_without_a_label (test_continuous.ContinuousTests.test_project_blocked_revokes_dispatch_even_without_a_label) ... ok
+test_rate_budget_waits_until_reset_without_disabling_service (test_continuous.ContinuousTests.test_rate_budget_waits_until_reset_without_disabling_service) ... ok
 test_refs_and_security_paths (test_continuous.ContinuousTests.test_refs_and_security_paths) ... ok
 test_registry_proxy_rejects_provider_and_billing_targets_before_connect (test_continuous.ContinuousTests.test_registry_proxy_rejects_provider_and_billing_targets_before_connect) ... ok
 test_request_symlink_and_oversize_are_denied (test_continuous.ContinuousTests.test_request_symlink_and_oversize_are_denied) ... ok
@@ -75,6 +77,6 @@ test_invalid_workspace_rejected_and_empty_workspace_accepted (test_workspace.Wor
 test_sibling_and_symlink_escape_rejected (test_workspace.WorkspaceTests.test_sibling_and_symlink_escape_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 62 tests in 0.269s
+Ran 64 tests in 0.297s
 
 OK

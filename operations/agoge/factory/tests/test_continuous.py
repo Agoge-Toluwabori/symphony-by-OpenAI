@@ -134,3 +134,16 @@ class ContinuousTests(unittest.TestCase):
             supervisor.tick(self.c,[]);supervisor.tick(self.c,[])
             health=json.loads((Path(d)/'continuous-health.json').read_text())
             self.assertEqual(health['status'],'idle');self.assertIsNone(health['selected'])
+    def test_minimal_project_query_paginates_without_expanding_unneeded_fields(self):
+        def page(next_page,cursor,number):
+            return {'data':{'node':{'items':{'nodes':[{'id':str(number),'content':{'number':number,'repository':{'nameWithOwner':self.c['repository']}},'status':{'name':'Ready'},'authority':{'name':'Autonomous Development'},'taskType':{'name':'Implementation'},'depends':{'text':''}}],'totalCount':2,'pageInfo':{'hasNextPage':next_page,'endCursor':cursor}}},'rateLimit':{'remaining':100,'cost':1,'resetAt':'2026-09-09T15:12:59Z'}}}
+        with patch.object(c,'gh',side_effect=[page(True,'cursor1',240),page(False,'cursor2',241)]) as request:
+            items=c.snapshot(self.c)
+            self.assertEqual([i['content']['number'] for i in items],[240,241])
+            self.assertIn('after=cursor1',request.call_args.args[0])
+            self.assertNotIn('fieldValues',c.PROJECT_QUERY)
+            self.assertTrue(c.eligible(self.c,items[0],self.issue,[]))
+    def test_rate_budget_waits_until_reset_without_disabling_service(self):
+        with patch.object(c,'LAST_RATE',{'remaining':5,'resetAt':'2026-09-09T15:00:00Z'}),patch.object(c.time,'time',return_value=1788965940):
+            self.assertGreater(c.poll_delay(self.c),self.c['poll_seconds'])
+        with patch.object(c,'LAST_RATE',{'remaining':100}):self.assertEqual(c.poll_delay(self.c),self.c['poll_seconds'])
