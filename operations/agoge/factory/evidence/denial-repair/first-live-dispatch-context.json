@@ -1,0 +1,30 @@
+{
+  "repair": "canary-denial-evidence-v1",
+  "service": "symphony-agoge.service",
+  "invocation_id": "bc19c4f45b9442a19c43dd41bd15af05",
+  "batch": "factory-v1-containment-canary",
+  "repository": "Agoge-Toluwabori/Agoge-Business-Systems",
+  "issue_id": "236",
+  "authority": "Autonomous Development",
+  "max_concurrency": 1,
+  "preflight": {
+    "service_identity": "verified",
+    "dispatch_invocation": "verified",
+    "service_disabled": "verified",
+    "approved_batch": "verified",
+    "hardening": "verified",
+    "stop_policy": "verified",
+    "concurrency": "verified",
+    "native_policy": "verified"
+  },
+  "approval_policy": "never",
+  "permissions": "factory-canary",
+  "batch_stop": {
+    "owner": "host supervisor",
+    "phase": "after worker completion",
+    "service_enabled": false
+  },
+  "policy_sha256": "6bcf456c6be41325b86d8ceba95455f2ac94850f74c529412cdff8b7d8677d8d",
+  "workspace": "/home/toluadmin/services/symphony-workspaces/agoge-business-systems/GH-236",
+  "app_server_pid": 48487
+}

@@ -1,0 +1,18 @@
+{
+  "blocked": [],
+  "running": [],
+  "retrying": [],
+  "codex_totals": {
+    "input_tokens": 34915,
+    "output_tokens": 607,
+    "total_tokens": 35522,
+    "seconds_running": 188
+  },
+  "rate_limits": null,
+  "counts": {
+    "blocked": 0,
+    "running": 0,
+    "retrying": 0
+  },
+  "generated_at": "2026-09-08T17:54:50Z"
+}

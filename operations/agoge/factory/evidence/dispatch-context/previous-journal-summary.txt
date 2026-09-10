@@ -1,0 +1,14 @@
+Complete captured journal: /tmp/agoge-latest-service-journal.txt
+SHA256: 5b8b62c785b2150c4e0bdfc3532684a1baf08fcefdf2b9926f88e873333ea044
+Latest invocation journal lines: 5441
+2026-09-09T04:00:32+00:00 vps3606215.trouble-free.net systemd[9817]: Started symphony-agoge.service - Agoge Delivery Factory V1 (single approved batch).
+2026-09-09T04:00:35+00:00 vps3606215.trouble-free.net bash[38315]: {"add_ready": [], "batch": "factory-v1-containment-canary", "boundary": false, "remove_ready": [], "selected": 236}
+2026-09-09T04:00:38+00:00 vps3606215.trouble-free.net bash[38336]: {"add_ready": [], "batch": "factory-v1-containment-canary", "boundary": false, "remove_ready": [], "selected": null}
+2026-09-09T04:01:11+00:00 vps3606215.trouble-free.net bash[39456]: {"add_ready": [], "batch": "factory-v1-containment-canary", "boundary": false, "remove_ready": [], "selected": null}
+2026-09-09T04:01:44+00:00 vps3606215.trouble-free.net bash[39509]: {"add_ready": [], "batch": "factory-v1-containment-canary", "boundary": false, "remove_ready": [], "selected": null}
+2026-09-09T04:02:16+00:00 vps3606215.trouble-free.net bash[39650]: {"add_ready": [], "batch": "factory-v1-containment-canary", "boundary": true, "remove_ready": [], "selected": null}
+2026-09-09T04:02:16+00:00 vps3606215.trouble-free.net systemd[9817]: symphony-agoge.service: Consumed 12.409s CPU time.
+2026-09-09T04:00:42+00:00 vps3606215.trouble-free.net bash[38335]: │ ● GH-236   open           38430    0m 3s / 1             0 01a0...9a0020  session started
+2026-09-09T04:00:42+00:00 vps3606215.trouble-free.net bash[38335]: │ ● GH-236   open           38430    0m 3s / 1             0 01a0...9a0020  turn started (01a08453-3a46-78a2-88d6-dbe...
+2026-09-09T04:01:59+00:00 vps3606215.trouble-free.net bash[38335]: │ ● GH-236   open           38430    1m 20s / 1      243,253 01a0...9a0020  turn diff updated (32 lines)
+2026-09-09T04:01:59+00:00 vps3606215.trouble-free.net bash[38335]: │ ● GH-236   open           38430    1m 20s / 1      243,253 01a0...9a0020  turn completed (completed)

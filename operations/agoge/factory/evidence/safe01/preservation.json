@@ -1,0 +1,10 @@
+{
+  "canary_commit": "5cc507a336ee4146df0bcd4e2db45849cad2d924",
+  "safe01_commit": "55e16eea299d7d798621030c404b42327d273819",
+  "original_commit_hash_matched": true,
+  "git_fsck": "PASS",
+  "bundles": {
+    "accepted-canary-236.bundle": "c3783b36a8e3cda8b0bfdff4a9355a47a6b4655300ebba260a432bb5a94fa273",
+    "safe01-investigation-235.bundle": "058e579de573297c4f5c18f53c2823cfbc60b9b68ae2d8769028cca9ca35661d"
+  }
+}

@@ -1,0 +1,4 @@
+MainPID=0
+ActiveState=inactive
+UnitFileState=disabled
+Observed after run-canary-once.sh exited 0 and independently verified with systemctl --user show.

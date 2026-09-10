@@ -1,0 +1,10 @@
+{
+  "existing_open_issues": 228,
+  "existing_issue_label_or_state_changes": [],
+  "ready_or_running_issues": [],
+  "workspaces": [
+    "GH-234"
+  ],
+  "workspace_clean": true,
+  "canary_marker_exists": false
+}

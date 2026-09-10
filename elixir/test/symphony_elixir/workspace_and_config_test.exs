@@ -5,6 +5,40 @@ defmodule SymphonyElixir.WorkspaceAndConfigTest do
   alias SymphonyElixir.Config.Schema.{Codex, StringOrMap}
   alias SymphonyElixir.Linear.Client
 
+  test "factory terminal cleanup preserves Git objects and untracked evidence and fails closed" do
+    root = Path.join(System.tmp_dir!(), "factory-archive-#{System.unique_integer([:positive])}")
+    on_exit(fn -> File.rm_rf(root) end)
+
+    write_workflow_file!(Workflow.workflow_file_path(),
+      workspace_root: root,
+      tracker_kind: "github",
+      tracker_active_states: ["open"],
+      tracker_terminal_states: ["closed"]
+    )
+
+    workflow = File.read!(Workflow.workflow_file_path())
+    provider = "tracker:\n  provider:\n    repo: octo/repo\n    token: fixture-token\n    agent_policy: agoge-factory-v1\n"
+    File.write!(Workflow.workflow_file_path(), String.replace(workflow, "tracker:\n", provider))
+    assert :ok = SymphonyElixir.WorkflowStore.force_reload()
+    workspace = Path.join(root, "GH-236")
+    File.mkdir_p!(Path.join(workspace, ".git/objects"))
+    File.write!(Path.join(workspace, ".git/objects/evidence"), "preserved Git bytes")
+    File.write!(Path.join(workspace, "untracked.json"), "preserved untracked bytes")
+    assert {:ok, [^workspace]} = Workspace.remove(workspace)
+    refute File.exists?(workspace)
+    archives = Path.join(root, ".factory-archives")
+    [name] = File.ls!(archives)
+    archive = Path.join(archives, name)
+    assert File.read!(Path.join(archive, ".git/objects/evidence")) == "preserved Git bytes"
+    assert File.read!(Path.join(archive, "untracked.json")) == "preserved untracked bytes"
+    File.rename!(archives, archives <> "-retained")
+    File.ln_s!(archives <> "-retained", archives)
+    File.mkdir_p!(workspace)
+    File.write!(Path.join(workspace, "keep"), "never delete on archive failure")
+    assert {:error, {:factory_archive_failed, _}, ^workspace} = Workspace.remove(workspace)
+    assert File.read!(Path.join(workspace, "keep")) == "never delete on archive failure"
+  end
+
   test "workspace bootstrap can be implemented in after_create hook" do
     test_root =
       Path.join(

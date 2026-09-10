@@ -1,0 +1,4 @@
+Existing test outputs observed in activation session:
+Adapter/App Server/workspace: seed 20061, 81 tests, 0 failures, 4.6 s.
+Core: seed 777846, 52 tests, 0 failures, 3.7 s.
+No application tests/builds run; canary preflight failed.

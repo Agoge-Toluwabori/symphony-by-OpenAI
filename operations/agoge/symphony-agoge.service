@@ -1,0 +1,23 @@
+[Unit]
+Description=Agoge Delivery Factory V1 (single approved batch)
+After=network-online.target
+StartLimitIntervalSec=300
+StartLimitBurst=1
+[Service]
+Type=simple
+EnvironmentFile=/home/toluadmin/.config/symphony/agoge.env
+Environment=PATH=/home/toluadmin/.local/share/mise/installs/elixir/1.19.5-otp-28/bin:/home/toluadmin/.local/share/mise/installs/erlang/28.5/bin:/home/toluadmin/.local/bin:/usr/local/bin:/usr/bin:/bin
+Environment="ERL_FLAGS=+S 2:2"
+ExecStart=/bin/bash @FACTORY_DIR@/run.sh
+Restart=no
+KillMode=control-group
+TimeoutStopSec=30
+UMask=0077
+MemoryMax=2G
+TasksMax=128
+CPUQuota=200%
+NoNewPrivileges=yes
+LockPersonality=yes
+RestrictSUIDSGID=yes
+[Install]
+WantedBy=default.target

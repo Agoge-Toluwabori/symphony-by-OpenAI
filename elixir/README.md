@@ -397,3 +397,33 @@ you.
 ## License
 
 This project is licensed under the [Apache License 2.0](../LICENSE).
+
+Agoge Factory V1 configures `tracker.provider.agent_policy: agoge-factory-v1` and
+`agent_issue_numbers` to constrain dynamic GitHub calls to repository reads and
+approved-task evidence/lifecycle writes. It blocks production, paid-resource and
+unrelated-repository REST requests; external worker isolation remains required.
+See `../operations/agoge/factory/TEMPLATE.md` for setup and validation boundaries.
+
+Factory Phase 2 adds optional `codex.permissions` for native named profiles,
+sent without legacy sandbox fields. Current status and limitations are recorded
+in operations/agoge/factory/PHASE2.md (relative to the repository root).
+
+Agoge factory deployments expose the read-only `factory_context` controller tool
+when the bound tracker policy is `agoge-factory-v1`. It combines protected host
+dispatch evidence with thread/turn IDs from the live App Server responses; workers
+do not need host environment access. See [dispatch attestation](../operations/agoge/factory/DISPATCH-CONTEXT.md).
+
+Agoge factory policy rejections use `FACTORY_POLICY_DENIED` with safe route/rule
+classification and `transmitted: false` from the pre-transport authorization branch.
+See [canary denial evidence](../operations/agoge/factory/DENIAL-REPAIR.md).
+
+SAFE-01 owner-authorized one-task activation and rollback are documented in [SAFE01-RUN.md](../operations/agoge/factory/SAFE01-RUN.md).
+
+## Agoge continuous controller
+
+The optional host controller in `../operations/agoge/factory/continuous/` derives
+`factory-dispatch` from Ready plus Autonomous Development Project authority. Install
+with `python3 ../operations/agoge/factory/install.py --continuous`, then enable the
+user service. It enforces one lease/worker, preserves failed workspaces, independently
+validates exact commits, and publishes only integration PRs. Empty queues stay active.
+See the factory template for containment, emergency stop and rollback.

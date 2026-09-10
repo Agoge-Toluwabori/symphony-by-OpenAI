@@ -1,0 +1,7 @@
+{
+  "description": "Select a named permissions profile id for this turn and subsequent turns. Cannot be combined with `sandboxPolicy`.",
+  "type": [
+    "string",
+    "null"
+  ]
+}

@@ -1,0 +1,5 @@
+[Certain] Phase 2 correction: DESIGN COMPLETE, ACTIVATION BLOCKED. Removing symphony-ready preserves this issue's Autonomous Development classification and approved one-task publication-guard batch. The host batch also has execution_enabled=false so reconciliation cannot restore readiness prematurely.
+
+Dedicated containment canary #236 is prepared but has not run. This session cannot write the canonical Symphony Git metadata or install user-service/state files: those paths are mounted read-only. The prior successful #234 marker canary is retained as historical evidence; it did not test credential reads, unrelated-repository access or a local commit.
+
+The revised implementation uses native Codex permission profiles and the existing scoped Symphony GitHub tool, eliminating the proposed mandatory external inference/provider broker architecture. Files and tests are staged in a durable isolated worktree; installation and real service-dispatched containment remain unproven. No canary or #235 execution is claimed. Only after #236 passes live containment may #235 regain executable readiness. Service remains inactive and disabled.

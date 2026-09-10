@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "repository": "Agoge-Toluwabori/Agoge-Business-Systems",
+  "project": 1,
+  "batch": "factory-v1-containment-canary",
+  "approved": true,
+  "approval_source": "Owner Phase 2 PRESERVE, COMPLETE AND PROVE instruction",
+  "execution_enabled": false,
+  "max_concurrency": 1,
+  "tasks": [
+    {
+      "number": 236,
+      "authority": "Autonomous Development",
+      "dependencies": []
+    }
+  ]
+}

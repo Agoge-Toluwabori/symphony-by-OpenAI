@@ -1,0 +1,7 @@
+{
+  "chunk_id": "e38f81",
+  "wall_time_seconds": 0.047672413,
+  "exit_code": 1,
+  "original_token_count": 56,
+  "output": "Traceback (most recent call last):\n  File \"/home/toluadmin/services/symphony-workspaces/agoge-business-systems/GH-236/factory-containment-probe.py\", line 22, in <module>\n    os.setuid(0)\nOSError: [Errno 22] Invalid argument\n"
+}

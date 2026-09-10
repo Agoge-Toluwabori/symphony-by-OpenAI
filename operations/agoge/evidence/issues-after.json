@@ -1,0 +1,2756 @@
+[
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0TDPZQ",
+        "name": "symphony-blocked",
+        "description": "Symphony stopped by a documented blocker",
+        "color": "B60205"
+      },
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0caC_w",
+        "name": "symphony-canary",
+        "description": "Controlled Symphony lifecycle: symphony-canary",
+        "color": "5319E7"
+      }
+    ],
+    "number": 234,
+    "title": "[CANARY] Verify Symphony controlled dispatch"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 233,
+    "title": "V35 \u2014 Validate ABS-REQ-35 \u2014 DevShop reuse review and productization without client IP leakage"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 232,
+    "title": "V34 \u2014 Validate ABS-REQ-34 \u2014 Existing Agoge ID qualification without customer-data migration"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 231,
+    "title": "V33 \u2014 Validate ABS-REQ-33 \u2014 Notification preferences and sensitive upload controls"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 230,
+    "title": "V32 \u2014 Validate ABS-REQ-32 \u2014 No paid engagement or high-impact action authorized by AI alone"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 229,
+    "title": "V31 \u2014 Validate ABS-REQ-31 \u2014 Parent brand tokens, approved assets and Figma handoff"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 228,
+    "title": "V30 \u2014 Validate ABS-REQ-30 \u2014 Pilot learning, evidence-based case studies and campaign readiness"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 227,
+    "title": "V29 \u2014 Validate ABS-REQ-29 \u2014 Global market eligibility, locale, pricing and privacy disclosures"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 226,
+    "title": "V28 \u2014 Validate ABS-REQ-28 \u2014 Distinct environments, CI, observability, backup and rollback"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 225,
+    "title": "V27 \u2014 Validate ABS-REQ-27 \u2014 Accessible responsive interface with all required states"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 224,
+    "title": "V26 \u2014 Validate ABS-REQ-26 \u2014 Server authorization and RLS tenant isolation"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 223,
+    "title": "V25 \u2014 Validate ABS-REQ-25 \u2014 Consent, audit and customer data requests"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 222,
+    "title": "V24 \u2014 Validate ABS-REQ-24 \u2014 Baseline, outcome, review and authorized next action"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 221,
+    "title": "V23 \u2014 Validate ABS-REQ-23 \u2014 Approved Team OS status/aggregate return; no raw participant data"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 220,
+    "title": "V22 \u2014 Validate ABS-REQ-22 \u2014 Standalone Team OS referral, consent and separate entitlement"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 219,
+    "title": "V21 \u2014 Validate ABS-REQ-21 \u2014 DevShop milestones, changes, acceptance, training and support"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 218,
+    "title": "V20 \u2014 Validate ABS-REQ-20 \u2014 DevShop qualification, scope and commercial approval"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 217,
+    "title": "V19 \u2014 Validate ABS-REQ-19 \u2014 Webhook verification, idempotency, retry and dead-letter handling"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 216,
+    "title": "V18 \u2014 Validate ABS-REQ-18 \u2014 Organization-owned messaging/email/calendar/CRM/payment connections"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 215,
+    "title": "V17 \u2014 Validate ABS-REQ-17 \u2014 Care Kit feedback, retention/reactivation and service reporting"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 214,
+    "title": "V16 \u2014 Validate ABS-REQ-16 \u2014 Care Kit onboarding, service requests and response tracking"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 213,
+    "title": "V15 \u2014 Validate ABS-REQ-15 \u2014 Operations Kit reminders, escalation, dashboard and audit"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 212,
+    "title": "V14 \u2014 Validate ABS-REQ-14 \u2014 Operations Kit requests, assignment and approvals"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 211,
+    "title": "V13 \u2014 Validate ABS-REQ-13 \u2014 Lead Kit follow-up, booking and conversion reporting"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 210,
+    "title": "V12 \u2014 Validate ABS-REQ-12 \u2014 Lead Kit intake, qualification and CRM pipeline"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 209,
+    "title": "V11 \u2014 Validate ABS-REQ-11 \u2014 Catalogue and explicit commercial/product activation"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 208,
+    "title": "V10 \u2014 Validate ABS-REQ-10 \u2014 Accept, clarify, defer or decline a Blueprint"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 207,
+    "title": "V09 \u2014 Validate ABS-REQ-09 \u2014 Paid advisor-reviewed Blueprint with customer options"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 206,
+    "title": "V08 \u2014 Validate ABS-REQ-08 \u2014 Required live AI with refusal, limits and deterministic fallback"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 205,
+    "title": "V07 \u2014 Validate ABS-REQ-07 \u2014 Structured findings with evidence and uncertainty"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 204,
+    "title": "V06 \u2014 Validate ABS-REQ-06 \u2014 Product entitlements, privileged MFA and secure recovery"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 203,
+    "title": "V05 \u2014 Validate ABS-REQ-05 \u2014 Organization memberships, invitations and context switching"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 202,
+    "title": "V04 \u2014 Validate ABS-REQ-04 \u2014 Save and resume versioned Checkups and private drafts"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 201,
+    "title": "V03 \u2014 Validate ABS-REQ-03 \u2014 Personal signup without mandatory organization"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 200,
+    "title": "V02 \u2014 Validate ABS-REQ-02 \u2014 Anonymous exploration and explicit consent before AI processing"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 199,
+    "title": "V01 \u2014 Validate ABS-REQ-01 \u2014 Problem-led public discovery, product catalogue and EDEO explanation"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 198,
+    "title": "P01 \u2014 Reconfirm full MVP and paid-offer conditions at commercial readiness"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 197,
+    "title": "Q20 \u2014 Obtain final P6 qualification after pilot and all requirement evidence"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 196,
+    "title": "Q19 \u2014 Compile pre-launch pilot learning and consented case-study evidence"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 195,
+    "title": "Q18 \u2014 Run separately authorized controlled pre-launch pilot"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 194,
+    "title": "Q17 \u2014 Review pilot outcomes and update optimization backlog"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 193,
+    "title": "Q16 \u2014 Operate post-launch monitoring and incident review"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 192,
+    "title": "Q15 \u2014 Launch approved campaign and controlled pilot operation"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 191,
+    "title": "Q14 \u2014 Execute explicitly approved production deployment and DNS cutover"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 190,
+    "title": "Q13 \u2014 Request P7 launch authorization for immutable release candidate"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 189,
+    "title": "Q12 \u2014 Prepare production deployment, DNS and rollback plan"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 188,
+    "title": "Q11 \u2014 Deploy and qualify separately approved staging candidate"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 187,
+    "title": "Q10 \u2014 Approve production provider budgets and operational targets"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 186,
+    "title": "Q09 \u2014 Prepare evidence-based content, analytics and campaign buildup"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 185,
+    "title": "Q08 \u2014 Approve supported-market eligibility and trust disclosures"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 184,
+    "title": "Q07 \u2014 Approve controlled pilot readiness and5\u201310business recruitment plan"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 183,
+    "title": "Q06 \u2014 Obtain technical owner UAT acceptance and residual-risk disposition"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 182,
+    "title": "Q05 \u2014 Rehearse backup restore, provider failure and recovery"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 181,
+    "title": "Q04 \u2014 Qualify accessibility and performance against approved workload"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 180,
+    "title": "Q03 \u2014 Run dependency, secret and supply-chain release scans"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 179,
+    "title": "Q02 \u2014 Qualify full integration, RLS and authorization across release candidate"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 178,
+    "title": "Q01 \u2014 Audit all35requirements and36workpackages against release evidence"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 177,
+    "title": "VM11 \u2014 Record owner feedback, triage defects and retest accepted fixes"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 176,
+    "title": "VM10 \u2014 Execute owner-preview golden path on mobile and desktop"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 175,
+    "title": "VM09 \u2014 Publish restricted owner-test URL with synthetic data"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 174,
+    "title": "VM08 \u2014 Implement approved restart, deploy and rollback scripts"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 173,
+    "title": "VM07 \u2014 Configure approved VM runtime, supervision and private HTTPS preview"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 172,
+    "title": "VM06 \u2014 Approve local build and bounded VM deployment packet"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 171,
+    "title": "VM05 \u2014 Establish PostgreSQL17-compatible VM verification and synthetic seeds"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 170,
+    "title": "VM04 \u2014 Install approved pinned runtime and configure nonproduction secrets"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 169,
+    "title": "VM03 \u2014 Establish authorized private VM checkout and worktrees"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 168,
+    "title": "VM02 \u2014 Inspect authorized VM capacity, ports and Symphony ownership"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 167,
+    "title": "VM01 \u2014 Prepare VM integration and owner-preview authorization plan"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 166,
+    "title": "OP12 \u2014 Qualify reuse candidates and IP ownership without copying"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 165,
+    "title": "OP11 \u2014 Implement authorized service monitoring and backup recovery controls"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 164,
+    "title": "OP10 \u2014 Implement sensitive-upload validation and signed-access controls"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 163,
+    "title": "OP09 \u2014 Implement incident response, abuse and notification safeguards"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 162,
+    "title": "OP08 \u2014 Implement scoped customer export and deletion workflow"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 161,
+    "title": "OP07 \u2014 Approve classifications, retention, deletion, export and environment policy"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 160,
+    "title": "OP06 \u2014 Implement administrative boundary and support audit views"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 159,
+    "title": "OP05 \u2014 Implement advisor and customer support queues"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 158,
+    "title": "OP04 \u2014 Implement catalogue activation and baseline/outcome review controls"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 157,
+    "title": "OP03 \u2014 Implement order/payment state separation and replay-safe reconciliation"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 156,
+    "title": "OP02 \u2014 Select payment provider and reconcile transaction ownership"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 155,
+    "title": "OP01 \u2014 Approve paid-Blueprint price and commercial terms"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 154,
+    "title": "C11 \u2014 Replace provisional product links after endpoint qualification"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 153,
+    "title": "C10 \u2014 Implement AgogeDev training, support and reusable handover evidence"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 152,
+    "title": "C09 \u2014 Verify connected-product mocked consent and revocation end to end"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 151,
+    "title": "C08 \u2014 Implement AgogeDev scope, handoff and milestone lifecycle"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 150,
+    "title": "C07 \u2014 Approve AgogeDev handoff and acceptance contract"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 149,
+    "title": "C06 \u2014 Implement Team OS referral, entitlement and return adapter"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 148,
+    "title": "C05 \u2014 Approve Team OS minimum-context consent and return allowlist"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 147,
+    "title": "C04 \u2014 Activate and qualify approved Twilio sandbox channels"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 146,
+    "title": "C03 \u2014 Implement STOP, opt-out and delivery retry suppression"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 145,
+    "title": "C02 \u2014 Implement provider-neutral communications and template contract"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 144,
+    "title": "C01 \u2014 Approve Twilio channel, account, consent and cost boundary"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 143,
+    "title": "IT03 \u2014 Implement authorized organization-owned provider connections"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 142,
+    "title": "IT02 \u2014 Implement verified webhook and durable event delivery foundation"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 141,
+    "title": "IT01 \u2014 Approve supported toolset and native-versus-external ownership"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 140,
+    "title": "KC06 \u2014 Qualify Care Kit approved provider connections and lifecycle"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 139,
+    "title": "KC05 \u2014 Implement Care Kit retention reporting, audit and optimization"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 138,
+    "title": "KC04 \u2014 Implement Care Kit feedback, reactivation and retry controls"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 137,
+    "title": "KC03 \u2014 Implement Care Kit mocked onboarding and service requests"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 136,
+    "title": "KC02 \u2014 Implement Care Kit configuration, consent and activation lifecycle"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 135,
+    "title": "KC01 \u2014 Specify Customer Engagement and Retention Kit readiness"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 134,
+    "title": "KL06 \u2014 Qualify Lead Kit approved provider connections and lifecycle"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 133,
+    "title": "KL05 \u2014 Implement Lead Kit conversion outcomes, audit and optimization"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 132,
+    "title": "KL04 \u2014 Implement Lead Kit follow-up, booking, failure and retry controls"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 131,
+    "title": "KL03 \u2014 Implement Lead Kit mocked intake, qualification and CRM pipeline"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 130,
+    "title": "KL02 \u2014 Implement Lead Kit configuration, consent and activation lifecycle"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 129,
+    "title": "KL01 \u2014 Specify Lead Generation Kit eligibility and readiness"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 128,
+    "title": "KP06 \u2014 Qualify Process Kit provider connections and end-to-end lifecycle"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 127,
+    "title": "KP05 \u2014 Implement Process Kit outcome dashboard, audit and optimization"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 126,
+    "title": "KP04 \u2014 Implement Process Kit reminders, escalation and retry handling"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 125,
+    "title": "KP03 \u2014 Implement Process Kit mocked requests, assignment and approvals"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 124,
+    "title": "KP02 \u2014 Implement Process Kit configuration, consent and activation lifecycle"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 123,
+    "title": "KP01 \u2014 Specify Process Optimization Kit eligibility and readiness"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 122,
+    "title": "BP07 \u2014 Implement approved paid-Blueprint order and release linkage"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 121,
+    "title": "BP06 \u2014 Implement scoped Blueprint document export"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 120,
+    "title": "BP05 \u2014 Implement advisor review and customer acknowledgement state machine"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 119,
+    "title": "BP04 \u2014 Implement Blueprint measures, risks, assumptions and decisions"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 118,
+    "title": "BP03 \u2014 Implement workflow recommendations and30/60/90-day roadmap"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 117,
+    "title": "BP02 \u2014 Implement current-state, priority and target-operating-model sections"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 116,
+    "title": "BP01 \u2014 Specify Blueprint generation and immutable-version rules"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 115,
+    "title": "A09 \u2014 Qualify live AI within approved budget and provider boundaries"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 114,
+    "title": "A08 \u2014 Implement server OpenAI adapter without live activation"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 113,
+    "title": "A07 \u2014 Request OpenAI credential, budget and data-processing approval"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 112,
+    "title": "A06 \u2014 Create frozen synthetic AI evaluation datasets and rubric"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 111,
+    "title": "A05 \u2014 Implement token budgets, retries, timeout and circuit-breaker controls"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 110,
+    "title": "A04 \u2014 Implement human review, revision and rejection ledger"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 109,
+    "title": "A03 \u2014 Implement deterministic structured AI adapter and schema guards"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 108,
+    "title": "A02 \u2014 Version prompts, schemas and redaction rules"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 107,
+    "title": "A01 \u2014 Specify provider-neutral AI authority and consent contract"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 106,
+    "title": "E10 \u2014 Enforce human authority on paid engagements and high-impact actions"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 105,
+    "title": "E09 \u2014 Implement anonymous exploration and explicit AI consent enforcement"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 104,
+    "title": "E08 \u2014 Implement diagnostic audit and Evaluate-to-Design transition"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 103,
+    "title": "E07 \u2014 Implement versioned prioritization and diagnostic summary"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 102,
+    "title": "E06 \u2014 Implement structured interpretation and customer confirmation"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 101,
+    "title": "E05 \u2014 Implement authorized evidence and document references"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 100,
+    "title": "E04 \u2014 Implement private versioned draft save and resume"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 99,
+    "title": "E03 \u2014 Implement conditional questions and incomplete-information paths"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 98,
+    "title": "E02 \u2014 Implement business profile, symptom and goal capture"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 97,
+    "title": "E01 \u2014 Specify diagnostic templates and versioned domain contracts"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 96,
+    "title": "E00 \u2014 Prepare first backend vertical-slice authorization request"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 95,
+    "title": "DB12 \u2014 Run post-migration security and performance advisor review"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 94,
+    "title": "DB11 \u2014 Generate database types from approved migrated schema"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 93,
+    "title": "DB10 \u2014 Apply approved migration to authorized development target"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 92,
+    "title": "DB09 \u2014 Request bounded hosted development migration authorization"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 91,
+    "title": "DB08 \u2014 Prepare synthetic seed and reversible migration recovery fixtures"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 90,
+    "title": "DB07 \u2014 Verify ownership transfer and product consent SQL boundaries"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 89,
+    "title": "DB06 \u2014 Complete RLS tests for every exposed table and privileged entrypoint"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 88,
+    "title": "DB05 \u2014 Refine local SQL constraints and query indexes"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 87,
+    "title": "DB04 \u2014 Approve schema exposure and ownership contract"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 86,
+    "title": "DB03 \u2014 Review 23-table migration and RLS coverage read-only"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 85,
+    "title": "DB02 \u2014 Run PG17-COMPAT against exact migration and policy suite"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 84,
+    "title": "DB01 \u2014 Prepare exact PostgreSQL17 compatibility execution packet"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 83,
+    "title": "ID07 \u2014 Verify tenant, product and revoked-access denial across queued effects"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 82,
+    "title": "ID06 \u2014 Implement selected-field personal-to-organization copy consent"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 81,
+    "title": "ID05 \u2014 Implement product-local secure server sessions and recovery topology"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 80,
+    "title": "ID04 \u2014 Implement product-owned roles, entitlements and privileged MFA checks"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 79,
+    "title": "ID03 \u2014 Implement personal profiles and organization memberships"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 78,
+    "title": "ID02 \u2014 Approve stable local profile and cross-product organization mapping"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 77,
+    "title": "ID01 \u2014 Qualify existing Agoge ID authority and permitted test environment"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 76,
+    "title": "F17 \u2014 Obtain owner acceptance of converted frontend package"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 75,
+    "title": "F16 \u2014 Verify frontend fidelity, accessibility and responsive system states"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 74,
+    "title": "F15 \u2014 Correct source-derived interaction defects while preserving motion"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 73,
+    "title": "F14 \u2014 Implement separately entitled Team OS and AgogeDev handoff interfaces"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 72,
+    "title": "F13 \u2014 Implement workspace and three-kit lifecycle interfaces"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 71,
+    "title": "F12 \u2014 Implement Blueprint review and customer-decision interfaces"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 70,
+    "title": "F11 \u2014 Implement findings, uncertainty and recommendation interfaces"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 69,
+    "title": "F10 \u2014 Implement diagnosis capture and resume interfaces with mocks"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 68,
+    "title": "F09 \u2014 Implement public discovery, catalogue and supported-market journeys"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 67,
+    "title": "F08 \u2014 Implement approved design tokens and font-loading contract"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 66,
+    "title": "F07 \u2014 Convert prototype entrypoint and component shell to Next App Router"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 65,
+    "title": "F06 \u2014 Repair confirmed missing imports in conversion copy only"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 64,
+    "title": "F05 \u2014 Review parent-brand tokens, asset provenance and font licensing"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 63,
+    "title": "F04 \u2014 Complete Figma-to-Next route, component and asset mapping"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 62,
+    "title": "F03 \u2014 Compare all prototype journeys and system states with approved brief"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 61,
+    "title": "F02 \u2014 Inventory source imports and classify missing-file claims"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 60,
+    "title": "F01 \u2014 Audit authoritative animation archive and preservation evidence"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 59,
+    "title": "G06 \u2014 Apply approved develop and reviewed feature-branch controls"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 58,
+    "title": "G05 \u2014 Configure approved repository-specific Symphony controls"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 57,
+    "title": "G04 \u2014 Define closure evidence and secret-safe completion conventions"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 56,
+    "title": "G03 \u2014 Specify Symphony claiming and one-task-per-worktree rules"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 55,
+    "title": "G02 \u2014 Define reviewed develop and feature-branch synchronization"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 54,
+    "title": "G01 \u2014 Reconcile accepted foundation, governance and frontend commit ancestry"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 49,
+    "title": "ABS-036 \u2014 Prepare campaign and pilot launch review"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 48,
+    "title": "ABS-035 \u2014 Prepare content and measurement package"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 47,
+    "title": "ABS-034 \u2014 Define launch offer and market disclosures"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 46,
+    "title": "ABS-033 \u2014 Compile production release evidence"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 45,
+    "title": "ABS-032 \u2014 Build and verify staging/CI/observability foundation"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 44,
+    "title": "ABS-031 \u2014 Approve repository and foundation specification"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 43,
+    "title": "ABS-030 \u2014 Qualify abuse, uploads, notification and incident safeguards"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 42,
+    "title": "ABS-029 \u2014 Implement and verify authorization and governance"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 41,
+    "title": "ABS-028 \u2014 Approve threat, data and market handling proposal"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 40,
+    "title": "ABS-027 \u2014 Verify cross-product privacy and status exchange"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 39,
+    "title": "ABS-026 \u2014 Integrate consented standalone launch"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 38,
+    "title": "ABS-025 \u2014 Define minimal referral and return contract"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 37,
+    "title": "ABS-024 \u2014 Verify acceptance, support and reuse handover"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 36,
+    "title": "ABS-023 \u2014 Implement governed scope and project lifecycle"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 35,
+    "title": "ABS-022 \u2014 Define DevShop intake and delivery controls"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 34,
+    "title": "ABS-021 \u2014 Automate and verify all three Business Kits"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 33,
+    "title": "ABS-020 \u2014 Build secure connections and event delivery"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 32,
+    "title": "ABS-019 \u2014 Select one supported toolset"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 31,
+    "title": "ABS-018 \u2014 Evaluate and qualify live AI"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 30,
+    "title": "ABS-017 \u2014 Implement bounded server interpretation and advisor review"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 29,
+    "title": "ABS-016 \u2014 Define AI consent and interpretation contracts"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 28,
+    "title": "ABS-015 \u2014 Build activation, outcome and audit coordination"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 27,
+    "title": "ABS-014 \u2014 Build Evaluate and Design domain slice"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 26,
+    "title": "ABS-013 \u2014 Specify domain APIs, events and schema boundaries"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 25,
+    "title": "ABS-012 \u2014 Qualify privileged and cross-product account lifecycle"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 24,
+    "title": "ABS-011 \u2014 Define and implement personal/organization access"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 23,
+    "title": "ABS-010 \u2014 Qualify existing Agoge ID authority"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 22,
+    "title": "ABS-009 \u2014 Verify responsive accessible integrated frontend"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 21,
+    "title": "ABS-008 \u2014 Implement customer and advisor surfaces"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 20,
+    "title": "ABS-007 \u2014 Plan application shell and component system"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 19,
+    "title": "ABS-006 \u2014 Package design for frontend acceptance"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 18,
+    "title": "ABS-005 \u2014 Design complete customer and advisor flows"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 17,
+    "title": "ABS-004 \u2014 Qualify brand assets and semantic tokens"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 16,
+    "title": "ABS-003 \u2014 Plan and assess pilot validation"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 15,
+    "title": "ABS-002 \u2014 Define customer journey and requirement baseline"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 14,
+    "title": "ABS-001 \u2014 Lock product and paid-offer hypotheses"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 13,
+    "title": "ABS-EPIC-012 \u2014 WS-12: Content, commercialization and launch"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 12,
+    "title": "ABS-EPIC-011 \u2014 WS-11: Platform, CI/CD and operations"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 11,
+    "title": "ABS-EPIC-010 \u2014 WS-10: Security, privacy and compliance engineering"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 10,
+    "title": "ABS-EPIC-009 \u2014 WS-09: Team OS referral bridge"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 9,
+    "title": "ABS-EPIC-008 \u2014 WS-08: DevShop product and delivery workflow"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 8,
+    "title": "ABS-EPIC-007 \u2014 WS-07: Integrations and connected tools"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 7,
+    "title": "ABS-EPIC-006 \u2014 WS-06: EDEO and AI interpretation"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 6,
+    "title": "ABS-EPIC-005 \u2014 WS-05: Business domains and backend"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 5,
+    "title": "ABS-EPIC-004 \u2014 WS-04: Identity, tenancy and entitlement"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 4,
+    "title": "ABS-EPIC-003 \u2014 WS-03: Frontend implementation"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 3,
+    "title": "ABS-EPIC-002 \u2014 WS-02: Brand, UX and Figma prototype"
+  },
+  {
+    "labels": [
+      {
+        "id": "LA_kwDOUPpu2s8AAAAC0Y6RTg",
+        "name": "delivery:planning-only",
+        "description": "Delivery record only. Never an execution, provider, merge or deployment authorization.",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 2,
+    "title": "ABS-EPIC-001 \u2014 WS-01: Product definition and validation"
+  }
+]

@@ -327,3 +327,18 @@ Use this exact structure for the persistent workpad comment and keep it updated 
 
 - <only include when something was confusing during execution>
 ````
+
+For Agoge's opt-in batch workflow and scoped GitHub agent policy, use
+`../operations/agoge/WORKFLOW.md` after its containment preflight passes. This
+upstream example does not itself approve any Agoge issue or enable publication.
+
+Factory native profiles use `codex.permissions: factory-canary`; do not configure
+legacy thread/turn sandbox policies alongside an explicit permission profile.
+
+## Optional Agoge delivery profile
+
+The Agoge installer uses `operations/agoge/factory/continuous/WORKFLOW.md` rather
+than this example. `factory_continuous: true` permits only assigned-issue lifecycle
+writes; the host controller owns the authoritative Project lease and GitHub PR
+integration. The `factory-canary` native permission profile name is retained for
+compatibility; it now supports local IPC through a default-deny managed proxy.

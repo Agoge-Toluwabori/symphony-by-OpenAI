@@ -1,0 +1,1 @@
+Activation blocked: isolated worker/brokers not installed; see REPORT.md

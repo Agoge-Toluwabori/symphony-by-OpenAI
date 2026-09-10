@@ -1,0 +1,82 @@
+test_failed_canary_recovers_only_after_current_preflight_and_once (test_attestation.AttestationTests.test_failed_canary_recovers_only_after_current_preflight_and_once) ... ok
+test_field_diagnostics_and_fail_closed (test_attestation.AttestationTests.test_field_diagnostics_and_fail_closed) ... ok
+test_private_dispatch_receipt_rejects_second_launch (test_attestation.AttestationTests.test_private_dispatch_receipt_rejects_second_launch) ... {"preflight_field": "workspace", "status": "verified"}
+{"preflight_field": "workspace", "status": "verified"}
+{"preflight_field": "workspace", "status": "invalid"}
+ok
+test_safe01_is_an_exact_scope_not_a_general_batch_override (test_attestation.AttestationTests.test_safe01_is_an_exact_scope_not_a_general_batch_override) ... ok
+test_safe01_requires_closed_and_accepted_canary (test_attestation.AttestationTests.test_safe01_requires_closed_and_accepted_canary) ... ok
+test_specific_failed_review_is_reopened_but_acceptance_is_not (test_attestation.AttestationTests.test_specific_failed_review_is_reopened_but_acceptance_is_not) ... ok
+test_unknown_blocker_or_gate_is_never_cleared (test_attestation.AttestationTests.test_unknown_blocker_or_gate_is_never_cleared) ... ok
+test_einval_no_longer_skips_network_or_results (test_canary_probe.ProbeTests.test_einval_no_longer_skips_network_or_results) ... ok
+test_errno_alone_and_unexpected_identity_are_not_proof (test_canary_probe.ProbeTests.test_errno_alone_and_unexpected_identity_are_not_proof) ... ok
+test_expected_denials_require_unchanged_unprivileged_identity (test_canary_probe.ProbeTests.test_expected_denials_require_unchanged_unprivileged_identity) ... ok
+test_parent_namespace_zero_is_not_host_root_and_attempt_is_required (test_canary_probe.ProbeTests.test_parent_namespace_zero_is_not_host_root_and_attempt_is_required) ... ok
+test_preexisting_privilege_and_unreadable_mapping_fail_closed (test_canary_probe.ProbeTests.test_preexisting_privilege_and_unreadable_mapping_fail_closed) ... ok
+test_uid_mapping_projects_only_relevant_identities (test_canary_probe.ProbeTests.test_uid_mapping_projects_only_relevant_identities) ... ok
+test_blocked_does_not_stall_unrelated_and_empty_queue_is_normal (test_continuous.ContinuousTests.test_blocked_does_not_stall_unrelated_and_empty_queue_is_normal) ... ok
+test_concurrency_and_merge_gate_cannot_be_weakened (test_continuous.ContinuousTests.test_concurrency_and_merge_gate_cannot_be_weakened) ... ok
+test_continuous_attestation_rechecks_project_authority_and_dependencies (test_continuous.ContinuousTests.test_continuous_attestation_rechecks_project_authority_and_dependencies) ... {"preflight_field": "service_identity", "status": "verified"}
+{"preflight_field": "dispatch_invocation", "status": "verified"}
+{"preflight_field": "service_enablement", "status": "verified"}
+{"preflight_field": "approved_batch", "status": "verified"}
+{"preflight_field": "hardening", "status": "verified"}
+{"preflight_field": "stop_policy", "status": "verified"}
+{"preflight_field": "concurrency", "status": "verified"}
+{"preflight_field": "native_policy", "status": "verified"}
+ok
+test_controller_waits_for_live_worker_and_preserves_bounded_failure (test_continuous.ContinuousTests.test_controller_waits_for_live_worker_and_preserves_bounded_failure) ... ok
+test_dependencies_and_withdrawn_tasks (test_continuous.ContinuousTests.test_dependencies_and_withdrawn_tasks) ... ok
+test_dependency_requests_cannot_execute_scripts_git_or_arbitrary_urls (test_continuous.ContinuousTests.test_dependency_requests_cannot_execute_scripts_git_or_arbitrary_urls) ... ok
+test_exclusions_and_field_authority_fail_closed (test_continuous.ContinuousTests.test_exclusions_and_field_authority_fail_closed) ... ok
+test_idle_controller_keeps_polling_and_records_health (test_continuous.ContinuousTests.test_idle_controller_keeps_polling_and_records_health) ... {"queue": "idle", "issue": null}
+{"queue": "idle", "issue": null}
+ok
+test_installer_continuous_mode_keeps_containment_and_rollback (test_continuous.ContinuousTests.test_installer_continuous_mode_keeps_containment_and_rollback) ... ok
+test_latest_required_ci_cannot_be_overridden_by_old_success (test_continuous.ContinuousTests.test_latest_required_ci_cannot_be_overridden_by_old_success) ... ok
+test_minimal_project_query_paginates_without_expanding_unneeded_fields (test_continuous.ContinuousTests.test_minimal_project_query_paginates_without_expanding_unneeded_fields) ... ok
+test_prohibited_push_never_invokes_git (test_continuous.ContinuousTests.test_prohibited_push_never_invokes_git) ... ok
+test_project_blocked_revokes_dispatch_even_without_a_label (test_continuous.ContinuousTests.test_project_blocked_revokes_dispatch_even_without_a_label) ... ok
+test_rate_budget_waits_until_reset_without_disabling_service (test_continuous.ContinuousTests.test_rate_budget_waits_until_reset_without_disabling_service) ... ok
+test_refs_and_security_paths (test_continuous.ContinuousTests.test_refs_and_security_paths) ... ok
+test_registry_proxy_rejects_provider_and_billing_targets_before_connect (test_continuous.ContinuousTests.test_registry_proxy_rejects_provider_and_billing_targets_before_connect) ... ok
+test_request_symlink_and_oversize_are_denied (test_continuous.ContinuousTests.test_request_symlink_and_oversize_are_denied) ... ok
+test_standing_authority_needs_no_batch_or_execution_label (test_continuous.ContinuousTests.test_standing_authority_needs_no_batch_or_execution_label) ... ok
+test_canary_install_selects_only_dedicated_issue (test_install.InstallerTests.test_canary_install_selects_only_dedicated_issue) ... ok
+test_codex_trust_metadata_survives_reinstall_and_is_archived_on_rollback (test_install.InstallerTests.test_codex_trust_metadata_survives_reinstall_and_is_archived_on_rollback) ... ok
+test_idempotent_install_and_rollback_preserve_original_service_and_auth (test_install.InstallerTests.test_idempotent_install_and_rollback_preserve_original_service_and_auth) ... ok
+test_legacy_trust_only_drift_is_migrated_with_original_retained (test_install.InstallerTests.test_legacy_trust_only_drift_is_migrated_with_original_retained) ... ok
+test_missing_auth_fails_before_any_change (test_install.InstallerTests.test_missing_auth_fails_before_any_change) ... ok
+test_modified_service_is_preserved_on_reinstall_and_rollback (test_install.InstallerTests.test_modified_service_is_preserved_on_reinstall_and_rollback) ... ok
+test_repeated_rollback_keeps_prior_evidence (test_install.InstallerTests.test_repeated_rollback_keeps_prior_evidence) ... ok
+test_safe01_install_preserves_native_policy_and_selects_only_235 (test_install.InstallerTests.test_safe01_install_preserves_native_policy_and_selects_only_235) ... ok
+test_security_policy_drift_is_not_treated_as_trust_metadata (test_install.InstallerTests.test_security_policy_drift_is_not_treated_as_trust_metadata) ... ok
+test_environment_ignores_host_path_and_credentials (test_launcher.LauncherTests.test_environment_ignores_host_path_and_credentials) ... ok
+test_native_policy_retains_containment_and_pins_system_path (test_launcher.LauncherTests.test_native_policy_retains_containment_and_pins_system_path) ... ok
+test_private_git_and_workspace_boundary_required (test_launcher.LauncherTests.test_private_git_and_workspace_boundary_required) ... ok
+test_activation_hold_does_not_revoke_batch_authority (test_queue.QueueTests.test_activation_hold_does_not_revoke_batch_authority) ... ok
+test_autonomous_without_execution_label (test_queue.QueueTests.test_autonomous_without_execution_label) ... ok
+test_batch_boundary (test_queue.QueueTests.test_batch_boundary) ... ok
+test_blocked_continuation (test_queue.QueueTests.test_blocked_continuation) ... ok
+test_concurrency_and_retry (test_queue.QueueTests.test_concurrency_and_retry) ... ok
+test_concurrency_change_rejected (test_queue.QueueTests.test_concurrency_change_rejected) ... ok
+test_dependency_must_be_accepted (test_queue.QueueTests.test_dependency_must_be_accepted) ... ok
+test_dry_run_cannot_mutate_fixture (test_queue.QueueTests.test_dry_run_cannot_mutate_fixture) ... ok
+test_duplicate_workspace_rejected (test_queue.QueueTests.test_duplicate_workspace_rejected) ... ok
+test_explicit_issue_gate (test_queue.QueueTests.test_explicit_issue_gate) ... ok
+test_issue_prose_cannot_reduce_contract (test_queue.QueueTests.test_issue_prose_cannot_reduce_contract) ... ok
+test_native_dependency (test_queue.QueueTests.test_native_dependency) ... ok
+test_owner_gate_and_prohibited (test_queue.QueueTests.test_owner_gate_and_prohibited) ... ok
+test_planning_status_is_not_authority (test_queue.QueueTests.test_planning_status_is_not_authority) ... ok
+test_process_lock_prevents_two_reconcilers (test_queue.QueueTests.test_process_lock_prevents_two_reconcilers) ... ok
+test_readiness_is_idempotent (test_queue.QueueTests.test_readiness_is_idempotent) ... ok
+test_runtime_retry_budget (test_queue.QueueTests.test_runtime_retry_budget) ... ok
+test_unverified_dependency (test_queue.QueueTests.test_unverified_dependency) ... ok
+test_edit_build_test_commit_and_archive_preserves_history (test_workspace.WorkspaceTests.test_edit_build_test_commit_and_archive_preserves_history) ... ok
+test_invalid_workspace_rejected_and_empty_workspace_accepted (test_workspace.WorkspaceTests.test_invalid_workspace_rejected_and_empty_workspace_accepted) ... ok
+test_sibling_and_symlink_escape_rejected (test_workspace.WorkspaceTests.test_sibling_and_symlink_escape_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 64 tests in 0.297s
+
+OK

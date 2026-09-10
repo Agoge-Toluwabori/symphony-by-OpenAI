@@ -1,0 +1,222 @@
+{
+  "phase1_commit": "22f1128d6954f8d9634232c8293d72f6a36ddb98",
+  "file_count": 36,
+  "files": [
+    {
+      "file": ".gitignore",
+      "phase1_sha256": "7231d8e5901e0c6374905eabfb037743463984e16c3a3e0a2589672c6eef0c6a",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "README.md",
+      "phase1_sha256": "7ec83ee778142600898de4faa5a1835142fdc3b13ae199ec9b240e75e41fe025",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "SPEC.md",
+      "phase1_sha256": "cf84382f8c74ac67632aed4bb2a300586a8498076416abb17967e138fec2adf2",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "elixir/README.md",
+      "phase1_sha256": "99f3d8dc48388823d3498b0b3d4ec458146c0d11b1886cc0c825058f2560a739",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "elixir/WORKFLOW.md",
+      "phase1_sha256": "d27b64e450565d14f60c44492c28a0df74e58560ff8ad2b9a81663d703fc7445",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "elixir/lib/symphony_elixir/github/agent_tool.ex",
+      "phase1_sha256": "22be0778f4536baf049b858b4164ca69c0bd7f49bf86a12da3677852b69ded59",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "elixir/test/symphony_elixir/github_adapter_test.exs",
+      "phase1_sha256": "60f759502f4ef58c190de4fdafb0457d0c85219358a1e9a7a251a1b129f5a24f",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/README.md",
+      "phase1_sha256": "a669f75aac04e1c4f3cddf35201b9c4e5e7e3bc331c2bf74c08e5df3269687ce",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/WORKFLOW.md",
+      "phase1_sha256": "b4363ce230575be80021cc604340bdac5f6c5a04b01e06e3366c0da3db90a818",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/REPORT.md",
+      "phase1_sha256": "787d719b94ca3ae29724861d4763d434849b8ee6c99e5968f7839a30bb6791c8",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/TEMPLATE.md",
+      "phase1_sha256": "110b8b81c00355ca59b339a381eea3a5355ddb572e220d4bb637966d7e69607b",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/batch.json",
+      "phase1_sha256": "5d0160130e6d7e53607cb3e1009075730e859d1382c4693c1dcf3156c2b26095",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/containment.json",
+      "phase1_sha256": "6def058dec16ca5bb8ee06f8ba14ee51f995716e568f40e5dcc5352a99fa3fba",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/dispatch-dry-run.json",
+      "phase1_sha256": "fc679b040c6151b5051c6cca4455fc9df2387e03b4dedf1e0de12193a9221326",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/evidence/activation-preflight.txt",
+      "phase1_sha256": "71905d93b7c66112fb4b7bd3f01da0a4f7bf90dd6e5e7a265d1b92ded7cc048e",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/evidence/configuration.txt",
+      "phase1_sha256": "7bbc44563986f845472aafbd1a5b6f4483286b3bc6a1e64e78a99a5a768cb101",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/evidence/credential-scan.txt",
+      "phase1_sha256": "c773d5aa726b8b4317ae2b0d08c2e8003da574cbb49f1bd8987f40e786e8bdea",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/evidence/dispatch-dry-run.txt",
+      "phase1_sha256": "5a44fb001f170b90c77e2253053e6320f0714c193da255b23bc4c3e3c18db639",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/evidence/factory-tests.txt",
+      "phase1_sha256": "c4cd5451996098511b8a7361dbd4bf6c098044de08560ab41fe79d5421c47588",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/evidence/full-gates.txt",
+      "phase1_sha256": "833992841761a96053ad2533bcb77b9cc1f14f0fd519fbb52d6daa6631768fcb",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/evidence/issue-235-final.json",
+      "phase1_sha256": "6da13d2bce516c36e79573ed125882a90dca3eece584bced27e9d93e470329d3",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/evidence/live-selection.txt",
+      "phase1_sha256": "ed2631a9f6ad4fc937d69e571b58a1a9783cd18c446064ed73153d80e1d8ecb2",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/evidence/original-application-status.txt",
+      "phase1_sha256": "afadb7a92960e64d0b3daf8e5156f3bb3d0ef8edcbd4367f17924ddafacbca4f",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/evidence/original-symphony-status.txt",
+      "phase1_sha256": "cdb7b1bd92811db3e93b0c6a93d9619c74ea61d08ed8802d30fcea93fbad73de",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/evidence/service-final.txt",
+      "phase1_sha256": "f35c37a85d7ebb0465afe048abd8d3c74020a8e7df013b6adb0625ff011cce13",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/install.sh",
+      "phase1_sha256": "a95b052d82529370fd37b39736789872bdf0a1dceb8c8abe823600483ccc9ee5",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/issue-235-comment.md",
+      "phase1_sha256": "5a3db9704e4aa6c564c36059b22bd0870267ba3f89404a7a64f0b7bb6766e806",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/preflight.py",
+      "phase1_sha256": "9f508b4c461635ede6146b10e937adf2c5a9fa05993624a0db1ed6dd447269f7",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/project-readme.before.md",
+      "phase1_sha256": "58f9f63321b2fffe886d3fc06ca3c4417025fcb03ec773b3d178e3ac7b178731",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/queue.py",
+      "phase1_sha256": "2284f5af4843264301566fe3e86090bcf128d7f0fa1e50654a982608970f8d15",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/run.sh",
+      "phase1_sha256": "ba85218104985a12f1cf2295a8e346d949cbab2ced7ff2c9e955239596e9c982",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/tests/test_queue.py",
+      "phase1_sha256": "01d0837cb163dac4615b4f6d7b4a961fa761ff0e4470746c876b5bb1eb4d3585",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/tests/test_workspace.py",
+      "phase1_sha256": "a9b608ce092073655514aa0d25bc50ee363ab8b24689daf34974a69f73bc8fbe",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/factory/workspace.py",
+      "phase1_sha256": "aca37709e266225299e972f96016f4cb3b80c33868770381ef3c0e7e5918963f",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/symphony-agoge.service",
+      "phase1_sha256": "a71e75583d38bf3953703dcc93c54aaa66ab6e507ed4984846e9bfb461b925d8",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    },
+    {
+      "file": "operations/agoge/workspace-create.sh",
+      "phase1_sha256": "10adcc251fd3394b57853314238481005601c6b81813229fa95abd9e3cfdadf6",
+      "original_temporary_bytes_match": true,
+      "durable_worktree_file_present": true
+    }
+  ]
+}

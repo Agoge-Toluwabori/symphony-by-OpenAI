@@ -39,3 +39,31 @@ help with the setup:
 ## License
 
 This project is licensed under the [Apache License 2.0](LICENSE).
+
+Agoge's reviewed, batch-authorized delivery control plane is documented in
+[Delivery Factory V1](operations/agoge/factory/TEMPLATE.md). It includes a derived
+GitHub queue and scoped agent REST policy. Activation remains fail-closed pending
+the external worker containment and broker integrations listed in its report.
+
+Factory Phase 2 adds optional `codex.permissions` for native named profiles,
+sent without legacy sandbox fields. Current status and limitations are recorded
+in operations/agoge/factory/PHASE2.md (relative to the repository root).
+
+Agoge factory deployments expose the read-only `factory_context` controller tool
+when the bound tracker policy is `agoge-factory-v1`. It combines protected host
+dispatch evidence with thread/turn IDs from the live App Server responses; workers
+do not need host environment access. See [dispatch attestation](operations/agoge/factory/DISPATCH-CONTEXT.md).
+
+Agoge canary denial evidence verifies unchanged real/effective/saved UID mappings
+and reports safe, structured GitHub rejections before transport. See
+[denial-evidence repair](operations/agoge/factory/DENIAL-REPAIR.md).
+
+SAFE-01 owner-authorized one-task activation and rollback are documented in [SAFE01-RUN.md](operations/agoge/factory/SAFE01-RUN.md).
+
+## Agoge autonomous GitHub delivery
+
+The optional [Agoge factory](operations/agoge/factory/TEMPLATE.md) continuously
+reconciles Project authority and dependencies, runs one isolated worker, validates
+and integrates exact commits through pull requests. GitHub is its delivery boundary;
+provider deployment is owner-managed. Business bindings are separate from reusable
+controller policy. Historical canary/batch evidence remains preserved.

@@ -157,8 +157,26 @@ defmodule SymphonyElixir.Workspace do
   end
 
   defp remove_local_workspace(workspace) do
-    maybe_run_before_remove_hook(workspace, nil)
-    File.rm_rf(workspace)
+    if Config.settings!().tracker.provider["agent_policy"] == "agoge-factory-v1" do
+      archive_factory_workspace(workspace)
+    else
+      maybe_run_before_remove_hook(workspace, nil)
+      File.rm_rf(workspace)
+    end
+  end
+
+  defp archive_factory_workspace(workspace) do
+    archives = Path.join(Path.dirname(workspace), ".factory-archives")
+    destination = Path.join(archives, Path.basename(workspace) <> "-completed-" <> Integer.to_string(System.system_time(:nanosecond)))
+
+    with :ok <- File.mkdir_p(archives),
+         {:ok, %{type: :directory}} <- File.lstat(archives),
+         :ok <- File.rename(workspace, destination) do
+      Logger.info("Preserved factory workspace path=#{workspace} archive=#{destination}")
+      {:ok, [workspace]}
+    else
+      error -> {:error, {:factory_archive_failed, error}, workspace}
+    end
   end
 
   @spec remove_issue_workspaces(term()) :: :ok

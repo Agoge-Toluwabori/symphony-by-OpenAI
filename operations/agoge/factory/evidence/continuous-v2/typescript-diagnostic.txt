@@ -1,0 +1,52 @@
+WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir "/tmp" (codex_home: AbsolutePathBuf("/tmp/agoge-continuous-ci-home"))
+{
+    "compilerOptions": {
+        "target": "es2022",
+        "lib": [
+            "es2022",
+            "dom",
+            "dom.iterable"
+        ],
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "strict": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "jsx": "react-jsx",
+        "skipLibCheck": true,
+        "noUncheckedIndexedAccess": true,
+        "exactOptionalPropertyTypes": true,
+        "types": [
+            "node",
+            "react",
+            "react-dom"
+        ],
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ],
+        "incremental": true
+    },
+    "files": [
+        "./next-env.d.ts",
+        "./css.d.ts",
+        "./app/layout.tsx",
+        "./app/page.tsx",
+        "./.next/types/cache-life.d.ts",
+        "./.next/types/root-params.d.ts",
+        "./.next/types/routes.d.ts",
+        "./.next/types/validator.ts"
+    ],
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        ".next/types/**/*.ts",
+        ".next/dev/types/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

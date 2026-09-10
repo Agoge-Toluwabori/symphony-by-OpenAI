@@ -267,6 +267,33 @@ defmodule SymphonyElixir.AppServerTest do
                  end
                end)
       end)
+
+      File.rm(trace_file)
+
+      write_workflow_file!(Workflow.workflow_file_path(),
+        workspace_root: workspace_root,
+        codex_command: "#{codex_binary} app-server"
+      )
+
+      workflow = File.read!(Workflow.workflow_file_path())
+      File.write!(Workflow.workflow_file_path(), String.replace(workflow, "codex:\n", "codex:\n  permissions: factory-canary\n"))
+      assert {:ok, _result} = AppServer.run(workspace, "Validate named permissions", issue)
+
+      requests =
+        trace_file
+        |> File.read!()
+        |> String.split("\n", trim: true)
+        |> Enum.filter(&String.starts_with?(&1, "JSON:"))
+        |> Enum.map(&(&1 |> String.trim_leading("JSON:") |> Jason.decode!()))
+        |> Enum.filter(&(&1["method"] in ["thread/start", "turn/start"]))
+
+      assert length(requests) == 2
+
+      for request <- requests do
+        assert request["params"]["permissions"] == "factory-canary"
+        refute Map.has_key?(request["params"], "sandbox")
+        refute Map.has_key?(request["params"], "sandboxPolicy")
+      end
     after
       File.rm_rf(test_root)
     end

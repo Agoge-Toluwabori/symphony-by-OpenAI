@@ -1,0 +1,1 @@
+PASS: installed Codex 0.153.4 --strict-config app-server accepted rendered policy and initialize with experimentalApi=true, using launcher-filtered environment. Exit 0. No auth, thread, model turn, Symphony process or issue dispatch.

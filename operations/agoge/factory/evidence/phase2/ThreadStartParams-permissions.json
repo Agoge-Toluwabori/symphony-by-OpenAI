@@ -1,0 +1,7 @@
+{
+  "description": "Named profile id for this thread. Cannot be combined with `sandbox`.",
+  "type": [
+    "string",
+    "null"
+  ]
+}

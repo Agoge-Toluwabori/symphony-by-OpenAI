@@ -1,0 +1,48 @@
+{
+  "dispatch": {
+    "app_server_pid": 51354,
+    "approval_policy": "never",
+    "authority": "Autonomous Development",
+    "batch": "factory-v1-containment-canary",
+    "batch_stop": {
+      "owner": "host supervisor",
+      "phase": "after worker completion",
+      "service_enabled": false
+    },
+    "invocation_id": "58882b4cdb0e4d9c9a952468ddc5045b",
+    "issue_id": "236",
+    "max_concurrency": 1,
+    "permissions": "factory-canary",
+    "policy_sha256": "6bcf456c6be41325b86d8ceba95455f2ac94850f74c529412cdff8b7d8677d8d",
+    "preflight": {
+      "approved_batch": "verified",
+      "concurrency": "verified",
+      "dispatch_invocation": "verified",
+      "hardening": "verified",
+      "native_policy": "verified",
+      "service_disabled": "verified",
+      "service_identity": "verified",
+      "stop_policy": "verified"
+    },
+    "repair": "canary-denial-evidence-v2",
+    "repository": "Agoge-Toluwabori/Agoge-Business-Systems",
+    "service": "symphony-agoge.service",
+    "workspace": "/home/toluadmin/services/symphony-workspaces/agoge-business-systems/GH-236"
+  },
+  "fields": {
+    "approved_batch": "verified",
+    "arguments": "verified",
+    "concurrency": "verified",
+    "dispatch_invocation": "verified",
+    "issue_id": "verified",
+    "native_preflight": "verified",
+    "service_identity": "verified",
+    "session_id": "verified",
+    "workspace": "verified"
+  },
+  "post_run_verification": "Host supervisor verifies batch stop after completion; not a pre-claim dependency",
+  "session_id": "01a08483-624a-7962-b2e6-81c700308c8a-01a08483-6402-7c52-9071-9ebc9004cbc8",
+  "thread_id": "01a08483-624a-7962-b2e6-81c700308c8a",
+  "turn_id": "01a08483-6402-7c52-9071-9ebc9004cbc8",
+  "verified": true
+}

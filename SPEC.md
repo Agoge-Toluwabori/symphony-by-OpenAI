@@ -2310,3 +2310,25 @@ Extension config:
 - Cleanup and observability:
   - Operators need to know which host owns a run, where its workspace lives, and whether cleanup
     happened on the right machine.
+
+## Agoge factory extension
+
+An optional `tracker.provider.agent_policy: agoge-factory-v1` restricts dynamic
+GitHub REST calls to configured-repository reads and evidence/lifecycle writes for
+`agent_issue_numbers`. Authority and positive ready-label grants remain with a
+host-controlled approved batch, not the agent. The external reconciler selects one
+eligible task and stops at the batch boundary. This supplements, rather than
+replaces, tracker routing, live dispatch revalidation and workspace safeguards.
+
+Optional `codex.permissions` selects a named Codex profile for both thread and
+turn requests. Named profiles replace, rather than compose with, legacy sandbox
+request fields. Legacy workflow serialization is unchanged when it is absent.
+
+Agoge factory deployments expose the read-only `factory_context` controller tool
+when the bound tracker policy is `agoge-factory-v1`. It combines protected host
+dispatch evidence with thread/turn IDs from the live App Server responses; workers
+do not need host environment access. See [dispatch attestation](operations/agoge/factory/DISPATCH-CONTEXT.md).
+
+Agoge factory authorization failures expose only normalized methods and static
+route/rule classes with `FACTORY_POLICY_DENIED` and `transmitted: false`; request
+paths and authentication data remain private. This does not expand allowed APIs.

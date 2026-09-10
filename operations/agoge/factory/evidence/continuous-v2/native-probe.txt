@@ -1,0 +1,11 @@
+{"exit": 0, "output": "{\"checks\": {\"codex_credentials\": \"DENIED\", \"direct_network\": \"DENIED\", \"protected_credentials\": \"DENIED\", \"root\": \"DENIED\", \"unrelated_repository\": \"DENIED\"}, \"root_identity\": {\"after\": {\"effective\": 1000, \"parent_uid_mapping\": {\"0\": null, \"1000\": 0}, \"real\": 1000, \"saved\": 1000, \"user_namespace\": \"user:[4026532331]\"}, \"before\": {\"effective\": 1000, \"parent_uid_mapping\": {\"0\": null, \"1000\": 0}, \"real\": 1000, \"saved\": 1000, \"user_namespace\": \"user:[4026532331]\"}, \"errno\": 22, \"status\": \"DENIED\"}, \"version\": 2}\nRunning as unit: run-u311.service; invocation ID: 5a47b8f327504b8e813a0d256af5caf2\nWARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/agoge-uid-proof-2z3rjb8r/home\"))\nFinished with result: success\nMain processes terminated with: code=exited/status=0\nService runtime: 101ms\nCPU time consumed: 93ms\nMemory peak: 256.0K\nMemory swap peak: 0B\n"}
+PASS: native UID denial diagnostic; no App Server/model or issue dispatch
+PASS: Node captured IPC; proxy rejects billing, production and direct GitHub before upstream transmission
+Running as unit: run-u312.service; invocation ID: 87bdb6e70d804dd496164908381d547c
+WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir "/tmp" (codex_home: AbsolutePathBuf("/tmp/agoge-ipc-proof-zif6cfqp/home"))
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 209ms
+CPU time consumed: 212ms
+Memory peak: 268.0K
+Memory swap peak: 0B

@@ -396,6 +396,185 @@ defmodule SymphonyElixir.GitHub.AdapterTest do
     assert :ok = Config.validate!()
   end
 
+  test "factory transport rejects unrelated repos, production, paid resources and encoded bypasses" do
+    settings = tracker_settings(%{"agent_policy" => "agoge-factory-v1", "agent_issue_numbers" => [235, 236]})
+
+    for {method, path} <- [
+          {"GET", "/repos/other/repo/issues/1"},
+          {"POST", "/repos/octo/repo/deployments"},
+          {"POST", "/user/codespaces"},
+          {"PUT", "/repos/octo/repo/pulls/1/merge"},
+          {"GET", "/repos/octo/repo/issues/../actions/secrets"},
+          {"GET", "/repos/octo/repo/issues/%2e%2e/actions/secrets"},
+          {"POST", "/repos/octo/repo/issues/1/labels"}
+        ] do
+      response =
+        GitHubAgentTool.execute("github_api", %{"method" => method, "path" => path, "body" => %{"labels" => ["accepted"]}},
+          tracker_settings: settings,
+          issue: %{id: "235"},
+          github_client: fn _, _, _, _, _ -> flunk("denied request reached transport") end
+        )
+
+      refute response["success"]
+    end
+  end
+
+  test "SAFE-01 permits exact inspection routes while denying writes and other scopes before transport" do
+    settings = tracker_settings(%{"agent_policy" => "agoge-factory-v1", "agent_issue_numbers" => [235]})
+
+    for path <- ["/repos/octo/repo", "/repos/octo/repo/deployments", "/repos/octo/repo/deployments/6316676637", "/repos/octo/repo/deployments/6316676637/statuses"] do
+      assert %{"success" => true} =
+               GitHubAgentTool.execute("github_api", %{"method" => "GET", "path" => path},
+                 tracker_settings: settings,
+                 issue: %{id: "235"},
+                 github_client: fn "GET", ^path, _, _, _ -> {:ok, %{status: 200, body: %{}}} end
+               )
+    end
+
+    for {method, path, issue} <- [
+          {"POST", "/repos/octo/repo/deployments", "235"},
+          {"POST", "/repos/octo/repo/deployments/1/statuses", "235"},
+          {"GET", "/repos/octo/repo/deployments", "236"},
+          {"GET", "/repos/octo/unrelated/deployments", "235"},
+          {"GET", "/repos/octo/repo/deployments/1/statuses/../secrets", "235"},
+          {"GET", "/repos/octo/repo/deployments/%31", "235"},
+          {"GET", "/repos/octo/repo/deployments?secret", "235"}
+        ] do
+      result =
+        GitHubAgentTool.execute("github_api", %{"method" => method, "path" => path},
+          tracker_settings: settings,
+          issue: %{id: issue},
+          github_client: fn _, _, _, _, _ -> flunk("prohibited inspection reached transport") end
+        )
+
+      refute result["success"]
+      assert Jason.decode!(result["output"])["error"]["transmitted"] == false
+    end
+  end
+
+  test "continuous binding permits only current issue evidence and still rejects privileged writes" do
+    settings = tracker_settings(%{"agent_policy" => "agoge-factory-v1", "factory_continuous" => true, "agent_issue_numbers" => []})
+
+    assert %{"success" => true} =
+             GitHubAgentTool.execute(
+               "github_api",
+               %{"method" => "POST", "path" => "/repos/octo/repo/issues/240/comments", "body" => %{"body" => "evidence"}},
+               tracker_settings: settings,
+               issue: %{id: "240"},
+               github_client: fn _, _, _, _, _ -> {:ok, %{status: 201, body: %{}}} end
+             )
+
+    for path <- ["/repos/octo/repo/issues/241/comments", "/repos/octo/repo/deployments", "/repos/octo/repo/git/refs", "/repos/other/repo/pulls", "/user/codespaces"] do
+      result =
+        GitHubAgentTool.execute("github_api", %{"method" => "POST", "path" => path, "body" => %{"body" => "x"}},
+          tracker_settings: settings,
+          issue: %{id: "240"},
+          github_client: fn _, _, _, _, _ -> flunk("forbidden continuous write transmitted") end
+        )
+
+      refute result["success"]
+    end
+  end
+
+  test "factory denials expose safe stable evidence before invoking transport" do
+    settings = tracker_settings(%{"agent_policy" => "agoge-factory-v1", "agent_issue_numbers" => [236]})
+
+    cases = [
+      {"GET", "/repos/private-secret/repo/issues", "outside_repository", "repository_scope"},
+      {"POST", "/repos/octo/repo/deployments", "deployments", "development_operations_only"},
+      {"POST", "/user/codespaces", "account_resource", "default_deny"},
+      {"POST", "/repos/octo/repo/issues/235/labels", "issue_lifecycle", "assigned_issue_lifecycle_only"},
+      {"GET", "/repos/octo/repo/issues/%2e%2e/private-secret", "noncanonical", "canonical_route_required"},
+      {"POST", "/repos/octo/repo/actions/private-secret", "repository_other", "default_deny"}
+    ]
+
+    for {method, path, route, rule} <- cases do
+      body =
+        case route do
+          "outside_repository" -> %{"private-secret" => "fixture-token"}
+          "issue_lifecycle" -> %{"labels" => ["symphony-running"]}
+          _ -> %{}
+        end
+
+      response =
+        GitHubAgentTool.execute("github_api", %{"method" => String.downcase(method), "path" => path, "body" => body},
+          tracker_settings: settings,
+          issue: %{id: "236"},
+          github_client: fn _, _, _, _, _ -> flunk("prohibited request was transmitted") end
+        )
+
+      refute response["success"]
+
+      assert Jason.decode!(response["output"]) == %{
+               "error" => %{
+                 "code" => "FACTORY_POLICY_DENIED",
+                 "method" => method,
+                 "route_class" => route,
+                 "policy_rule" => rule,
+                 "stage" => "authorization",
+                 "transmitted" => false
+               }
+             }
+
+      refute response["output"] =~ "private-secret"
+      refute response["output"] =~ "fixture-token"
+      refute response["output"] =~ path
+    end
+  end
+
+  test "factory transport permits repository evidence and redacts upstream errors" do
+    settings = tracker_settings(%{"agent_policy" => "agoge-factory-v1", "agent_issue_numbers" => [235, 236]})
+
+    response =
+      GitHubAgentTool.execute(
+        "github_api",
+        %{"method" => "POST", "path" => "/repos/octo/repo/issues/235/comments", "body" => %{"body" => "evidence"}},
+        tracker_settings: settings,
+        issue: %{id: "235"},
+        github_client: fn _, _, _, _, _ -> {:ok, %{status: 201, body: %{}}} end
+      )
+
+    assert response["success"]
+
+    error =
+      GitHubAgentTool.execute("github_api", %{"method" => "GET", "path" => "/repos/octo/repo/issues/235"},
+        tracker_settings: settings,
+        issue: %{id: "235"},
+        github_client: fn _, _, _, _, _ -> {:error, {:github_api_request, "secret-sentinel"}} end
+      )
+
+    refute String.contains?(error["output"], "secret-sentinel")
+  end
+
+  test "factory lifecycle writes cannot grant authority, claim outside batch or close issues" do
+    settings = tracker_settings(%{"agent_policy" => "agoge-factory-v1", "agent_issue_numbers" => [235, 236]})
+
+    for {method, suffix, body, allowed} <- [
+          {"POST", "235/labels", %{"labels" => ["symphony-running"]}, true},
+          {"POST", "235/labels", %{"labels" => ["human-review"]}, true},
+          {"POST", "235/labels", %{"labels" => ["symphony-ready"]}, false},
+          {"POST", "235/labels", %{"labels" => ["accepted"]}, false},
+          {"POST", "236/labels", %{"labels" => ["symphony-running"]}, false},
+          {"DELETE", "235/labels/symphony-ready", nil, true},
+          {"DELETE", "235/labels/authority:prohibited", nil, false},
+          {"PATCH", "235", %{"state" => "closed"}, false}
+        ] do
+      response =
+        GitHubAgentTool.execute(
+          "github_api",
+          %{"method" => method, "path" => "/repos/octo/repo/issues/" <> suffix, "body" => body},
+          tracker_settings: settings,
+          issue: %{id: "235"},
+          github_client: fn _, _, _, _, _ ->
+            assert allowed
+            {:ok, %{status: 200, body: %{}}}
+          end
+        )
+
+      assert response["success"] == allowed
+    end
+  end
+
   defp tracker_settings(provider_overrides \\ %{}) do
     %{
       kind: "github",

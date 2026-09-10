@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "repository": "Agoge-Toluwabori/Agoge-Business-Systems",
+  "project": 1,
+  "batch": "factory-v1-publication-guard",
+  "approved": true,
+  "approval_source": "Authorized owner Agoge-Toluwabori accepted canary #236 and instructed one SAFE-01 run, 2026-09-09",
+  "max_concurrency": 1,
+  "publication_guard_verified": false,
+  "preview_isolation_verified": false,
+  "tasks": [
+    {
+      "number": 235,
+      "authority": "Autonomous Development",
+      "dependencies": [
+        236
+      ],
+      "publication_guard_task": true
+    }
+  ],
+  "execution_enabled": false
+}

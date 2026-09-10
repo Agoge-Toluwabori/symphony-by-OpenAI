@@ -1,0 +1,48 @@
+{
+  "recorded_at": "2026-09-09T14:42:13.469488+00:00",
+  "service": {
+    "MainPID": "71812",
+    "NRestarts": "0",
+    "NoNewPrivileges": "yes",
+    "LockPersonality": "yes",
+    "RestrictSUIDSGID": "yes",
+    "ActiveState": "active",
+    "SubState": "running",
+    "UnitFileState": "enabled"
+  },
+  "health": {
+    "time": 1788963862.049661,
+    "selected": null,
+    "eligible_count": 0,
+    "status": "idle",
+    "concurrency": 1
+  },
+  "running": [],
+  "retrying": [],
+  "recent_queue_polls": [
+    {
+      "queue_error": "RuntimeError",
+      "retry": 7
+    },
+    {
+      "queue_error": "RuntimeError",
+      "retry": 8
+    },
+    {
+      "queue_error": "RuntimeError",
+      "retry": 9
+    },
+    {
+      "queue_error": "RuntimeError",
+      "retry": 10
+    },
+    {
+      "queue_error": "RuntimeError",
+      "retry": 11
+    }
+  ],
+  "factory_commit": "dd4b2eb551d688db03665c640d1740d243cfd647",
+  "factory_pr": "https://github.com/Agoge-Toluwabori/symphony-by-OpenAI/pull/2",
+  "governance_pr": "https://github.com/Agoge-Toluwabori/Agoge-Business-Systems/pull/237",
+  "integration_commit": "42b547358a16acb650ed4083cf9bb9e213b94b04"
+}

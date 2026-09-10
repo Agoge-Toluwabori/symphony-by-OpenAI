@@ -1,0 +1,223 @@
+{
+  "recorded_at": "2026-09-09T15:17:09.613413+00:00",
+  "item_count": 233,
+  "counts": [
+    {
+      "task_type": "Canonical Epic",
+      "status": "Backlog",
+      "factory_authority": "unset",
+      "count": 12
+    },
+    {
+      "task_type": "Decision",
+      "status": "Blocked",
+      "factory_authority": "unset",
+      "count": 23
+    },
+    {
+      "task_type": "Deployment",
+      "status": "Blocked",
+      "factory_authority": "unset",
+      "count": 10
+    },
+    {
+      "task_type": "Foundation",
+      "status": "Done",
+      "factory_authority": "unset",
+      "count": 4
+    },
+    {
+      "task_type": "Implementation",
+      "status": "Blocked",
+      "factory_authority": "unset",
+      "count": 77
+    },
+    {
+      "task_type": "Integration",
+      "status": "Blocked",
+      "factory_authority": "unset",
+      "count": 7
+    },
+    {
+      "task_type": "Operations",
+      "status": "Blocked",
+      "factory_authority": "unset",
+      "count": 2
+    },
+    {
+      "task_type": "Planning",
+      "status": "Blocked",
+      "factory_authority": "unset",
+      "count": 10
+    },
+    {
+      "task_type": "Planning",
+      "status": "Ready",
+      "factory_authority": "unset",
+      "count": 5
+    },
+    {
+      "task_type": "Validation",
+      "status": "Blocked",
+      "factory_authority": "unset",
+      "count": 45
+    },
+    {
+      "task_type": "Validation",
+      "status": "Ready",
+      "factory_authority": "unset",
+      "count": 1
+    },
+    {
+      "task_type": "Work Package",
+      "status": "Backlog",
+      "factory_authority": "unset",
+      "count": 36
+    },
+    {
+      "task_type": "unset",
+      "status": "Done",
+      "factory_authority": "unset",
+      "count": 1
+    }
+  ],
+  "finding": "Legacy planning-only classifications exclude implementation records; prerequisites include explicitly excluded planning tasks. Standing eligibility is not sufficient authority to erase these classifications blindly.",
+  "examples": [
+    {
+      "number": 60,
+      "title": "F01 \u2014 Audit authoritative animation archive and preservation evidence",
+      "status": "Blocked",
+      "type": "Planning",
+      "authority": null,
+      "dependencies": "No delivery predecessor; task-level authority still required"
+    },
+    {
+      "number": 61,
+      "title": "F02 \u2014 Inventory source imports and classify missing-file claims",
+      "status": "Blocked",
+      "type": "Planning",
+      "authority": null,
+      "dependencies": "No delivery predecessor; task-level authority still required"
+    },
+    {
+      "number": 54,
+      "title": "G01 \u2014 Reconcile accepted foundation, governance and frontend commit ancestry",
+      "status": "Blocked",
+      "type": "Planning",
+      "authority": null,
+      "dependencies": "No delivery predecessor; task-level authority still required"
+    },
+    {
+      "number": 63,
+      "title": "F04 \u2014 Complete Figma-to-Next route, component and asset mapping",
+      "status": "Blocked",
+      "type": "Planning",
+      "authority": null,
+      "dependencies": "No delivery predecessor; task-level authority still required"
+    },
+    {
+      "number": 62,
+      "title": "F03 \u2014 Compare all prototype journeys and system states with approved brief",
+      "status": "Blocked",
+      "type": "Planning",
+      "authority": null,
+      "dependencies": "No delivery predecessor; task-level authority still required"
+    },
+    {
+      "number": 64,
+      "title": "F05 \u2014 Review parent-brand tokens, asset provenance and font licensing",
+      "status": "Blocked",
+      "type": "Planning",
+      "authority": null,
+      "dependencies": "No delivery predecessor; task-level authority still required"
+    },
+    {
+      "number": 84,
+      "title": "DB01 \u2014 Prepare exact PostgreSQL17 compatibility execution packet",
+      "status": "Blocked",
+      "type": "Planning",
+      "authority": null,
+      "dependencies": "No delivery predecessor; task-level authority still required"
+    },
+    {
+      "number": 55,
+      "title": "G02 \u2014 Define reviewed develop and feature-branch synchronization",
+      "status": "Ready",
+      "type": "Planning",
+      "authority": null,
+      "dependencies": "No delivery predecessor; task-level authority still required"
+    },
+    {
+      "number": 56,
+      "title": "G03 \u2014 Specify Symphony claiming and one-task-per-worktree rules",
+      "status": "Ready",
+      "type": "Planning",
+      "authority": null,
+      "dependencies": "No delivery predecessor; task-level authority still required"
+    },
+    {
+      "number": 57,
+      "title": "G04 \u2014 Define closure evidence and secret-safe completion conventions",
+      "status": "Ready",
+      "type": "Planning",
+      "authority": null,
+      "dependencies": "No delivery predecessor; task-level authority still required"
+    },
+    {
+      "number": 58,
+      "title": "G05 \u2014 Configure approved repository-specific Symphony controls",
+      "status": "Blocked",
+      "type": "Implementation",
+      "authority": null,
+      "dependencies": "#56 G03, #167 VM01"
+    },
+    {
+      "number": 59,
+      "title": "G06 \u2014 Apply approved develop and reviewed feature-branch controls",
+      "status": "Blocked",
+      "type": "Implementation",
+      "authority": null,
+      "dependencies": "#54 G01, #55 G02"
+    },
+    {
+      "number": 65,
+      "title": "F06 \u2014 Repair confirmed missing imports in conversion copy only",
+      "status": "Blocked",
+      "type": "Implementation",
+      "authority": null,
+      "dependencies": "#61 F02"
+    },
+    {
+      "number": 66,
+      "title": "F07 \u2014 Convert prototype entrypoint and component shell to Next App Router",
+      "status": "Blocked",
+      "type": "Implementation",
+      "authority": null,
+      "dependencies": "#60 F01, #62 F03, #63 F04, #65 F06"
+    },
+    {
+      "number": 77,
+      "title": "ID01 \u2014 Qualify existing Agoge ID authority and permitted test environment",
+      "status": "Blocked",
+      "type": "Implementation",
+      "authority": null,
+      "dependencies": "No delivery predecessor; task-level authority still required"
+    },
+    {
+      "number": 85,
+      "title": "DB02 \u2014 Run PG17-COMPAT against exact migration and policy suite",
+      "status": "Ready",
+      "type": "Validation",
+      "authority": null,
+      "dependencies": "#84 DB01"
+    }
+  ],
+  "proposed_reconciliation": [
+    "Record already-delivered governance prerequisites against PR #237 and factory PR #2 without pretending new implementation occurred.",
+    "Convert local MVP Implementation/Validation records to Autonomous Development only after verifying scope and removing obsolete blanket planning labels.",
+    "Keep genuine provider, production, credentials, spending, acceptance and business decisions at Owner Gate.",
+    "Make Ready only after verified prerequisites; preserve unresolved dependencies.",
+    "Explicitly resolve whether preparation-only prerequisite issues may become autonomous development tasks; current standing policy excludes planning-only work."
+  ],
+  "mutations_performed": []
+}

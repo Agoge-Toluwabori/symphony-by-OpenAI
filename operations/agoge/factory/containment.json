@@ -1,0 +1,14 @@
+{
+  "status": "CANARY_PASS_NORMAL_DELIVERY_STOPPED",
+  "mechanism": "Native Codex permission profiles selected explicitly at thread/start and turn/start",
+  "model_command_filesystem": "root deny, minimal runtime read, task workspace write",
+  "model_command_network": "disabled for containment canary",
+  "authentication": "Trusted App Server references existing auth; filtered command environment and denied host reads",
+  "github": "Existing Symphony host tool, repository/current-issue allowlist",
+  "external_brokers_required_for_canary": false,
+  "live_canary_issue": 236,
+  "live_canary_passed": true,
+  "bubblewrap": "/usr/bin/bwrap via fixed command PATH; no outer namespace wrapper",
+  "dispatch_context_proven": true,
+  "successful_canary_commit": "5cc507a336ee4146df0bcd4e2db45849cad2d924"
+}
